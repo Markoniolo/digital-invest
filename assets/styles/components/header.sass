@@ -1,0 +1,148 @@
+.header
+  position: sticky
+  z-index: 1
+  top: 0
+
+.header_active
+  .header__menu
+    opacity: 1
+    pointer-events: all
+  .header__burger
+    &::before
+      +bgIcon('ic_burger_close_black.svg')
+
+.header__cont
+  max-width: calc(1440px)
+  padding: 0 12px
+  margin: 0 auto
+
+.header__area
+  position: relative
+  padding: 12px 0
+  display: flex
+  align-items: center
+
+.header__burger
+  width: 50px
+  height: 50px
+  background-color: $white
+  border-radius: 50%
+  position: relative
+  @include media(xs)
+    width: 42px
+    height: 42px
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    +bgIcon('ic_burger_open_black.svg')
+    transition-duration: $transition-duration
+    transition-property: background
+
+.header__back
+  margin-left: 12px
+  background-color: $white
+  border-radius: 1000px
+  padding: 16px 24px 16px 52px
+  position: relative
+  @include media(xs)
+    display: none
+  &::before
+    content: ''
+    width: 18px
+    height: 18px
+    position: absolute
+    top: 16px
+    left: 16px
+    +bgIcon('ic_arrow_btn_left_black.svg')
+
+.header__menu
+  position: absolute
+  z-index: 1
+  top: 100%
+  left: 0
+  max-width: 363px
+  width: 100%
+  opacity: 0
+  pointer-events: none
+  transition-property: opacity
+  transition-duration: $transition-duration
+
+.header__nav
+  padding: 32px 24px
+  box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5)
+  background: $white
+  border-radius: 16px
+
+.header__list
+
+.header__item
+  &:not(:last-of-type)
+    margin-bottom: 24px
+
+.header__link
+
+.header__button
+  margin-top: 6px
+  display: block
+  width: 100%
+
+.header__logo
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  width: 145px
+  @include media(xs)
+    width: 126px
+
+a.header__logo
+  transition-property: opacity
+  transition-duration: $transition-duration
+  &:hover
+    opacity: 0.8
+
+.header__logo-image
+  height: 32px
+  @include media(xs)
+    height: 27px
+
+.header__tg
+  overflow: hidden
+  margin-left: auto
+  position: relative
+  width: 50px
+  height: 50px
+  background-color: $white
+  border-radius: 50%
+  @include media(xs)
+    width: 42px
+    height: 42px
+  &::before
+    content: ''
+    width: 28px
+    height: 28px
+    position: absolute
+    top: calc(50% - 14px)
+    right: calc(50% - 14px)
+    +bgIcon('ic_tg_black.svg')
+    @include media(xs)
+      width: 24px
+      height: 24px
+      top: calc(50% - 12px)
+      right: calc(50% - 12px)
+  &:hover
+    &::before
+      animation: 0.3s headerTgAnim forwards linear
+  @keyframes headerTgAnim
+    0%
+      transform: translate(0,0)
+    50%
+      transform: translate(30px,-30px)
+    51%
+      transform: translate(-30px,30px)
+    100%
+      transform: translate(0,0)

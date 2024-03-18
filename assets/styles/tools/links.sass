@@ -1,0 +1,9 @@
+@mixin link
+  transition-duration: $transition-duration
+  transition-property: color
+
+.link-black
+  +link
+  text-decoration: none
+  &:hover
+    color: $saturated

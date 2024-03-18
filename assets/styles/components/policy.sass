@@ -1,0 +1,70 @@
+.policy
+  margin-top: 78px
+  margin-bottom: 120px
+  @include media(lg)
+    margin-top: 60px
+    margin-bottom: 90px
+  @include media(xs)
+    margin-top: 47px
+    margin-bottom: 60px
+
+.policy__cont
+
+.policy__wrap
+  max-width: 864px
+  margin: 0 auto
+  h1
+    margin-bottom: 32px
+    font-size: 48px
+    line-height: 105%
+    @include media(lg)
+      margin-bottom: 16px
+    @include media(xs)
+      margin-bottom: 12px
+      font-size: 30px
+  h2
+    margin-top: 62px
+    margin-bottom: 32px
+    @include media(lg)
+      margin-top: 60px
+      margin-bottom: 16px
+      font-size: 28px
+    @include media(xs)
+      margin-top: 40px
+      font-size: 24px
+  p
+    margin-bottom: 10px
+    font-size: 16px
+    line-height: 140%
+    @include media(lg)
+      margin-bottom: 8px
+      font-size: 14px
+    @include media(xs)
+      margin-bottom: 5px
+  ul
+    margin-bottom: 10px
+    @include media(lg)
+      margin-bottom: 8px
+    @include media(xs)
+      margin-bottom: 5px
+  li
+    position: relative
+    padding-left: 20px
+    font-size: 16px
+    line-height: 140%
+    @include media(lg)
+      padding-left: 15px
+      font-size: 14px
+    &::before
+      content: ''
+      width: 6px
+      height: 6px
+      border-radius: 50%
+      position: absolute
+      top: 8px
+      left: 4px
+      background-color: $text
+      @include media(lg)
+        top: 8px
+        width: 5px
+        height: 5px

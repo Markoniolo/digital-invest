@@ -1,0 +1,15 @@
+include ../_variables
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=2.5, minimum-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Карта сайта
+  body
+    main.wrapper
+      div(style="padding-top: 20px; font-size: 40px")
+        .cont
+          each page in pages
+            div: a(href=`${page.view}.html`) #{page.name}

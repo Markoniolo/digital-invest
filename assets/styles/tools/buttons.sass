@@ -1,0 +1,152 @@
+@mixin btn
+  text-decoration: none
+
+.btn-saturated
+  +btn
+  position: relative
+  border-radius: 16px
+  background-color: $saturated
+  padding: 23px 70px 23px 24px
+  color: $white
+  text-align: left
+  transition-property: background-color
+  transition-duration: $transition-duration
+  &:hover
+    background: $dark
+  &::before
+    content: ''
+    width: 26px
+    height: 26px
+    position: absolute
+    top: 23px
+    right: 24px
+    +bgIcon('ic_email_white.svg')
+
+.btn-black-arrow
+  +btn
+  overflow: hidden
+  position: relative
+  border-radius: 16px
+  background-color: $text
+  padding: 23px 70px 23px 24px
+  color: $white
+  text-align: left
+  span
+    display: inline-block
+  &:not(:hover)
+    span
+      animation: 0.3s btnBlackArrowSpanReverse forwards linear
+    &::before
+      animation: 0.3s btnBlackArrowReverse forwards linear
+  &:hover
+    &::before
+      animation: 0.3s btnBlackArrow forwards linear
+    span
+      animation: 0.3s btnBlackArrowSpan forwards linear
+  &::before
+    content: ''
+    width: 26px
+    height: 26px
+    position: absolute
+    top: 23px
+    right: 24px
+    +bgIcon('ic_arrow_btn_right_white.svg')
+  @keyframes btnBlackArrow
+    0%
+      right: 24px
+    50%
+      right: -26px
+    51%
+      right: 0
+      left: -26px
+    100%
+      left: 24px
+  @keyframes btnBlackArrowReverse
+    0%
+      left: 24px
+    50%
+      right: 0
+      left: -26px
+    51%
+      right: -26px
+    100%
+      right: 24px
+  @keyframes btnBlackArrowSpan
+    0%
+      transform: translateX(0)
+    51%
+      transform: translateX(0)
+    100%
+      transform: translateX(62px)
+  @keyframes btnBlackArrowSpanReverse
+    0%
+      transform: translateX(62px)
+    51%
+      transform: translateX(0)
+    100%
+      transform: translateX(0)
+
+.btn-white-arrow
+  +btn
+  overflow: hidden
+  position: relative
+  border-radius: 1000px
+  background-color: $white
+  padding: 15px 70px 15px 24px
+  color: $text
+  text-align: left
+  min-width: 233px
+  span
+    display: inline-block
+  &:not(:hover)
+    span
+      animation: 0.3s btnBlackArrowSpanReverse forwards linear
+    &::before
+      animation: 0.3s btnBlackArrowReverse forwards linear
+  &:hover
+    &::before
+      animation: 0.3s btnBlackArrow forwards linear
+    span
+      animation: 0.3s btnBlackArrowSpan forwards linear
+  &::before
+    content: ''
+    width: 18px
+    height: 18px
+    position: absolute
+    top: 16px
+    right: 24px
+    +bgIcon('ic_arrow_btn_right_black.svg')
+  @keyframes btnBlackArrow
+    0%
+      right: 24px
+    50%
+      right: -26px
+    51%
+      right: 0
+      left: -26px
+    100%
+      left: 24px
+  @keyframes btnBlackArrowReverse
+    0%
+      left: 24px
+    50%
+      right: 0
+      left: -26px
+    51%
+      right: -26px
+    100%
+      right: 24px
+  @keyframes btnBlackArrowSpan
+    0%
+      transform: translateX(0)
+    51%
+      transform: translateX(0)
+    100%
+      transform: translateX(32px)
+  @keyframes btnBlackArrowSpanReverse
+    0%
+      transform: translateX(32px)
+    51%
+      transform: translateX(0)
+    100%
+      transform: translateX(0)

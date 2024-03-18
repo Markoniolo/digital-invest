@@ -1,0 +1,32 @@
+-
+  const headerMenu = [
+    'О нас',
+    'Кейсы',
+    'Команда',
+    'Преимущества',
+    'Этапы работы',
+    'Ответы на вопросы',
+  ]
+
+header.header(data-element="header")
+  .header__cont
+    .header__area
+      button.header__burger(type='button' data-element="header-burger")
+      if VIEW === 'policy'
+        button.header__back.text-medium(type='button') Назад
+      .header__menu
+        nav.header__nav
+          ul.header__list
+            each item in headerMenu
+              li.header__item
+                a.header__link.title.link-black(href="#")= item
+        a.header__button.title.btn.btn-saturated(href='mailto:info@cifrinvest.ru') info@cifrinvest.ru
+        button.header__button.btn.btn-black-arrow
+          span.title Оставить заявку
+      if VIEW === 'index'
+        .header__logo
+          img.header__logo-image(src=staticImg('logo.svg') alt='')
+      else
+        a.header__logo(href='/')
+          img.header__logo-image(src=staticImg('logo.svg') alt='')
+      a.header__tg(href='#' target='_blank')
