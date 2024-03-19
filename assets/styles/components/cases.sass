@@ -1,0 +1,158 @@
+.cases
+  padding-bottom: 283px
+  @include media(lg)
+    padding-bottom: 0
+
+.cases__cont
+
+.cases__caption
+  margin-bottom: 8px
+  font-size: 80px
+  text-align: center
+  @include media(lg)
+    margin-bottom: 4px
+  @include media(xs)
+    text-align: left
+
+.cases__note
+  margin-bottom: 32px
+  text-align: center
+  font-size: 24px
+  line-height: 120%
+  @include media(lg)
+    margin-bottom: 40px
+    font-size: 18px
+    line-height: 110%
+  @include media(xs)
+    margin-bottom: 20px
+    font-size: 14px
+    text-align: left
+
+.cases__area
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  @include media(lg)
+    gap: 12px
+
+.cases__box_1
+  width: 426px
+  height: 426px
+
+.cases__box_2
+  width: 498px
+  height: 319px
+  top: 200px
+
+.cases__box_3
+  width: 426px
+  height: 426px
+  top: 94px
+  left: 216px
+
+.cases__box_4
+  width: 426px
+  height: 426px
+  top: 341px
+  right: 150px
+  .cases__name
+    @include media(lg)
+      max-width: 235px
+
+.cases__box_5
+  width: 498px
+  height: 319px
+  top: 252px
+
+.cases__box_6
+  width: 426px
+  height: 426px
+  top: 540px
+
+.cases__box
+  display: flex
+  flex-direction: column
+  position: relative
+  border-radius: 16px
+  overflow: hidden
+  padding: 24px
+  @include media(lg)
+    width: calc(50% - 6px)
+    height: 351px
+    padding: 16px
+    top: 0
+    right: 0
+    left: 0
+  @include media(xs)
+    padding: 12px
+    width: 100%
+
+.cases__box_7
+  width: 498px
+  height: 319px
+  top: 352px
+  left: 290px
+  @include media(lg)
+    width: 100%
+
+.cases__picture
+  position: absolute
+  z-index: -1
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+.cases__image
+  height: 100%
+
+.cases__top
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+
+.cases__name
+  font-size: 24px
+  line-height: 110%
+  color: $white
+  @include media(xs)
+    font-size: 18px
+
+.cases__tag
+  position: relative
+  flex-shrink: 0
+  margin-left: 20px
+  padding-left: 15px
+  color: $white
+  font-size: 14px
+  line-height: 105%
+  @include media(xs)
+    font-size: 12px
+    padding-left: 12px
+  &::before
+    content: ''
+    width: 8px
+    height: 8px
+    position: absolute
+    top: 2px
+    left: 0
+    border-radius: 50%
+    background-color: $white
+    @include media(xs)
+      width: 6px
+      height: 6px
+      top: 3px
+
+.cases__tech-icons
+  margin-top: auto
+  display: flex
+  gap: 16px
+  @include media(xs)
+    gap: 10px
+
+.cases__tech-icon
+  width: 32px
+  height: 32px
+  @include media(xs)
+    width: 28px
+    height: 28px

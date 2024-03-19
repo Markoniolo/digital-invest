@@ -1,0 +1,40 @@
+-
+  const capTopCards = [
+    { value: '30+', note: 'человек в команде' },
+    { value: '25+', note: 'выполненных проектов' },
+    { value: '10+', note: 'лет на рынке' },
+  ]
+  const capAreaCards = [
+    { title: 'Аутсорс <br>отдел разработки',
+      price: 'от 500 000 руб. / мес.',
+      descr: 'Полноценный отдел разработки, собранный специально для решения ваших задач под нашим контролем',
+      mod: 'light' },
+    { title: 'Автоматизация <br>бизнес-процессов',
+      price: 'от 800 000 руб. / мес.',
+      descr: 'Наши специалисты проведут полную аналитику всех процессов в вашей компании, создадут на её основе максимально возможное решение для их автоматизации, проведут внедрение и будут поддерживать, развивать новое цифровое сердце компании',
+      mod: 'saturated' },
+    { title: 'Разработка <br>нетиповых проектов',
+      price: 'от 5 000 000 руб.',
+      descr: 'Поможем продумать и реализуем любую идею при помощи веб-технологий. Запустим MVP в короткие сроки',
+      mod: 'dark' },
+  ]
+
+section.cap
+  .cap__cont.cont
+    .cap__top
+      .cap__top-inner
+        h1.cap__caption.h1 Интегратор digital-решений
+        .cap__note.text-medium Отдел разработки на аутсорсе для вашего бизнеса
+      .cap__top-cards
+        each item in capTopCards
+          .cap__top-card
+            .cap__top-card-value.h4= item.value
+            .cap__top-card-note.text-medium= item.note
+    .cap__area
+      each item in capAreaCards
+        .cap__box(class = `cap__box_${item.mod}`)
+          button.cap__button
+          .cap__title!= item.title
+          .cap__price.text-medium= item.price
+          .cap__descr.text-medium= item.descr
+

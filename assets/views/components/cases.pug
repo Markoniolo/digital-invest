@@ -1,0 +1,28 @@
+-
+  const casesArea = [
+    'ERP-система для производства',
+    'Fintech-проект',
+    'Маркетинговые сервисы',
+    'Система автоматизации для строительства дата-центров',
+    'Система хранения и обмена чувствительной информацией',
+    'Разработка инструментов для нагруженного сервиса',
+    'Разработка личного кабинета для СМИ-проекта',
+  ]
+
+section.cases
+  .cases__cont.cont
+    h2.cases__caption.h2 Наши кейсы
+    .cases__note.title Работаем по NDA
+    .cases__area
+      each item, index in casesArea
+        .cases__box(class=`cases__box_${index+1}`)
+          picture.cases__picture
+            source(srcset=staticImg(`cases/case-${index+1}_336.jpg`) media="(max-width: 767px)")
+            source(srcset=staticImg(`cases/case-${index+1}_351.jpg`) media="(max-width: 1439px)")
+            img.cases__image(src=staticImg(`cases/case-${index+1}.jpg`) alt='')
+          .cases__top
+            .cases__name= item
+            .cases__tag NDA
+          .cases__tech-icons
+            each item in [1,2,3,4]
+              img.cases__tech-icon(src=staticImg(`cases/ic_cases_tech_${item}.svg`) alt='')

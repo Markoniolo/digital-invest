@@ -1,0 +1,71 @@
+.about
+  overflow: hidden
+  margin-bottom: 120px
+  @include media(lg)
+    margin-bottom: 93px
+  @include media(xs)
+    margin-bottom: 60px
+
+.about__cont
+
+.about__caption
+  margin-bottom: 32px
+  @include media(lg)
+    margin-bottom: 16px
+  @include media(xs)
+    margin-bottom: 12px
+
+.about__inner
+  max-width: 620px
+  width: 100%
+  margin-left: 216px
+  margin-bottom: 5px
+  @include media(lg)
+    margin-left: 120px
+    margin-bottom: 30px
+  @include media(xs)
+    margin-left: 0
+
+.about__text
+  &:not(:last-of-type)
+    margin-bottom: 18px
+    @include media(lg)
+      margin-bottom: 16px
+    @include media(xs)
+      margin-bottom: 12px
+
+.about__title
+  margin-left: auto
+  margin-bottom: 32px
+  max-width: 280px
+  text-align: right
+  font-size: 24px
+  line-height: 110%
+  @include media(lg)
+    margin-bottom: 16px
+    font-size: 18px
+  @include media(xs)
+    margin-bottom: 12px
+
+.about__area
+  display: flex
+  gap: 56px
+  transform: translateX(216px)
+  @include media(lg)
+    gap: 46px
+    transform: translateX(120px)
+  @include media(xs)
+    gap: 13px
+    transform: translateX(0)
+
+.about__icon
+  flex-shrink: 0
+  width: 80px
+  height: 80px
+  object-fit: cover
+  @include media(lg)
+    width: 64px
+    height: 64px
+  @include media(xs)
+    width: 46px
+    height: 46px

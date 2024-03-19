@@ -7,6 +7,7 @@
   border-radius: 16px
   background-color: $saturated
   padding: 23px 70px 23px 24px
+  box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5)
   color: $white
   text-align: left
   transition-property: background-color
@@ -27,6 +28,7 @@
   overflow: hidden
   position: relative
   border-radius: 16px
+  box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5)
   background-color: $text
   padding: 23px 70px 23px 24px
   color: $white
@@ -86,28 +88,28 @@
     100%
       transform: translateX(0)
 
-.btn-white-arrow
+.btn-small-arrow
   +btn
+  $offset: 24px
+  display: inline-block
   overflow: hidden
   position: relative
   border-radius: 1000px
-  background-color: $white
   padding: 15px 70px 15px 24px
-  color: $text
   text-align: left
   min-width: 233px
   span
     display: inline-block
   &:not(:hover)
     span
-      animation: 0.3s btnBlackArrowSpanReverse forwards linear
+      animation: 0.3s btnSmallArrowSpanReverse forwards linear
     &::before
-      animation: 0.3s btnBlackArrowReverse forwards linear
+      animation: 0.3s btnSmallArrowReverse forwards linear
   &:hover
     &::before
-      animation: 0.3s btnBlackArrow forwards linear
+      animation: 0.3s btnSmallArrow forwards linear
     span
-      animation: 0.3s btnBlackArrowSpan forwards linear
+      animation: 0.3s btnSmallArrowSpan forwards linear
   &::before
     content: ''
     width: 18px
@@ -116,7 +118,10 @@
     top: 16px
     right: 24px
     +bgIcon('ic_arrow_btn_right_black.svg')
-  @keyframes btnBlackArrow
+    @include media(lg)
+      width: 16px
+      height: 16px
+  @keyframes btnSmallArrow
     0%
       right: 24px
     50%
@@ -126,7 +131,7 @@
       left: -26px
     100%
       left: 24px
-  @keyframes btnBlackArrowReverse
+  @keyframes btnSmallArrowReverse
     0%
       left: 24px
     50%
@@ -136,17 +141,27 @@
       right: -26px
     100%
       right: 24px
-  @keyframes btnBlackArrowSpan
+  @keyframes btnSmallArrowSpan
     0%
       transform: translateX(0)
     51%
       transform: translateX(0)
     100%
       transform: translateX(32px)
-  @keyframes btnBlackArrowSpanReverse
+  @keyframes btnSmallArrowSpanReverse
     0%
       transform: translateX(32px)
     51%
       transform: translateX(0)
     100%
       transform: translateX(0)
+
+.btn-small-arrow_white
+  color: $text
+  background-color: $white
+
+.btn-small-arrow_black
+  background-color: $text
+  color: $white
+  &::before
+    +bgIcon('ic_arrow_btn_right_white.svg')

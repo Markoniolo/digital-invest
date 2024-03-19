@@ -1,0 +1,12 @@
+section.not-found
+  .not-found__cont.cont
+    .not-found__area
+      picture.not-found__picture
+        source(srcset=staticImg('not-found/not-found-bg_375.svg') media="(max-width: 767px)")
+        source(srcset=staticImg('not-found/not-found-bg_768.svg') media="(max-width: 1439px)")
+        img.not-found__bg(src=staticImg('not-found/not-found-bg.svg') alt='')
+      img.not-found__404(src=staticImg('not-found/not-found-404.svg') alt='')
+      h1.not-found__title Страница, которую вы ищете не найдена
+      a.not-found__button.btn-small-arrow.btn-small-arrow_black(href='/')
+        span.text-medium На главную
+

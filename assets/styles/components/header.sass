@@ -1,6 +1,6 @@
 .header
   position: sticky
-  z-index: 1
+  z-index: 100
   top: 0
 
 .header_active
@@ -72,7 +72,7 @@
   transition-duration: $transition-duration
 
 .header__nav
-  padding: 32px 24px
+  padding: 20px 12px
   box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5)
   background: $white
   border-radius: 16px
@@ -80,15 +80,17 @@
 .header__list
 
 .header__item
-  &:not(:last-of-type)
-    margin-bottom: 24px
 
 .header__link
+  padding: 12px
+  display: inline-block
 
 .header__button
   margin-top: 6px
   display: block
   width: 100%
+  font-size: 24px
+  line-height: 110%
 
 .header__logo
   position: absolute
@@ -136,7 +138,7 @@ a.header__logo
       right: calc(50% - 12px)
   &:hover
     &::before
-      animation: 0.3s headerTgAnim forwards linear
+      animation: $transition-duration headerTgAnim forwards linear
   @keyframes headerTgAnim
     0%
       transform: translate(0,0)

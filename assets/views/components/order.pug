@@ -1,0 +1,27 @@
+section.order
+  .order__cont.cont
+    .order__area
+      .order__box
+        h2.order__caption.h2 Найдем подход к любому проекту
+        .order__text Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение
+      form.order__form
+        input.order__input.input(placeholder='Ваше имя' type='text' name='name')
+        input.order__input.input(placeholder='Номер телефона' type='tel' name='phone')
+        .order__headline Удобный способ связи
+        .order__list
+          label.order__label
+            input.order__radio(type='radio' name='communication' checked value='По телефону')
+            .order__radio-view По телефону
+          label.order__label
+            input.order__radio(type='radio' name='communication' value='Telegram')
+            .order__radio-view Telegram
+          label.order__label
+            input.order__radio(type='radio' name='communication' value='WhatsApp')
+            .order__radio-view WhatsApp
+        .order__bottom
+          button.order__submit.btn-small-arrow.btn-small-arrow_white
+            span.text-medium Отправить заявку
+          .order__policy.text-small
+            | Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
+            |
+            a(href='#') политикой конфиденциальности
