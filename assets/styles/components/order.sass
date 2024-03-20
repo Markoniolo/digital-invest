@@ -1,4 +1,6 @@
 .order
+  color: $white
+  background-color: $saturated
   padding: 274px 0 90px
   @include media(lg)
     padding: 120px 0 90px
@@ -8,31 +10,117 @@
 .order__cont
 
 .order__area
+  display: flex
+  justify-content: space-between
+  @include media(lg)
+    display: block
 
 .order__box
+  max-width: 560px
+  width: 100%
+  @include media(lg)
+    max-width: 100%
 
 .order__caption
+  margin-bottom: 32px
+  @include media(lg)
+    margin-bottom: 16px
+    max-width: 490px
+  @include media(xs)
+    margin-bottom: 12px
+    max-width: 285px
 
 .order__text
+  opacity: 0.8
+  max-width: 430px
+  width: 100%
+  margin-left: auto
+  text-align: right
+  @include media(lg)
+    margin-bottom: 40px
+    margin-left: 0
+    max-width: 360px
+    text-align: left
+  @include media(xs)
+    margin-bottom: 30px
+    max-width: 285px
 
 .order__form
+  margin-top: 28px
+  max-width: 648px
+  width: 100%
+  @include media(lg)
+    margin-top: 0
+    max-width: 100%
 
 .order__input
+  &:not(:last-of-type)
+    margin-bottom: 46px
+    @include media(lg)
+      margin-bottom: 40px
+    @include media(xs)
+      margin-top: 30px
 
 .order__headline
+  margin-top: 38px
+  margin-bottom: 9px
+  opacity: 0.8
+  @include media(lg)
+    margin-top: 40px
+    margin-bottom: 12px
+  @include media(xs)
+    margin-top: 30px
 
 .order__list
+  display: flex
+  flex-wrap: wrap
+  gap: 3px
+  margin-bottom: 46px
+  @include media(lg)
+    margin-bottom: 38px
+    gap: 8px
+  @include media(xs)
+    margin-bottom: 30px
 
 .order__label
 
 .order__radio
+  display: none
+  &:checked + .order__radio-view
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%)
+    color: $white
+    cursor: default
 
 .order__radio-view
+  cursor: pointer
+  color: rgba($white, .5)
+  padding: 10px 16px
+  border-radius: 1000px
+  backdrop-filter: blur(30px)
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%)
+  transition-duration: $transition-duration
+  transition-property: color, background
+  &:hover
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%)
+    color: rgba($white, .75)
 
 .order__bottom
+  display: flex
+  align-items: center
+  @include media(xs)
+    display: block
 
 .order__submit
+  @include media(xs)
+    width: 100%
 
 .text-medium
 
 .order__policy
+  margin-left: 20px
+  opacity: 0.4
+  max-width: 340px
+  @include media(xs)
+    max-width: 320px
+    margin: 14px auto 0
+    text-align: center

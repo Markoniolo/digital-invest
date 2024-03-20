@@ -1,0 +1,93 @@
+.team
+  position: relative
+  z-index: 1
+  margin-top: -25px
+  margin-bottom: 120px
+  border-radius: 32px
+  background-color: $dark
+  color: $white
+  padding: 120px 0
+  @include media(lg)
+    padding: 90px 0
+    margin-bottom: 90px
+  @include media(xs)
+    padding: 60px 0
+    border-radius: 16px
+    margin-bottom: 60px
+
+.team__cont
+
+.team__area
+  display: flex
+  justify-content: space-between
+  @include media(xs)
+    display: block
+
+.team__box
+  max-width: 560px
+  width: 100%
+  @include media(lg)
+    max-width: 336px
+  @include media(xs)
+    margin-bottom: 30px
+
+.team__caption
+  position: sticky
+  top: 80px
+
+.team__list
+  max-width: 576px
+  width: 100%
+  @include media(lg)
+    max-width: 336px
+
+.team__item
+  display: flex
+  align-items: center
+  &:not(:last-of-type)
+    margin-bottom: 24px
+    @include media(lg)
+      margin-bottom: 32px
+
+.team__picture
+  position: relative
+  margin-right: 28px
+  flex-shrink: 0
+  width: 116px
+  height: 116px
+  @include media(lg)
+    margin-right: 16px
+    width: 68px
+    height: 68px
+  &::before
+    content: ''
+    position: absolute
+    bottom: 3px
+    right: 10px
+    width: 22px
+    height: 22px
+    border-radius: 50%
+    background-color: #3BD867
+    border: 3px solid $dark
+    @include media(lg)
+      width: 13px
+      height: 13px
+      right: 6px
+      bottom: 2px
+      border: 2px solid $dark
+
+.team__image
+  height: 100%
+  border-radius: 50%
+
+.team__inner
+
+.team__name
+  margin-bottom: 12px
+  @include media(lg)
+    margin-bottom: 7px
+
+.team__text
+  opacity: 0.8
+  @include media(lg)
+    font-size: 12px

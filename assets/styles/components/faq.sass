@@ -1,0 +1,101 @@
+.faq
+  margin-bottom: 120px
+  @include media(lg)
+    margin-bottom: 90px
+  @include media(xs)
+    margin-bottom: 60px
+
+.faq__cont
+
+.faq__area
+  display: flex
+  @include media(lg)
+    display: block
+
+.faq__caption
+  margin-right: 72px
+  flex-shrink: 0
+  max-width: 360px
+  width: 100%
+  @include media(lg)
+    margin-right: 0
+    margin-bottom: 40px
+    max-width: 270px
+
+.faq__list
+
+.faq__item
+  border-radius: 16px
+  box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5)
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%)
+  @include media(xs)
+    border-radius: 8px
+  &:not(:last-of-type)
+    margin-bottom: 6px
+    @include media(lg)
+      margin-bottom: 16px
+    @include media(xs)
+      margin-bottom: 12px
+
+.faq__top
+  cursor: pointer
+  display: flex
+  padding: 12px 12px 12px 24px
+  @include media(xs)
+    padding: 12px 12px 12px 12px
+
+.faq__top_active
+  .faq__button::before
+    transform: rotate(180deg)
+
+.faq__headline
+  margin-right: 28px
+  flex-grow: 1
+  align-self: center
+  @include media(lg)
+    margin-right: 0
+    max-width: 538px
+  @include media(xs)
+    max-width: 244px
+    font-size: 14px
+
+.faq__button
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-left: auto
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: $white
+  @include media(xs)
+    width: 42px
+    height: 42px
+  &::before
+    content: ''
+    width: 18px
+    height: 18px
+    +bgIcon('ic_dropdown_arrow_black.svg')
+    transition-property: transform
+    transition-duration: $transition-duration
+    @include media(xs)
+      width: 15px
+      height: 15px
+
+.faq__content
+  transition-duration: 0.5s
+  transition-property: max-height
+  max-height: 0
+  overflow: hidden
+
+.faq__content-inner
+  padding: 0 90px 24px 24px
+  @include media(lg)
+    padding: 0 159px 30px 24px
+  @include media(xs)
+    padding: 0 57px 12px 12px
+
+.faq__text
+  opacity: 0.8
+  @include media(lg)
+    font-size: 12px

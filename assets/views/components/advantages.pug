@@ -1,0 +1,25 @@
+-
+  const advantagesList = [
+    { title: 'Высокий уровень технических специалистов',
+      text: 'Мы очень внимательно относимся к отбору технических специалистов и придерживаемся высоких стандартов в требованиях к их технической экспертизе' },
+    { title: 'Экспертиза в разных отраслях',
+      text: 'У нас богатый опыт длительного сотрудничества с компаниями из разных предметных областей: fintech, edtech, medtech, blockchain и др.' },
+    { title: 'Эффективное<br> управление проектами',
+      text: 'Все наши внутренние процессы и методики управления ориентированы на выполнение долгосрочных и сложных проектов для корпоративных клиентов.' },
+    { title: 'Формирование команды в короткие сроки',
+      text: 'Имеем большую экспертизу в вопросе найма команды, а также развитую сеть проверенных партнёров' },
+  ]
+
+section.advantages
+  .advantages__cont.cont
+    h2.advantages__caption.h2 Наши преимущества
+    ul.advantages__list
+      each item in advantagesList
+        li.advantages__item
+          .advantages__title.title!= item.title
+          .advantages__text.text-medium= item.text
+    .advantages__headline.title Нам доверяют
+    .advantages__partners
+      each item, index in ['png','svg','svg','svg','svg','svg','svg']
+        picture.advantages__partner
+          img.advantages__partner-image(src=staticImg(`advantages/advantages-partner-${index+1}.${item}`) alt='')
