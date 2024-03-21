@@ -1,10 +1,32 @@
 .about
-  overflow: hidden
   margin-bottom: 120px
   @include media(lg)
     margin-bottom: 93px
   @include media(xs)
     margin-bottom: 60px
+
+.about__bg
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: -120px
+    left: 0
+    right: 0
+    height: 1028px
+    +bgIcon('about/about-bg.svg')
+    @include media(lg)
+      content: none
+    @include media(xs)
+      content: ''
+      top: -116px
+      +bgIcon('about/about-bg_456.svg')
+      height: 534px
+
+.about__wrap
+  overflow: hidden
+  position: relative
+  z-index: 1
 
 .about__cont
 
@@ -51,12 +73,22 @@
   display: flex
   gap: 56px
   transform: translateX(216px)
+  transition-duration: 0.5s
+  transition-property: transform
   @include media(lg)
     gap: 46px
     transform: translateX(120px)
+    transition-duration: 1s
   @include media(xs)
     gap: 13px
     transform: translateX(0)
+
+.about__area_scroll
+  transform: translateX(0)
+  @include media(lg)
+    transform: translateX(-334px)
+  @include media(xs)
+    transform: translateX(-234px)
 
 .about__icon
   flex-shrink: 0

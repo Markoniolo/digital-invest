@@ -30,6 +30,10 @@
 .steps__item
   position: relative
   padding-left: 216px
+  transform: translateX(-70px) scale(0.75)
+  opacity: 0.2
+  transition-property: opacity, transform
+  transition-duration: 0.8s
   @include media(lg)
     padding-left: 56px
   @include media(xs)
@@ -38,6 +42,10 @@
     margin-bottom: 62px
     @include media(xs)
       margin-bottom: 30px
+
+.steps__item_fade
+  transform: translateX(0) scale(1)
+  opacity: 1
 
 .steps__number
   position: absolute

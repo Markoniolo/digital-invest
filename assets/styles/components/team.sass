@@ -44,10 +44,28 @@
 .team__item
   display: flex
   align-items: center
+  transform: translateX(70px) scale(0.75)
+  opacity: 0.2
+  transition-property: opacity, transform
+  transition-duration: 0.8s
+  @include media(lg)
+    transform: translateX(65px) scale(0.75)
+  @include media(xs)
+    transform: translateX(50px) scale(0.75)
   &:not(:last-of-type)
     margin-bottom: 24px
     @include media(lg)
       margin-bottom: 32px
+
+.team__item_fade
+  transform: translateX(0) scale(1)
+  opacity: 1
+  @include media(lg)
+    transform: translateX(0) scale(1)
+  @include media(xs)
+    transform: translateX(0) scale(1)
+  .team__picture::before
+    opacity: 1
 
 .team__picture
   position: relative
@@ -69,6 +87,10 @@
     border-radius: 50%
     background-color: #3BD867
     border: 3px solid $dark
+    opacity: 0
+    transition-property: opacity
+    transition-duration: $transition-duration
+    transition-delay: 0.8s
     @include media(lg)
       width: 13px
       height: 13px

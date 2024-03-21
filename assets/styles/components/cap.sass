@@ -1,14 +1,89 @@
 .cap
-  margin-top: 120px
+  overflow: hidden
+  margin-top: -74px
   margin-bottom: 120px
   @include media(lg)
-    margin-top: 43px
     margin-bottom: 90px
   @include media(xs)
-    margin-top: 30px
+    margin-top: -66px
     margin-bottom: 60px
 
 .cap__cont
+  position: relative
+  z-index: 1
+  padding-top: 194px
+  @include media(lg)
+    padding-top: 117px
+  @include media(xs)
+    padding-top: 95px
+  &::before
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    height: 585px
+    +bgIcon('cap/cap-bg.svg')
+    @include media(lg)
+      height: 1290px
+      left: -36px
+      right: -36px
+      +bgIcon('cap/cap-bg_840.svg')
+    @include media(xs)
+      height: 664px
+      left: -40px
+      right: -40px
+      +bgIcon('cap/cap-bg_456.svg')
+
+.cap__figure
+  position: absolute
+  z-index: -2
+  filter: blur(100px)
+  animation: 2s capFigureRotate infinite linear
+  @include media(lg)
+    filter: blur(80px)
+  @include media(xs)
+    filter: blur(40px)
+  @keyframes capFigureRotate
+    0%
+      transform: rotate(0)
+    100%
+      transform: rotate(360deg)
+
+.cap__figure_1
+  top: 22px
+  left: -25px
+  width: 460px
+  height: 520px
+  +bgIcon('cap/cap-bg-figure-1.svg')
+  @include media(lg)
+    top: 93px
+    left: -48px
+    width: 257px
+    height: 291px
+  @include media(xs)
+    width: 144px
+    height: 163px
+    top: 90px
+    left: -57px
+
+.cap__figure_2
+  top: -47px
+  right: -24px
+  width: 763px
+  height: 736px
+  +bgIcon('cap/cap-bg-figure-2.svg')
+  @include media(lg)
+    top: 54px
+    right: -77px
+    width: 427px
+    height: 412px
+  @include media(xs)
+    top: 69px
+    right: -34px
+    width: 239px
+    height: 231px
 
 .cap__top
   display: flex

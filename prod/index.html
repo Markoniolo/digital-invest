@@ -37,7 +37,7 @@
   <header class="header" data-element="header">
     <div class="header__cont">
       <div class="header__area">
-        <button class="header__burger" type="button" data-element="header-burger"></button>
+        <button class="header__burger magnetic" type="button" data-element="header-burger"></button>
         <div class="header__menu">
           <nav class="header__nav">
             <ul class="header__list">
@@ -66,16 +66,18 @@
             <span>Оставить заявку</span>
           </button>
         </div>
-        <div class="header__logo">
+        <a class="header__logo magnetic" href="/">
           <img class="header__logo-image" src="statics/img/logo.svg" alt="">
-        </div>
-        <a class="header__tg" href="#" target="_blank"></a>
+        </a>
+        <a class="header__tg magnetic" href="#" target="_blank"></a>
       </div>
     </div>
   </header>
   <main class="wrapper">
     <section class="cap">
       <div class="cap__cont cont">
+        <div class="cap__figure cap__figure_1"></div>
+        <div class="cap__figure cap__figure_2"></div>
         <div class="cap__top">
           <div class="cap__top-inner">
             <h1 class="cap__caption h1">Интегратор digital-решений</h1>
@@ -125,31 +127,34 @@
       </div>
     </section>
     <section class="about">
-      <div class="about__cont cont">
-        <h2 class="about__caption h2">О нас</h2>
-        <div class="about__inner">
-          <p class="about__text text-large">
-            Компания «Цифровые инвестиции» работает с 2014 года. Мы помогаем среднему и крупному бизнесу перейти на новый
-            уровень, внедряя цифровые решения.
-          </p>
-          <p class="about__text text-large">
-            Изучая и анализируя бизнес-процессы наших клиентов, разрабатываем системы, которые позволяют снизить
-            операционные расходы, найти и убрать узкие горлышки для масштабирования, повысить эффективность работы всей
-            команды. Мы можем выделить под проект отдельную команду, которая будет заниматься только клиентской задачей
-          </p>
-        </div>
-        <div class="about__title">Технологии которые используем</div>
-        <div class="about__area">
-          <img class="about__icon" src="statics/img/about/ic_about_1.svg" alt="">
-          <img class="about__icon" src="statics/img/about/ic_about_2.svg" alt="">
-          <img class="about__icon" src="statics/img/about/ic_about_3.svg" alt="">
-          <img class="about__icon" src="statics/img/about/ic_about_4.svg" alt="">
-          <img class="about__icon" src="statics/img/about/ic_about_5.svg" alt="">
-          <img class="about__icon" src="statics/img/about/ic_about_6.svg" alt="">
-          <img class="about__icon" src="statics/img/about/ic_about_7.svg" alt="">
-          <img class="about__icon" src="statics/img/about/ic_about_8.svg" alt="">
-          <img class="about__icon" src="statics/img/about/ic_about_9.svg" alt="">
-          <img class="about__icon" src="statics/img/about/ic_about_10.svg" alt="">
+      <div class="about__bg cont"></div>
+      <div class="about__wrap">
+        <div class="about__cont cont">
+          <h2 class="about__caption h2">О нас</h2>
+          <div class="about__inner">
+            <p class="about__text text-large">
+              Компания «Цифровые инвестиции» работает с 2014 года. Мы помогаем среднему и крупному бизнесу перейти на новый
+              уровень, внедряя цифровые решения.
+            </p>
+            <p class="about__text text-large">
+              Изучая и анализируя бизнес-процессы наших клиентов, разрабатываем системы, которые позволяют снизить
+              операционные расходы, найти и убрать узкие горлышки для масштабирования, повысить эффективность работы всей
+              команды. Мы можем выделить под проект отдельную команду, которая будет заниматься только клиентской задачей
+            </p>
+          </div>
+          <div class="about__title">Технологии которые используем</div>
+          <div class="about__area" data-element="about-area">
+            <img class="about__icon" src="statics/img/about/ic_about_1.svg" alt="">
+            <img class="about__icon" src="statics/img/about/ic_about_2.svg" alt="">
+            <img class="about__icon" src="statics/img/about/ic_about_3.svg" alt="">
+            <img class="about__icon" src="statics/img/about/ic_about_4.svg" alt="">
+            <img class="about__icon" src="statics/img/about/ic_about_5.svg" alt="">
+            <img class="about__icon" src="statics/img/about/ic_about_6.svg" alt="">
+            <img class="about__icon" src="statics/img/about/ic_about_7.svg" alt="">
+            <img class="about__icon" src="statics/img/about/ic_about_8.svg" alt="">
+            <img class="about__icon" src="statics/img/about/ic_about_9.svg" alt="">
+            <img class="about__icon" src="statics/img/about/ic_about_10.svg" alt="">
+          </div>
         </div>
       </div>
     </section>
@@ -282,7 +287,8 @@
     </section>
     <section class="order">
       <div class="order__cont cont">
-        <div class="order__area">
+        <div class="order__area" data-role="light-bg-box">
+          <div class="order__light" data-role="light-bg"></div>
           <div class="order__box">
             <h2 class="order__caption h2">Найдем подход к&nbsp;любому проекту</h2>
             <div class="order__text text-large">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
@@ -311,7 +317,7 @@
               </button>
               <div class="order__policy text-small">
                 Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
-                <a href="#">политикой конфиденциальности</a>
+                <a href="policy.html">политикой конфиденциальности</a>
               </div>
             </div>
           </form>
@@ -325,7 +331,7 @@
             <h2 class="team__caption h2">Над каждым проектом трудится команда специалистов</h2>
           </div>
           <ul class="team__list">
-            <li class="team__item">
+            <li class="team__item" data-element="team-item">
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
@@ -335,7 +341,7 @@
                 <div class="team__text text-medium">Выявляет потребности клиента и находит максимально эффективные пути для их закрытия</div>
               </div>
             </li>
-            <li class="team__item">
+            <li class="team__item" data-element="team-item">
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
@@ -345,7 +351,7 @@
                 <div class="team__text text-medium">Координирует работу всей команды проекта, составляет план разработки, коммуницирует с клиентом</div>
               </div>
             </li>
-            <li class="team__item">
+            <li class="team__item" data-element="team-item">
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
@@ -355,7 +361,7 @@
                 <div class="team__text text-medium">Находит самые правильные по UX/UI варианты визуала будущих инструментов</div>
               </div>
             </li>
-            <li class="team__item">
+            <li class="team__item" data-element="team-item">
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
@@ -365,7 +371,7 @@
                 <div class="team__text text-medium">Проектирует техническую архитектуру, отвечает за её реализацию</div>
               </div>
             </li>
-            <li class="team__item">
+            <li class="team__item" data-element="team-item">
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
@@ -375,7 +381,7 @@
                 <div class="team__text text-medium">Делает Pixel-Perfect вёрстку по макетам и подгатавливает её к разработке</div>
               </div>
             </li>
-            <li class="team__item">
+            <li class="team__item" data-element="team-item">
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
@@ -385,7 +391,7 @@
                 <div class="team__text text-medium">Разрабатывает серверную часть приложений по заданному архитектурному коду</div>
               </div>
             </li>
-            <li class="team__item">
+            <li class="team__item" data-element="team-item">
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
@@ -395,7 +401,7 @@
                 <div class="team__text text-medium">Связывает вёрстку с серверной частью приложения, разрабатывает интерактивные функции</div>
               </div>
             </li>
-            <li class="team__item">
+            <li class="team__item" data-element="team-item">
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
@@ -405,7 +411,7 @@
                 <div class="team__text text-medium">Проводит тестирование на каждом этапе разработки, отвечает за качество конечного продукта</div>
               </div>
             </li>
-            <li class="team__item">
+            <li class="team__item" data-element="team-item">
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
@@ -468,48 +474,48 @@
         </div>
       </div>
     </section>
-    <section class="steps">
+    <section class="steps" data-element="steps">
       <div class="steps__cont cont">
         <div class="steps__area">
           <div class="steps__wrap">
             <h2 class="steps__title h2">Этапы работы</h2>
             <ul class="steps__list">
-              <li class="steps__item">
+              <li class="steps__item" data-element="steps-item">
                 <div class="steps__number">01</div>
                 <div class="steps__box">
                   <div class="steps__headline title">Аналитическое исследование</div>
                   <div class="steps__text text-medium">Изучаем текущее состояние компании в деталях: портрет клиента, команда, бизнес-процессы, техническое состояние</div>
                 </div>
               </li>
-              <li class="steps__item">
+              <li class="steps__item" data-element="steps-item">
                 <div class="steps__number">02</div>
                 <div class="steps__box">
                   <div class="steps__headline title">Проектирование</div>
                   <div class="steps__text text-medium">Создаём концепцию будущей разработки: прототипы интерфейсов, архитектура, схемы взаимодействий</div>
                 </div>
               </li>
-              <li class="steps__item">
+              <li class="steps__item" data-element="steps-item">
                 <div class="steps__number">03</div>
                 <div class="steps__box">
                   <div class="steps__headline title">Дизайн</div>
                   <div class="steps__text text-medium">Проводим скрининг по мудборду, разрабатываем концепты, подготавливаем макеты к разработке</div>
                 </div>
               </li>
-              <li class="steps__item">
+              <li class="steps__item" data-element="steps-item">
                 <div class="steps__number">04</div>
                 <div class="steps__box">
                   <div class="steps__headline title">Разработка</div>
                   <div class="steps__text text-medium">Занимаемся поэтапной разработкой проекта. После каждого этапа уведомляем о прогрессе, делаем разработку прогнозируемой</div>
                 </div>
               </li>
-              <li class="steps__item">
+              <li class="steps__item" data-element="steps-item">
                 <div class="steps__number">05</div>
                 <div class="steps__box">
                   <div class="steps__headline title">Тестирование</div>
                   <div class="steps__text text-medium">Проводим комплексное тестирование всех узлов проекта, составляем документацию</div>
                 </div>
               </li>
-              <li class="steps__item">
+              <li class="steps__item" data-element="steps-item">
                 <div class="steps__number">06</div>
                 <div class="steps__box">
                   <div class="steps__headline title">Техническая поддержка и сопровождение</div>
@@ -566,7 +572,8 @@
     </section>
   </main>
   <footer class="footer">
-    <div class="footer__cont">
+    <div class="footer__cont" data-role="light-bg-box">
+      <div class="footer__light" data-role="light-bg"></div>
       <div class="footer__area">
         <div class="footer__note title">Обсудим проект?</div>
         <a class="footer__email h1" href="mailto:info@cifrinvest.ru">info@cifrinvest.ru</a>

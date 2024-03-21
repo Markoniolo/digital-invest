@@ -13,13 +13,21 @@ function faqTopArrayInit () {
     const item = this.closest('.faq__item')
     const content = item.querySelector('.faq__content')
     if (this.classList.contains('faq__top_active')) {
-      item.classList.remove('faq__box_active')
-      content.style.maxHeight = 0
-      this.classList.remove('faq__top_active')
+      faqTopClose(this, item, content)
     } else {
-      item.classList.add('faq__box_active')
-      content.style.maxHeight = content.scrollHeight + "px"
-      this.classList.add('faq__top_active')
+      faqTopOpen(this, item, content)
     }
+  }
+
+  function faqTopClose (faqTop, item, content) {
+    item.classList.remove('faq__box_active')
+    content.style.maxHeight = 0
+    faqTop.classList.remove('faq__top_active')
+  }
+
+  function faqTopOpen (faqTop, item, content) {
+    item.classList.add('faq__box_active')
+    content.style.maxHeight = content.scrollHeight + "px"
+    faqTop.classList.add('faq__top_active')
   }
 }

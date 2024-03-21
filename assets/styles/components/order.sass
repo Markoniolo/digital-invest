@@ -1,15 +1,77 @@
 .order
+  position: relative
   color: $white
-  background-color: $saturated
-  padding: 274px 0 90px
-  @include media(lg)
-    padding: 120px 0 90px
-  @include media(xs)
-    padding: 60px 0
+  &::before
+    content: ''
+    position: absolute
+    top: -217px
+    left: 0
+    right: 0
+    height: 560px
+    background: linear-gradient(180deg, rgba(#2183a6, 0) 0%, rgba(#2183a6, 1) 100%)
+    @include media(lg)
+      height: 566px
+      top: -273px
+    @include media(xs)
+      height: 559px
+      top: -356px
+  &::after
+    content: ''
+    position: absolute
+    top: 342px
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: $saturated
+    @include media(lg)
+      top: 292px
+    @include media(xs)
+      top: 203px
 
 .order__cont
+  overflow: hidden
+  position: relative
+  z-index: 1
+  padding-top: 274px
+  padding-bottom: 90px
+  @include media(lg)
+    padding-top: 120px
+    padding-bottom: 90px
+  @include media(xs)
+    padding-top: 60px
+    padding-bottom: 60px
+  &::before
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    height: 734px
+    +bgIcon('order/order-bg.svg')
+    @include media(lg)
+      top: -23px
+      height: 734px
+      +bgIcon('order/order-bg_768.svg')
+    @include media(xs)
+      +bgIcon('order/order-bg_375.svg')
+
+.order__light
+  position: absolute
+  z-index: -2
+  bottom: 100px
+  left: 100px
+  border-radius: 50%
+  background-color: $pastel
+  width: 183px
+  height: 183px
+  filter: blur(60px)
+  transform: translate(-50%, -50%)
+  @include media(lg)
+    display: none
 
 .order__area
+  position: relative
   display: flex
   justify-content: space-between
   @include media(lg)
@@ -59,7 +121,7 @@
     @include media(lg)
       margin-bottom: 40px
     @include media(xs)
-      margin-top: 30px
+      margin-bottom: 30px
 
 .order__headline
   margin-top: 38px

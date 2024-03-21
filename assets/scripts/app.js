@@ -1,2 +1,7 @@
 import './components/header'
 import './components/faq'
+import './components/magnetic'
+import './components/team'
+import './components/steps'
+import './components/about'
+import './components/light-bg'

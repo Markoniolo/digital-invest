@@ -2,6 +2,7 @@
   position: sticky
   z-index: 100
   top: 0
+  pointer-events: none
 
 .header_active
   .header__menu
@@ -23,6 +24,7 @@
   align-items: center
 
 .header__burger
+  pointer-events: all
   width: 50px
   height: 50px
   background-color: $white
@@ -43,6 +45,7 @@
     transition-property: background
 
 .header__back
+  pointer-events: all
   margin-left: 12px
   background-color: $white
   border-radius: 1000px
@@ -93,6 +96,7 @@
   line-height: 110%
 
 .header__logo
+  pointer-events: all
   position: absolute
   top: 50%
   left: 50%
@@ -101,18 +105,13 @@
   @include media(xs)
     width: 126px
 
-a.header__logo
-  transition-property: opacity
-  transition-duration: $transition-duration
-  &:hover
-    opacity: 0.8
-
 .header__logo-image
   height: 32px
   @include media(xs)
     height: 27px
 
 .header__tg
+  pointer-events: all
   overflow: hidden
   margin-left: auto
   position: relative

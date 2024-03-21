@@ -1,4 +1,7 @@
 .footer
+  overflow: hidden
+  position: relative
+  z-index: 1
   background-color: $saturated
   padding: 24px
   color: $white
@@ -7,6 +10,34 @@
     padding: 24px 16px 40px
 
 .footer__cont
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    bottom: 0
+    left: -24px
+    right: -24px
+    +bgIcon('footer/footer-bg.svg')
+    @include media(lg)
+      content: none
+
+.footer__light
+  display: none
+  position: absolute
+  z-index: -2
+  bottom: 100px
+  left: 100px
+  border-radius: 50%
+  background-color: $pastel
+  width: 183px
+  height: 183px
+  filter: blur(60px)
+  transform: translate(-50%, -50%)
+  @include media(lg)
+    display: none
 
 .footer__area
   display: flex

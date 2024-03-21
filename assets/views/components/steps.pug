@@ -14,14 +14,14 @@
       text: 'Обеспечиваем качественную, бесперебойную работу наших систем, развиваем их, пишем регламенты по использованию и проводим обучение сотрудников' },
   ]
 
-section.steps
+section.steps(data-element="steps")
   .steps__cont.cont
     .steps__area
       .steps__wrap
         h2.steps__title.h2 Этапы работы
         ul.steps__list
           each item in stepsList
-            li.steps__item
+            li.steps__item(data-element="steps-item")
               .steps__number= item.number
               .steps__box
                 .steps__headline.title= item.headline

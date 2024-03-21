@@ -18,7 +18,7 @@ section.team
         h2.team__caption.h2 Над каждым проектом трудится команда специалистов
       ul.team__list
         each item in teamList
-          li.team__item
+          li.team__item(data-element="team-item")
             picture.team__picture
               source(srcset=staticImg(`team/team-1_68.jpg`) media="(max-width: 1439px)")
               img.team__image(src=staticImg('team/team-1.jpg') alt='')

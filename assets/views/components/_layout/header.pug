@@ -11,9 +11,9 @@
 header.header(data-element="header")
   .header__cont
     .header__area
-      button.header__burger(type='button' data-element="header-burger")
+      button.header__burger.magnetic(type='button' data-element="header-burger")
       if VIEW === 'policy'
-        button.header__back.text-medium(type='button') Назад
+        button.header__back.text-medium.magnetic(type='button') Назад
       .header__menu
         nav.header__nav
           ul.header__list
@@ -23,10 +23,6 @@ header.header(data-element="header")
         a.header__button.btn.btn-saturated(href='mailto:info@cifrinvest.ru') info@cifrinvest.ru
         button.header__button.btn.btn-black-arrow
           span Оставить заявку
-      if VIEW === 'index'
-        .header__logo
-          img.header__logo-image(src=staticImg('logo.svg') alt='')
-      else
-        a.header__logo(href='/')
-          img.header__logo-image(src=staticImg('logo.svg') alt='')
-      a.header__tg(href='#' target='_blank')
+      a.header__logo.magnetic(href='/')
+        img.header__logo-image(src=staticImg('logo.svg') alt='')
+      a.header__tg.magnetic(href='#' target='_blank')
