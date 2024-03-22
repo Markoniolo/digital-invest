@@ -1,12 +1,12 @@
 -
   const casesArea = [
-    'ERP-система для производства',
-    'Fintech-проект',
-    'Маркетинговые сервисы',
-    'Система автоматизации для строительства дата-центров',
-    'Система хранения и обмена чувствительной информацией',
-    'Разработка инструментов для нагруженного сервиса',
-    'Разработка личного кабинета для СМИ-проекта',
+    { name: 'ERP-система для производства', transformY: 10 },
+    { name: 'Fintech-проект', transformY: 10 },
+    { name: 'Маркетинговые сервисы', transformY: 10 },
+    { name: 'Система автоматизации для строительства дата-центров', transformY: 10 },
+    { name: 'Система хранения и обмена чувствительной информацией', transformY: 10 },
+    { name: 'Разработка инструментов для нагруженного сервиса', transformY: 10 },
+    { name: 'Разработка личного кабинета для СМИ-проекта', transformY: 10 },
   ]
 
 section.cases
@@ -21,7 +21,7 @@ section.cases
             source(srcset=staticImg(`cases/case-${index+1}_351.jpg`) media="(max-width: 1439px)")
             img.cases__image(src=staticImg(`cases/case-${index+1}.jpg`) alt='')
           .cases__top
-            .cases__name= item
+            .cases__name= item.name
             .cases__tag NDA
           .cases__tech-icons
             each item in [1,2,3,4]

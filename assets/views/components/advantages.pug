@@ -19,7 +19,10 @@ section.advantages
           .advantages__title.title!= item.title
           .advantages__text.text-medium= item.text
     .advantages__headline.title Нам доверяют
-    .advantages__partners
-      each item, index in ['png','svg','svg','svg','svg','svg','svg']
-        picture.advantages__partner
-          img.advantages__partner-image(src=staticImg(`advantages/advantages-partner-${index+1}.${item}`) alt='')
+    .advantages__partners-box
+      each item in [1,2]
+        .advantages__partners
+          each box in [1,2]
+            each picture, index in ['png','svg','svg','svg','svg','svg','svg']
+              picture.advantages__partner
+                img.advantages__partner-image(src=staticImg(`advantages/advantages-partner-${index+1}.${picture}`) alt='')

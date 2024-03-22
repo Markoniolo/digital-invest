@@ -12,11 +12,11 @@
     { title: 'Автоматизация <br>бизнес-процессов',
       price: 'от 800 000 руб. / мес.',
       descr: 'Наши специалисты проведут полную аналитику всех процессов в вашей компании, создадут на её основе максимально возможное решение для их автоматизации, проведут внедрение и будут поддерживать, развивать новое цифровое сердце компании',
-      mod: 'saturated' },
+      mod: 'saturated', delta: 96 },
     { title: 'Разработка <br>нетиповых проектов',
       price: 'от 5 000 000 руб.',
       descr: 'Поможем продумать и реализуем любую идею при помощи веб-технологий. Запустим MVP в короткие сроки',
-      mod: 'dark' },
+      mod: 'dark', delta: 187 },
   ]
 
 section.cap
@@ -34,8 +34,9 @@ section.cap
             .cap__top-card-note.text-medium= item.note
     .cap__area
       each item in capAreaCards
-        .cap__box(class = `cap__box_${item.mod}`)
-          button.cap__button
+        .cap__box(class = `cap__box_${item.mod}` data-role="modal-opener" data-modal-class="modal-order"
+            data-element=item.delta ? "cap-box" : false data-delta=item.delta ? item.delta : false )
+          .cap__button
           .cap__title!= item.title
           .cap__price.text-medium= item.price
           .cap__descr.text-medium= item.descr

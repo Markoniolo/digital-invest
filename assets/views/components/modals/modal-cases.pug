@@ -1,0 +1,40 @@
+-
+  const modalCases = [
+    'ERP-система для производства', 'Fintech-проект', 'Маркетинговые сервисы',
+    'Система автоматизации для строительства дата-центров', 'Система хранения и обмена чувствительной информацией',
+    'Разработка инструментов для нагруженного сервиса', 'Разработка личного кабинета для СМИ-проекта',
+  ]
+  const modalCasesList = [
+    'Система генерации коммерческих предложений',
+    'Система учёта клиентов / контрагентов / счетов',
+    'Автогенерация документа + документооборот',
+    'Калькуляторы доходности и лизинга',
+    'Монитор для камер видеонаблюдения',
+    'Система управления внешним сайтами',
+    'Система управления ценами по всем площадкам',
+    'Личный кабинет для клиентов ДЦ',
+    'Аналитический модуль',
+  ]
+
+.modal-cases
+  .modal-cases__slider
+    .modal-cases__wrapper
+      each title, index in modalCases
+        .modal-cases__slide
+          .modal-cases__tag NDA
+          .modal-cases__title= title
+          .modal-cases__area
+            .modal-cases__about
+              .modal-cases__headline О проекте
+              .modal-cases__descr.
+                Ввиду огромных темпов развития компании, старые системы быстро теряли свою актуальность. Мы
+                спроектировали гибкую масштабируемую архитектуру, которая позволяет модернизировать систему
+                под нужды компании в короткие сроки
+            .modal-cases__steps
+              .modal-cases__headline Что мы сделали
+              ul.modal-cases__list
+                each item in modalCasesList
+                  li.modal-cases__item= item
+          .modal-cases__tech
+            each icon in [1,2,3,4]
+              img.modal-cases__tech-icon(src=staticImg(`cases/ic_cases_tech_${item}.svg`) alt='')

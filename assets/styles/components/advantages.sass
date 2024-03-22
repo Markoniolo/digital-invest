@@ -55,11 +55,30 @@
     margin-bottom: 12px
     font-size: 30px
 
+.advantages__partners-box
+  display: flex
+  transform: translate(-50%)
+
 .advantages__partners
   display: flex
-  gap: 6px
+  animation: ticker-1 100s linear infinite
+  animation-delay: -100s
+  &:last-of-type
+    animation: ticker-2 100s linear infinite
+    animation-delay: -50s
+  @keyframes ticker-1
+    0%
+      transform: translateX(100%)
+    100%
+      transform: translateX(-100%)
+  @keyframes ticker-2
+    0%
+      transform: translateX(0)
+    100%
+      transform: translateX(-200%)
 
 .advantages__partner
+  margin: 0 3px
   border-radius: 16px
   background-color: $white
   flex-shrink: 0

@@ -1,0 +1,28 @@
+.modal-order.modal(data-role="modal")
+  .modal-order__layer(data-role="modal-layer")
+  .modal-order__wrap
+    .modal-order__content
+      button.modal-order__close(type='button' data-role="modal-close")
+      .modal-order__title.h4 Найдем подход к&nbsp;любому проекту
+      .modal-order__text.text-large Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение
+      form.modal-order__form
+        input.modal-order__input.text-large.input(placeholder='Ваше имя' type='text' name='name')
+        input.modal-order__input.text-large.input(placeholder='Номер телефона' type='tel' name='phone')
+        .modal-order__headline.text-large Удобный способ связи
+        .modal-order__list
+          label.modal-order__label
+            input.modal-order__radio(type='radio' name='communication' checked value='По телефону')
+            .modal-order__radio-view.text-medium По телефону
+          label.modal-order__label
+            input.modal-order__radio(type='radio' name='communication' value='Telegram')
+            .modal-order__radio-view.text-medium Telegram
+          label.modal-order__label
+            input.modal-order__radio(type='radio' name='communication' value='WhatsApp')
+            .modal-order__radio-view.text-medium WhatsApp
+        .modal-order__bottom
+          button.modal-order__submit.btn-small-arrow.btn-small-arrow_black
+            span.text-medium Отправить заявку
+          .modal-order__policy.text-small
+            | Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
+            |
+            a(href='policy.html') политикой конфиденциальности

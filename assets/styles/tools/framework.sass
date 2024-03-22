@@ -13,7 +13,7 @@
     max-width: calc(720px + 24px + 24px)
   @include media(xs)
     padding: 0 16px
-    max-width: calc(342px + 16px + 16px)
+    max-width: calc(392px + 16px + 16px)
 
 .h1
   font-size: 80px
@@ -68,3 +68,32 @@
 .magnetic
   transition-duration: $transition-duration
   transition-property: transform
+
+.html_no-scroll
+  overflow: hidden
+  position: relative
+  height: 100%
+  body
+    position: relative
+    height: 100%
+    overflow: hidden
+    touch-action: none
+    -ms-touch-action: none
+
+.modal
+  display: flex
+  position: fixed
+  z-index: 1000
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  overflow-y: auto
+  opacity: 0
+  pointer-events: none
+  transition-duration: $transition-duration
+  transition-property: opacity
+
+.modal_active
+  opacity: 1
+  pointer-events: all

@@ -62,7 +62,7 @@
             </ul>
           </nav>
           <a class="header__button btn btn-saturated" href="mailto:info@cifrinvest.ru">info@cifrinvest.ru</a>
-          <button class="header__button btn btn-black-arrow">
+          <button class="header__button btn btn-black-arrow" data-role="modal-opener" data-modal-class="modal-order">
             <span>Оставить заявку</span>
           </button>
         </div>
@@ -99,24 +99,24 @@
           </div>
         </div>
         <div class="cap__area">
-          <div class="cap__box cap__box_light">
-            <button class="cap__button"></button>
+          <div class="cap__box cap__box_light" data-role="modal-opener" data-modal-class="modal-order">
+            <div class="cap__button"></div>
             <div class="cap__title">Аутсорс
               <br>отдел разработки
             </div>
             <div class="cap__price text-medium">от 500 000 руб. / мес.</div>
             <div class="cap__descr text-medium">Полноценный отдел разработки, собранный специально для решения ваших задач под нашим контролем</div>
           </div>
-          <div class="cap__box cap__box_saturated">
-            <button class="cap__button"></button>
+          <div class="cap__box cap__box_saturated" data-role="modal-opener" data-modal-class="modal-order" data-element="cap-box" data-delta="96">
+            <div class="cap__button"></div>
             <div class="cap__title">Автоматизация
               <br>бизнес-процессов
             </div>
             <div class="cap__price text-medium">от 800 000 руб. / мес.</div>
             <div class="cap__descr text-medium">Наши специалисты проведут полную аналитику всех процессов в вашей компании, создадут на её основе максимально возможное решение для их автоматизации, проведут внедрение и будут поддерживать, развивать новое цифровое сердце компании</div>
           </div>
-          <div class="cap__box cap__box_dark">
-            <button class="cap__button"></button>
+          <div class="cap__box cap__box_dark" data-role="modal-opener" data-modal-class="modal-order" data-element="cap-box" data-delta="187">
+            <div class="cap__button"></div>
             <div class="cap__title">Разработка
               <br>нетиповых проектов
             </div>
@@ -294,8 +294,8 @@
             <div class="order__text text-large">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
           </div>
           <form class="order__form">
-            <input class="order__input text-large input" placeholder="Ваше имя" type="text" name="name">
-            <input class="order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
+            <input class="order__input text-large input input_white" placeholder="Ваше имя" type="text" name="name">
+            <input class="order__input text-large input input_white" placeholder="Номер телефона" type="tel" name="phone">
             <div class="order__headline text-large">Удобный способ связи</div>
             <div class="order__list">
               <label class="order__label">
@@ -449,28 +449,95 @@
           </li>
         </ul>
         <div class="advantages__headline title">Нам доверяют</div>
-        <div class="advantages__partners">
-          <picture class="advantages__partner">
-            <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-1.png" alt="">
-          </picture>
-          <picture class="advantages__partner">
-            <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-2.svg" alt="">
-          </picture>
-          <picture class="advantages__partner">
-            <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-3.svg" alt="">
-          </picture>
-          <picture class="advantages__partner">
-            <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-4.svg" alt="">
-          </picture>
-          <picture class="advantages__partner">
-            <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-5.svg" alt="">
-          </picture>
-          <picture class="advantages__partner">
-            <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-6.svg" alt="">
-          </picture>
-          <picture class="advantages__partner">
-            <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-7.svg" alt="">
-          </picture>
+        <div class="advantages__partners-box">
+          <div class="advantages__partners">
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-1.png" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-2.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-3.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-4.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-5.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-6.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-7.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-1.png" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-2.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-3.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-4.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-5.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-6.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-7.svg" alt="">
+            </picture>
+          </div>
+          <div class="advantages__partners">
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-1.png" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-2.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-3.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-4.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-5.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-6.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-7.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-1.png" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-2.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-3.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-4.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-5.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-6.svg" alt="">
+            </picture>
+            <picture class="advantages__partner">
+              <img class="advantages__partner-image" src="statics/img/advantages/advantages-partner-7.svg" alt="">
+            </picture>
+          </div>
         </div>
       </div>
     </section>
@@ -577,7 +644,7 @@
       <div class="footer__area">
         <div class="footer__note title">Обсудим проект?</div>
         <a class="footer__email h1" href="mailto:info@cifrinvest.ru">info@cifrinvest.ru</a>
-        <button class="footer__order btn-small-arrow btn-small-arrow_white">
+        <button class="footer__order btn-small-arrow btn-small-arrow_white" data-role="modal-opener" data-modal-class="modal-order">
           <span class="text-medium">Оставить заявку</span>
         </button>
       </div>
@@ -587,6 +654,44 @@
       </div>
     </div>
   </footer>
+  <div class="modal-order modal" data-role="modal">
+    <div class="modal-order__layer" data-role="modal-layer"></div>
+    <div class="modal-order__wrap">
+      <div class="modal-order__content">
+        <button class="modal-order__close" type="button" data-role="modal-close"></button>
+        <div class="modal-order__title h4">Найдем подход к&nbsp;любому проекту</div>
+        <div class="modal-order__text text-large">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
+        <form class="modal-order__form">
+          <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
+          <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
+          <div class="modal-order__headline text-large">Удобный способ связи</div>
+          <div class="modal-order__list">
+            <label class="modal-order__label">
+              <input class="modal-order__radio" type="radio" name="communication" checked value="По телефону">
+              <div class="modal-order__radio-view text-medium">По телефону</div>
+            </label>
+            <label class="modal-order__label">
+              <input class="modal-order__radio" type="radio" name="communication" value="Telegram">
+              <div class="modal-order__radio-view text-medium">Telegram</div>
+            </label>
+            <label class="modal-order__label">
+              <input class="modal-order__radio" type="radio" name="communication" value="WhatsApp">
+              <div class="modal-order__radio-view text-medium">WhatsApp</div>
+            </label>
+          </div>
+          <div class="modal-order__bottom">
+            <button class="modal-order__submit btn-small-arrow btn-small-arrow_black">
+              <span class="text-medium">Отправить заявку</span>
+            </button>
+            <div class="modal-order__policy text-small">
+              Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
+              <a href="policy.html">политикой конфиденциальности</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
   <script src="statics/js/libs.js"></script>
   <script src="statics/js/app.js" async></script>
 </body>

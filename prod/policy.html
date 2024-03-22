@@ -63,7 +63,7 @@
             </ul>
           </nav>
           <a class="header__button btn btn-saturated" href="mailto:info@cifrinvest.ru">info@cifrinvest.ru</a>
-          <button class="header__button btn btn-black-arrow">
+          <button class="header__button btn btn-black-arrow" data-role="modal-opener" data-modal-class="modal-order">
             <span>Оставить заявку</span>
           </button>
         </div>
@@ -190,7 +190,7 @@
       <div class="footer__area">
         <div class="footer__note title">Обсудим проект?</div>
         <a class="footer__email h1" href="mailto:info@cifrinvest.ru">info@cifrinvest.ru</a>
-        <button class="footer__order btn-small-arrow btn-small-arrow_white">
+        <button class="footer__order btn-small-arrow btn-small-arrow_white" data-role="modal-opener" data-modal-class="modal-order">
           <span class="text-medium">Оставить заявку</span>
         </button>
       </div>
@@ -200,6 +200,44 @@
       </div>
     </div>
   </footer>
+  <div class="modal-order modal" data-role="modal">
+    <div class="modal-order__layer" data-role="modal-layer"></div>
+    <div class="modal-order__wrap">
+      <div class="modal-order__content">
+        <button class="modal-order__close" type="button" data-role="modal-close"></button>
+        <div class="modal-order__title h4">Найдем подход к&nbsp;любому проекту</div>
+        <div class="modal-order__text text-large">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
+        <form class="modal-order__form">
+          <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
+          <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
+          <div class="modal-order__headline text-large">Удобный способ связи</div>
+          <div class="modal-order__list">
+            <label class="modal-order__label">
+              <input class="modal-order__radio" type="radio" name="communication" checked value="По телефону">
+              <div class="modal-order__radio-view text-medium">По телефону</div>
+            </label>
+            <label class="modal-order__label">
+              <input class="modal-order__radio" type="radio" name="communication" value="Telegram">
+              <div class="modal-order__radio-view text-medium">Telegram</div>
+            </label>
+            <label class="modal-order__label">
+              <input class="modal-order__radio" type="radio" name="communication" value="WhatsApp">
+              <div class="modal-order__radio-view text-medium">WhatsApp</div>
+            </label>
+          </div>
+          <div class="modal-order__bottom">
+            <button class="modal-order__submit btn-small-arrow btn-small-arrow_black">
+              <span class="text-medium">Отправить заявку</span>
+            </button>
+            <div class="modal-order__policy text-small">
+              Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
+              <a href="policy.html">политикой конфиденциальности</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
   <script src="statics/js/libs.js"></script>
   <script src="statics/js/app.js" async></script>
 </body>

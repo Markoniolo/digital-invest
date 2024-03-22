@@ -1,0 +1,122 @@
+.modal-order
+
+.modal-order__layer
+  position: fixed
+  z-index: -1
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: rgba(0, 34, 46, 0.5)
+
+.modal-order__wrap
+  margin: auto
+  width: 615px
+  padding: 20px
+
+.modal-order__content
+  position: relative
+  z-index: 1
+  background: $gray
+  border-radius: 32px
+  padding: 36px
+  @include media(xs)
+    padding: 18px
+    border-radius: 16px
+
+.modal-order__close
+  position: absolute
+  z-index: 1
+  top: 0
+  right: 0
+  width: 90px
+  height: 90px
+  opacity: 0.4
+  transition-duration: $transition-duration
+  transition-property: opacity
+  &:hover
+    opacity: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 26px
+    height: 26px
+    +bgIcon('ic_close_modal.svg')
+
+.modal-order__title
+  margin-bottom: 24px
+  max-width: 396px
+  width: 100%
+  @include media(xs)
+    font-size: 24px
+    padding-right: 60px
+
+.modal-order__text
+  margin-bottom: 36px
+  max-width: 450px
+  width: 100%
+  @include media(lg)
+    max-width: 380px
+
+.modal-order__form
+
+.modal-order__input
+  margin-bottom: 36px
+
+.modal-order__headline
+  margin-bottom: 8px
+
+.modal-order__list
+  display: flex
+  flex-wrap: wrap
+  gap: 3px
+  margin-bottom: 46px
+  @include media(lg)
+    margin-bottom: 38px
+    gap: 8px
+  @include media(xs)
+    margin-bottom: 30px
+
+.modal-order__label
+
+.modal-order__radio
+  display: none
+  &:checked + .modal-order__radio-view
+    background: $pastel
+    color: $saturated
+    cursor: default
+
+.modal-order__radio-view
+  cursor: pointer
+  color: rgba($text, .5)
+  padding: 10px 16px
+  border-radius: 1000px
+  backdrop-filter: blur(30px)
+  background: rgba(11, 57, 72, 0.05)
+  transition-duration: $transition-duration
+  transition-property: color, background
+  &:hover
+    background: rgba(11, 57, 72, 0.07)
+    color: $saturated
+
+.modal-order__bottom
+  display: flex
+  align-items: center
+  @include media(xs)
+    display: block
+
+.modal-order__submit
+  @include media(xs)
+    width: 100%
+
+.modal-order__policy
+  margin-left: 20px
+  opacity: 0.4
+  max-width: 340px
+  @include media(xs)
+    max-width: 320px
+    margin: 14px auto 0
+    text-align: center

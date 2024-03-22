@@ -16,8 +16,8 @@ function teamItemsInit () {
   function elementIsVisible (el) {
     const rect = el.getBoundingClientRect()
     return (
-      rect.top >= 100 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) - 100
+      rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + 10
     )
   }
 }
