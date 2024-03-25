@@ -35,7 +35,7 @@
 
 <body class="body_policy" id="body">
   <header class="header" data-element="header">
-    <div class="header__cont">
+    <div class="header__cont cont">
       <div class="header__area">
         <button class="header__burger magnetic" type="button" data-element="header-burger"></button>
         <button class="header__back text-medium magnetic" type="button">Назад</button>
@@ -207,9 +207,15 @@
         <button class="modal-order__close" type="button" data-role="modal-close"></button>
         <div class="modal-order__title h4">Найдем подход к&nbsp;любому проекту</div>
         <div class="modal-order__text text-large">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
-        <form class="modal-order__form">
-          <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
-          <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
+        <form class="modal-order__form" data-role="form-validate">
+          <label class="modal-order__label" data-role="form-validate-name">
+            <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
+            <div class="input-error-message">Не заполнено поле</div>
+          </label>
+          <div class="modal-order__label" data-role="form-validate-phone">
+            <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
+            <div class="input-error-message">Не заполнено поле</div>
+          </div>
           <div class="modal-order__headline text-large">Удобный способ связи</div>
           <div class="modal-order__list">
             <label class="modal-order__label">

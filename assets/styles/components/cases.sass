@@ -9,7 +9,7 @@
 
 .cases__caption
   margin-bottom: 8px
-  font-size: 80px
+  font-size: 5rem
   text-align: center
   @include media(lg)
     margin-bottom: 4px
@@ -19,7 +19,7 @@
 .cases__note
   margin-bottom: 32px
   text-align: center
-  font-size: 24px
+  font-size: 1.51rem
   line-height: 120%
   @include media(lg)
     margin-bottom: 40px
@@ -38,23 +38,23 @@
     gap: 12px
 
 .cases__box_1
-  width: 426px
-  height: 426px
+  width: 26.72rem
+  height: 26.72rem
 
 .cases__box_2
-  width: 498px
-  height: 319px
+  width: 31.23rem
+  height: 20.01rem
   top: 200px
 
 .cases__box_3
-  width: 426px
-  height: 426px
+  width: 26.72rem
+  height: 26.72rem
   top: 94px
   left: 216px
 
 .cases__box_4
-  width: 426px
-  height: 426px
+  width: 26.72rem
+  height: 26.72rem
   top: 341px
   right: 150px
   .cases__name
@@ -62,13 +62,13 @@
       max-width: 235px
 
 .cases__box_5
-  width: 498px
-  height: 319px
+  width: 31.23rem
+  height: 20.01rem
   top: 252px
 
 .cases__box_6
-  width: 426px
-  height: 426px
+  width: 26.72rem
+  height: 26.72rem
   top: 540px
 
 .cases__box
@@ -90,8 +90,8 @@
     width: 100%
 
 .cases__box_7
-  width: 498px
-  height: 319px
+  width: 31.23rem
+  height: 20.01rem
   top: 352px
   left: 290px
   @include media(lg)
@@ -107,6 +107,7 @@
 
 .cases__image
   height: 100%
+  object-fit: cover
 
 .cases__top
   display: flex
@@ -114,9 +115,11 @@
   justify-content: space-between
 
 .cases__name
-  font-size: 24px
+  font-size: 1.51rem
   line-height: 110%
   color: $white
+  @include media(lg)
+    font-size: 24px
   @include media(xs)
     font-size: 18px
 
@@ -126,8 +129,10 @@
   margin-left: 20px
   padding-left: 15px
   color: $white
-  font-size: 14px
+  font-size: 0.88rem
   line-height: 105%
+  @include media(lg)
+    font-size: 14px
   @include media(xs)
     font-size: 12px
     padding-left: 12px
@@ -136,8 +141,9 @@
     width: 8px
     height: 8px
     position: absolute
-    top: 2px
+    top: 50%
     left: 0
+    transform: translateY(-50%)
     border-radius: 50%
     background-color: $white
     @include media(xs)
@@ -153,8 +159,11 @@
     gap: 10px
 
 .cases__tech-icon
-  width: 32px
-  height: 32px
+  width: 2.007rem
+  height: 2.007rem
+  @include media(lg)
+    width: 32px
+    height: 32px
   @include media(xs)
     width: 28px
     height: 28px

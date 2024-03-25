@@ -12,9 +12,9 @@
   align-items: flex-start
 
 .steps__wrap
-  width: 596px
+  width: 37.375rem
   @include media(lg)
-    width: 392px
+    width: 55%
   @include media(xs)
     width: 100%
 
@@ -36,6 +36,7 @@
   transition-duration: 0.8s
   @include media(lg)
     padding-left: 56px
+  //  padding-left: 6.59rem
   @include media(xs)
     padding-left: 84px
   &:not(:last-of-type)
@@ -53,23 +54,29 @@
   left: 0
   opacity: 0.3
   color: $saturated
-  font-size: 24px
+  font-size: 1.51rem
   line-height: 110%
+  @include media(lg)
+    font-size: 18px
+  //  font-size: 2.823rem
   @include media(xs)
     font-size: 18px
 
 .steps__box
   @include media(xs)
-    max-width: 228px
     width: 100%
 
 .steps__headline
   margin-bottom: 12px
+  //@include media(lg)
+  //  font-size: 2.117rem
   @include media(xs)
     margin-bottom: 7px
 
 .steps__text
   opacity: 0.8
+  //@include media(lg)
+  //  font-size: 1.411rem
   @include media(lg)
     font-size: 12px
 
@@ -77,12 +84,13 @@
   position: sticky
   top: 80px
   margin-left: 55px
-  max-width: 573px
-  height: 300px
-  width: 100%
+  width: 35.932rem
+  height: 35.932rem
+  border-radius: 50%
   background-color: $saturated
   @include media(lg)
     margin-left: 28px
-    max-width: 300px
+    width: 35.64rem
+    height: 35.64rem
   @include media(xs)
     display: none

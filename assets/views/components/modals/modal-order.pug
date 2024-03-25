@@ -5,9 +5,13 @@
       button.modal-order__close(type='button' data-role="modal-close")
       .modal-order__title.h4 Найдем подход к&nbsp;любому проекту
       .modal-order__text.text-large Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение
-      form.modal-order__form
-        input.modal-order__input.text-large.input(placeholder='Ваше имя' type='text' name='name')
-        input.modal-order__input.text-large.input(placeholder='Номер телефона' type='tel' name='phone')
+      form.modal-order__form(data-role="form-validate")
+        label.modal-order__label(data-role="form-validate-name")
+          input.modal-order__input.text-large.input(placeholder='Ваше имя' type='text' name='name')
+          .input-error-message Не заполнено поле
+        .modal-order__label(data-role="form-validate-phone")
+          input.modal-order__input.text-large.input(placeholder='Номер телефона' type='tel' name='phone')
+          .input-error-message Не заполнено поле
         .modal-order__headline.text-large Удобный способ связи
         .modal-order__list
           label.modal-order__label

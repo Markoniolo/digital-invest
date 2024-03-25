@@ -13,9 +13,12 @@
       +bgIcon('ic_burger_close_black.svg')
 
 .header__cont
-  max-width: calc(1440px)
   padding: 0 12px
   margin: 0 auto
+  @include media(lg)
+    padding: 0 12px
+  @include media(xs)
+    padding: 0 12px
 
 .header__area
   position: relative
@@ -25,14 +28,17 @@
 
 .header__burger
   pointer-events: all
-  width: 50px
-  height: 50px
+  width: 3.14rem
+  height: 3.14rem
   background-color: $white
   border-radius: 50%
   position: relative
+  @include media(lg)
+    width: 50px
+    height: 50px
   @include media(xs)
-    width: 42px
-    height: 42px
+    width: 10.11rem
+    height: 10.11rem
   &::before
     content: ''
     position: absolute
@@ -67,12 +73,14 @@
   z-index: 1
   top: 100%
   left: 0
-  max-width: 363px
+  max-width: 22.764rem
   width: 100%
   opacity: 0
   pointer-events: none
   transition-property: opacity
   transition-duration: $transition-duration
+  @include media(lg)
+    max-width: 363px
 
 .header__nav
   padding: 20px 12px
@@ -92,8 +100,10 @@
   margin-top: 6px
   display: block
   width: 100%
-  font-size: 24px
+  font-size: 1.51rem
   line-height: 110%
+  @include media(lg)
+    font-size: 20px
 
 .header__logo
   pointer-events: all
@@ -101,40 +111,48 @@
   top: 50%
   left: 50%
   transform: translate(-50%,-50%)
-  width: 145px
+  width: 9.093rem
+  @include media(lg)
+    width: 145px
   @include media(xs)
     width: 126px
 
 .header__logo-image
-  height: 32px
+  height: 2.01rem
+  @include media(lg)
+    height: 32px
   @include media(xs)
     height: 27px
 
 .header__tg
+  display: flex
+  align-items: center
+  justify-content: center
   pointer-events: all
   overflow: hidden
   margin-left: auto
   position: relative
-  width: 50px
-  height: 50px
+  width: 3.14rem
+  height: 3.14rem
   background-color: $white
   border-radius: 50%
+  @include media(lg)
+    width: 50px
+    height: 50px
   @include media(xs)
     width: 42px
     height: 42px
   &::before
     content: ''
-    width: 28px
-    height: 28px
-    position: absolute
-    top: calc(50% - 14px)
-    right: calc(50% - 14px)
+    width: 1.76rem
+    height: 1.76rem
     +bgIcon('ic_tg_black.svg')
+    @include media(lg)
+      width: 28px
+      height: 28px
     @include media(xs)
       width: 24px
       height: 24px
-      top: calc(50% - 12px)
-      right: calc(50% - 12px)
   &:hover
     &::before
       animation: $transition-duration headerTgAnim forwards linear

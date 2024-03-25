@@ -18,3 +18,21 @@
   border-bottom: 1px solid $white
   &::placeholder
     color: rgba($white, .5)
+  &:focus
+    border-bottom: 1px solid $white
+
+.input-error
+  border-bottom: 1px solid $error
+  &:focus
+    border-bottom: 1px solid $error
+  & + .input-error-message
+    display: block
+
+.input-error-message
+  display: none
+  position: absolute
+  top: 0
+  right: 0
+  font-size: 12px
+  line-height: 140%
+  color: $error

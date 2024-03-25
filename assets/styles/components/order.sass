@@ -57,6 +57,7 @@
       +bgIcon('order/order-bg_375.svg')
 
 .order__light
+  display: none
   position: absolute
   z-index: -2
   bottom: 100px
@@ -68,7 +69,7 @@
   filter: blur(60px)
   transform: translate(-50%, -50%)
   @include media(lg)
-    display: none
+    display: none !important
 
 .order__area
   position: relative
@@ -78,7 +79,7 @@
     display: block
 
 .order__box
-  max-width: 560px
+  max-width: 35.12rem
   width: 100%
   @include media(lg)
     max-width: 100%
@@ -94,7 +95,7 @@
 
 .order__text
   opacity: 0.8
-  max-width: 430px
+  max-width: 27rem
   width: 100%
   margin-left: auto
   text-align: right
@@ -109,19 +110,23 @@
 
 .order__form
   margin-top: 28px
-  max-width: 648px
+  max-width: 40.64rem
   width: 100%
   @include media(lg)
     margin-top: 0
     max-width: 100%
 
-.order__input
+.order__label
+  position: relative
+  display: block
   &:not(:last-of-type)
     margin-bottom: 46px
     @include media(lg)
       margin-bottom: 40px
     @include media(xs)
       margin-bottom: 30px
+
+.order__input
 
 .order__headline
   margin-top: 38px

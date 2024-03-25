@@ -1,6 +1,7 @@
 .cap
   overflow: hidden
-  margin-top: -74px
+  margin-top: -4.641rem
+  //margin-top: -74px
   margin-bottom: 120px
   @include media(lg)
     margin-bottom: 90px
@@ -15,7 +16,8 @@
   @include media(lg)
     padding-top: 117px
   @include media(xs)
-    padding-top: 95px
+    //padding-top: 95px
+    padding-top: 23rem
   &::before
     content: ''
     position: absolute
@@ -97,20 +99,27 @@
     margin-bottom: 20px
 
 .cap__top-inner
+  width: 50%
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  @include media(lg)
+    max-width: 478px
+    width: 100%
+  @include media(xs)
+    max-width: 69rem
 
 .cap__caption
-  max-width: 600px
   margin-top: 36px
   margin-bottom: 24px
   @include media(lg)
-    max-width: 480px
     margin-top: 0
     margin-bottom: 16px
   @include media(xs)
     margin-bottom: 12px
+    font-size: 9.15rem
 
 .cap__note
-  max-width: 216px
   text-align: right
   @include media(lg)
     margin-bottom: 40px
@@ -137,7 +146,7 @@
   display: flex
   flex-direction: column
   justify-content: space-between
-  width: 210px
+  width: 13.17rem
   position: relative
   z-index: 1
   padding: 16px
@@ -155,10 +164,13 @@
     position: absolute
     top: 12px
     right: 12px
-    width: 8px
-    height: 8px
+    width: 0.502rem
+    height: 0.502rem
     border-radius: 100%
     background-color: #2183a6
+    @include media(lg)
+      width: 8px
+      height: 8px
   &::after
     content: ''
     position: absolute
@@ -176,15 +188,19 @@
 
 .cap__top-card-value
   margin-bottom: 4px
-  font-size: 36px
+  font-size: 2.26rem
   line-height: 105%
+  @include media(lg)
+    font-size: 36px
   @include media(xs)
     margin-bottom: 12px
     font-size: 24px
 
 .cap__top-card-note
-  font-size: 14px
+  font-size: 0.88rem
   line-height: 105%
+
+.cap__carousel
 
 .cap__area
   display: flex
@@ -195,14 +211,18 @@
 
 .cap__box_light
   background-color: #B9E0ED
-  min-height: 263px
+  min-height: 16.493rem
+  @include media(lg)
+    min-height: 263px
   .cap__price
     color: $saturated
     opacity: 0.8
 
 .cap__box_saturated
   background-color: #2183A6
-  min-height: 359px
+  min-height: 22.513rem
+  @include media(lg)
+    min-height: 359px
   .cap__price
     color: $pastel
     opacity: 0.8
@@ -211,7 +231,9 @@
 
 .cap__box_dark
   background-color: $dark
-  min-height: 315px
+  min-height: 19.754rem
+  @include media(lg)
+    min-height: 315px
   .cap__price
     color: $pastel
     opacity: 0.8
@@ -225,12 +247,14 @@
     @include media(xs)
       margin-bottom: 12px
   position: relative
+  z-index: 1
   display: flex
   flex-direction: column
   cursor: pointer
   padding: 24px
   width: calc(33.33% - 4px)
   border-radius: 16px
+  overflow: hidden
   @include media(lg)
     min-height: 246px
     width: 100%
@@ -241,6 +265,15 @@
   &:hover
     .cap__button::before
       animation: $transition-duration capButton
+  canvas
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100% !important
+    height: 100% !important
 
 .cap__button
   overflow: hidden
@@ -250,10 +283,13 @@
   position: absolute
   top: 24px
   right: 24px
-  width: 50px
-  height: 50px
+  width: 3.14rem
+  height: 3.14rem
   border-radius: 50%
   background-color: $white
+  @include media(lg)
+    width: 50px
+    height: 50px
   @include media(xs)
     width: 42px
     height: 42px
@@ -262,8 +298,11 @@
   &::before
     content: ''
     position: absolute
-    width: 18px
-    height: 18px
+    width: 1.13rem
+    height: 1.13rem
+    @include media(lg)
+      width: 18px
+      height: 18px
     @include media(xs)
       width: 16px
       height: 16px
@@ -280,9 +319,11 @@
 
 .cap__title
   margin-bottom: 6px
-  max-width: 303px
-  font-size: 24px
+  max-width: 65%
+  font-size: 1.51rem
   line-height: 110%
+  @include media(lg)
+    font-size: 24px
   @include media(xs)
     margin-bottom: 12px
     font-size: 18px
@@ -291,10 +332,12 @@
 
 .cap__descr
   margin-top: auto
-  max-width: 336px
+  padding-right: 2.635rem
   width: 100%
   opacity: 0.8
   @include media(lg)
     max-width: 450px
+    padding-right: 42px
   @include media(xs)
     max-width: 100%
+    padding-right: 0

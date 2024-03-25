@@ -5,9 +5,13 @@ section.order
       .order__box
         h2.order__caption.h2 Найдем подход к&nbsp;любому проекту
         .order__text.text-large Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение
-      form.order__form
-        input.order__input.text-large.input.input_white(placeholder='Ваше имя' type='text' name='name')
-        input.order__input.text-large.input.input_white(placeholder='Номер телефона' type='tel' name='phone')
+      form.order__form(data-role="form-validate")
+        label.order__label(data-role="form-validate-name")
+          input.order__input.text-large.input.input_white(placeholder='Ваше имя' type='text' name='name')
+          .input-error-message Не заполнено поле
+        label.order__label(data-role="form-validate-phone")
+          input.order__input.text-large.input.input_white(placeholder='Номер телефона' type='tel' name='phone')
+          .input-error-message Не заполнено поле
         .order__headline.text-large Удобный способ связи
         .order__list
           label.order__label

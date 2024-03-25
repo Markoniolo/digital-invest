@@ -13,7 +13,7 @@
   transition-property: background-color
   transition-duration: $transition-duration
   &:hover
-    background: $dark
+    background: #1A799B
   &::before
     content: ''
     width: 26px
@@ -115,7 +115,7 @@
     width: 18px
     height: 18px
     position: absolute
-    top: 16px
+    top: calc(50% - 9px)
     right: 24px
     +bgIcon('ic_arrow_btn_right_black.svg')
     @include media(lg)

@@ -24,22 +24,27 @@
     display: block
 
 .team__box
-  max-width: 560px
+  max-width: 35.12rem
   width: 100%
   @include media(lg)
-    max-width: 336px
+    max-width: 100%
+    width: 46.667%
   @include media(xs)
     margin-bottom: 30px
+    width: 100%
 
 .team__caption
   position: sticky
   top: 80px
 
 .team__list
-  max-width: 576px
+  max-width: 36.12rem
   width: 100%
   @include media(lg)
-    max-width: 336px
+    max-width: 100%
+    width: 46.667%
+  @include media(xs)
+    width: 100%
 
 .team__item
   display: flex
@@ -72,10 +77,13 @@
   position: relative
   margin-right: 28px
   flex-shrink: 0
-  width: 116px
-  height: 116px
+  width: 7.275rem
+  height: 7.275rem
   @include media(lg)
     margin-right: 16px
+    width: 8rem
+    height: 8rem
+  @include media(xs)
     width: 68px
     height: 68px
   &::before
@@ -83,8 +91,8 @@
     position: absolute
     bottom: 3px
     right: 10px
-    width: 22px
-    height: 22px
+    width: 1.38rem
+    height: 1.38rem
     border-radius: 50%
     background-color: #3BD867
     border: 3px solid $dark
@@ -93,11 +101,14 @@
     transition-duration: $transition-duration
     transition-delay: 0.8s
     @include media(lg)
-      width: 13px
-      height: 13px
+      width: 1.529rem
+      height: 1.529rem
       right: 6px
       bottom: 2px
       border: 2px solid $dark
+    @include media(xs)
+      width: 13px
+      height: 13px
 
 .team__image
   height: 100%
@@ -108,9 +119,11 @@
 .team__name
   margin-bottom: 12px
   @include media(lg)
+    //font-size: 2.117rem
     margin-bottom: 7px
 
 .team__text
   opacity: 0.8
   @include media(lg)
+    //font-size: 1.411rem
     font-size: 12px

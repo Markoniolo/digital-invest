@@ -6,17 +6,19 @@
 .cont
   margin: 0 auto
   width: 100%
-  max-width: calc(1296px + 72px + 72px)
+  //max-width: calc(1296px + 72px + 72px)
+  max-width: calc(1776px + 72px + 72px)
   padding: 0 72px
   @include media(lg)
     padding: 0 24px
-    max-width: calc(720px + 24px + 24px)
+    //max-width: calc(720px + 24px + 24px)
   @include media(xs)
     padding: 0 16px
-    max-width: calc(392px + 16px + 16px)
+    //max-width: calc(392px + 16px + 16px)
 
 .h1
-  font-size: 80px
+  font-size: 5rem
+  //font-size: 80px
   line-height: 105%
   @include media(lg)
     font-size: 64px
@@ -24,7 +26,7 @@
     font-size: 38px
 
 .h2
-  font-size: 64px
+  font-size: 4.01rem
   line-height: 105%
   @include media(lg)
     font-size: 48px
@@ -36,11 +38,11 @@
   line-height: 105%
 
 .h4
-  font-size: 36px
+  font-size: 2.26rem
   line-height: 105%
 
 .title
-  font-size: 24px
+  font-size: 1.51rem
   line-height: 110%
   @include media(lg)
     font-size: 18px
@@ -48,18 +50,22 @@
     font-size: 14px
 
 .subtitle
-  font-size: 18px
+  font-size: 1.13rem
   line-height: 110%
+  @include media(lg)
+    font-size: 18px
 
 .text-large
-  font-size: 16px
+  font-size: 1.004rem
   line-height: 140%
   @include media(lg)
     font-size: 14px
 
 .text-medium
-  font-size: 14px
+  font-size: 0.88rem
   line-height: 140%
+  @include media(lg)
+    font-size: 14px
 
 .text-small
   font-size: 12px

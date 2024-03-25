@@ -34,7 +34,7 @@
 .faq__caption
   margin-right: 72px
   flex-shrink: 0
-  max-width: 360px
+  max-width: 22.575rem
   width: 100%
   @include media(lg)
     margin-right: 0
@@ -84,20 +84,26 @@
   align-items: center
   justify-content: center
   margin-left: auto
-  width: 50px
-  height: 50px
+  width: 3.14rem
+  height: 3.14rem
   border-radius: 50%
   background-color: $white
+  @include media(lg)
+    width: 50px
+    height: 50px
   @include media(xs)
     width: 42px
     height: 42px
   &::before
     content: ''
-    width: 18px
-    height: 18px
+    width: 1.13rem
+    height: 1.13rem
     +bgIcon('ic_dropdown_arrow_black.svg')
     transition-property: transform
     transition-duration: $transition-duration
+    @include media(lg)
+      width: 18px
+      height: 18px
     @include media(xs)
       width: 15px
       height: 15px

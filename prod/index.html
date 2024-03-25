@@ -35,7 +35,7 @@
 
 <body class="body_index" id="body">
   <header class="header" data-element="header">
-    <div class="header__cont">
+    <div class="header__cont cont">
       <div class="header__area">
         <button class="header__burger magnetic" type="button" data-element="header-burger"></button>
         <div class="header__menu">
@@ -81,47 +81,51 @@
         <div class="cap__top">
           <div class="cap__top-inner">
             <h1 class="cap__caption h1">Интегратор digital-решений</h1>
-            <div class="cap__note text-medium">Отдел разработки на аутсорсе для вашего бизнеса</div>
+            <div class="cap__note text-medium">Отдел разработки на аутсорсе
+              <br> для вашего бизнеса
+            </div>
           </div>
           <div class="cap__top-cards">
             <div class="cap__top-card">
-              <div class="cap__top-card-value h4">30+</div>
+              <div class="cap__top-card-value">30+</div>
               <div class="cap__top-card-note text-medium">человек в команде</div>
             </div>
             <div class="cap__top-card">
-              <div class="cap__top-card-value h4">25+</div>
+              <div class="cap__top-card-value">25+</div>
               <div class="cap__top-card-note text-medium">выполненных проектов</div>
             </div>
             <div class="cap__top-card">
-              <div class="cap__top-card-value h4">10+</div>
+              <div class="cap__top-card-value">10+</div>
               <div class="cap__top-card-note text-medium">лет на рынке</div>
             </div>
           </div>
         </div>
-        <div class="cap__area">
-          <div class="cap__box cap__box_light" data-role="modal-opener" data-modal-class="modal-order">
-            <div class="cap__button"></div>
-            <div class="cap__title">Аутсорс
-              <br>отдел разработки
+        <div class="cap__carousel" id="cap__carousel">
+          <div class="cap__area" id="cap__area">
+            <div class="cap__box cap__box_light" data-role="modal-opener" data-modal-class="modal-order">
+              <div class="cap__button"></div>
+              <div class="cap__title">Аутсорс
+                <br>отдел разработки
+              </div>
+              <div class="cap__price text-medium">от 500 000 руб. / мес.</div>
+              <div class="cap__descr text-medium">Полноценный отдел разработки, собранный специально для решения ваших задач под нашим контролем</div>
             </div>
-            <div class="cap__price text-medium">от 500 000 руб. / мес.</div>
-            <div class="cap__descr text-medium">Полноценный отдел разработки, собранный специально для решения ваших задач под нашим контролем</div>
-          </div>
-          <div class="cap__box cap__box_saturated" data-role="modal-opener" data-modal-class="modal-order" data-element="cap-box" data-delta="96">
-            <div class="cap__button"></div>
-            <div class="cap__title">Автоматизация
-              <br>бизнес-процессов
+            <div class="cap__box cap__box_saturated" data-role="modal-opener" data-modal-class="modal-order" data-element="cap-box" data-delta="96">
+              <div class="cap__button"></div>
+              <div class="cap__title">Автоматизация
+                <br>бизнес-процессов
+              </div>
+              <div class="cap__price text-medium">от 800 000 руб. / мес.</div>
+              <div class="cap__descr text-medium">Наши специалисты проведут полную аналитику всех процессов в вашей компании, создадут на её основе максимально возможное решение для их автоматизации, проведут внедрение и будут поддерживать, развивать новое цифровое сердце компании</div>
             </div>
-            <div class="cap__price text-medium">от 800 000 руб. / мес.</div>
-            <div class="cap__descr text-medium">Наши специалисты проведут полную аналитику всех процессов в вашей компании, создадут на её основе максимально возможное решение для их автоматизации, проведут внедрение и будут поддерживать, развивать новое цифровое сердце компании</div>
-          </div>
-          <div class="cap__box cap__box_dark" data-role="modal-opener" data-modal-class="modal-order" data-element="cap-box" data-delta="187">
-            <div class="cap__button"></div>
-            <div class="cap__title">Разработка
-              <br>нетиповых проектов
+            <div class="cap__box cap__box_dark" data-role="modal-opener" data-modal-class="modal-order" data-element="cap-box" data-delta="187">
+              <div class="cap__button"></div>
+              <div class="cap__title">Разработка
+                <br>нетиповых проектов
+              </div>
+              <div class="cap__price text-medium">от 5 000 000 руб.</div>
+              <div class="cap__descr text-medium">Поможем продумать и реализуем любую идею при помощи веб-технологий. Запустим MVP в короткие сроки</div>
             </div>
-            <div class="cap__price text-medium">от 5 000 000 руб.</div>
-            <div class="cap__descr text-medium">Поможем продумать и реализуем любую идею при помощи веб-технологий. Запустим MVP в короткие сроки</div>
           </div>
         </div>
       </div>
@@ -293,9 +297,15 @@
             <h2 class="order__caption h2">Найдем подход к&nbsp;любому проекту</h2>
             <div class="order__text text-large">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
           </div>
-          <form class="order__form">
-            <input class="order__input text-large input input_white" placeholder="Ваше имя" type="text" name="name">
-            <input class="order__input text-large input input_white" placeholder="Номер телефона" type="tel" name="phone">
+          <form class="order__form" data-role="form-validate">
+            <label class="order__label" data-role="form-validate-name">
+              <input class="order__input text-large input input_white" placeholder="Ваше имя" type="text" name="name">
+              <div class="input-error-message">Не заполнено поле</div>
+            </label>
+            <label class="order__label" data-role="form-validate-phone">
+              <input class="order__input text-large input input_white" placeholder="Номер телефона" type="tel" name="phone">
+              <div class="input-error-message">Не заполнено поле</div>
+            </label>
             <div class="order__headline text-large">Удобный способ связи</div>
             <div class="order__list">
               <label class="order__label">
@@ -661,9 +671,15 @@
         <button class="modal-order__close" type="button" data-role="modal-close"></button>
         <div class="modal-order__title h4">Найдем подход к&nbsp;любому проекту</div>
         <div class="modal-order__text text-large">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
-        <form class="modal-order__form">
-          <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
-          <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
+        <form class="modal-order__form" data-role="form-validate">
+          <label class="modal-order__label" data-role="form-validate-name">
+            <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
+            <div class="input-error-message">Не заполнено поле</div>
+          </label>
+          <div class="modal-order__label" data-role="form-validate-phone">
+            <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
+            <div class="input-error-message">Не заполнено поле</div>
+          </div>
           <div class="modal-order__headline text-large">Удобный способ связи</div>
           <div class="modal-order__list">
             <label class="modal-order__label">
@@ -694,6 +710,107 @@
   </div>
   <script src="statics/js/libs.js"></script>
   <script src="statics/js/app.js" async></script>
+  <script id="noise" type="x-shader/x-fragment">
+      #define NUM_OCTAVES 5
+      vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+      vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+      vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+      float rand(float n){return fract(sin(n) * 43758.5453123);}
+      float rand(vec2 n) {
+      return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+      }
+      float noise(float p){
+      float fl = floor(p);
+      float fc = fract(p);
+      return mix(rand(fl), rand(fl + 1.0), fc);
+      }
+      float noise(vec2 n) {
+      const vec2 d = vec2(0.0, 1.0);
+      vec2 b = floor(n), f = smoothstep(vec2(0.0), vec2(1.0), fract(n));
+      return mix(mix(rand(b), rand(b + d.yx), f.x), mix(rand(b + d.xy), rand(b + d.yy), f.x), f.y);
+      }
+      float snoise(vec2 v) {
+      const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
+      0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)
+      -0.577350269189626,  // -1.0 + 2.0 * C.x
+      0.024390243902439); // 1.0 / 41.0
+      vec2 i  = floor(v + dot(v, C.yy) );
+      vec2 x0 = v -   i + dot(i, C.xx);
+      vec2 i1;
+      i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+      vec4 x12 = x0.xyxy + C.xxzz;
+      x12.xy -= i1;
+      i = mod289(i); // Avoid truncation effects in permutation
+      vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+      + i.x + vec3(0.0, i1.x, 1.0 ));
+      vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+      m = m*m ;
+      m = m*m ;
+      vec3 x = 2.0 * fract(p * C.www) - 1.0;
+      vec3 h = abs(x) - 0.5;
+      vec3 ox = floor(x + 0.5);
+      vec3 a0 = x - ox;
+      m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+      vec3 g;
+      g.x  = a0.x  * x0.x  + h.x  * x0.y;
+      g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+      return 130.0 * dot(m, g);
+      }
+      const mat2 m2 = mat2(0.8,-0.6,0.6,0.8);
+      #define NB_OCTAVES 8
+      #define LACUNARITY 10.0
+      #define GAIN 0.5
+      float fbm(in vec2 p) {
+      float total = 0.0,
+      frequency = 1.0,
+      amplitude = 1.0;
+      for (int i = 0; i < NB_OCTAVES; i++) {
+      total += snoise(p * frequency) * amplitude;
+      frequency *= LACUNARITY;
+      amplitude *= GAIN;
+      }
+      return total;
+      }
+    </script>
+  <script id="vertex" type="x-shader/x-fragment">
+      uniform float u_time;
+      uniform float u_height;
+      uniform vec2 u_rand;
+      float xDistortion;
+      float yDistortion;
+      varying float vDistortion;
+      varying vec2 vUv;
+      void main() {
+      vUv = uv;
+      vDistortion = snoise(vUv.xx * 3. - vec2(u_time / u_rand.x, u_time / u_rand.x) + cos(vUv.yy) * u_rand.y) * u_height;
+      xDistortion = snoise(vUv.xx * 1.) * u_height * u_rand.x / 10.;
+      vec3 pos = position;
+      pos.z += (vDistortion * 55.);
+      pos.x += (xDistortion * 55.);
+      pos.y += (sin(vUv.y) * 55.);
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+      }
+    </script>
+  <script id="fragment" type="x-shader/x-fragment">
+      vec3 rgb(float r, float g, float b) {
+      return vec3(r / 255., g / 255., b / 255.);
+      }
+      vec3 rgb(float c) {
+      return vec3(c / 255., c / 255., c / 255.);
+      }
+      uniform vec3 u_lowColor;
+      uniform vec3 u_highColor;
+      uniform float u_time;
+      varying vec2 vUv;
+      varying float vDistortion;
+      varying float xDistortion;
+      void main() {
+      vec3 highColor = rgb(u_highColor.r, u_highColor.g, u_highColor.b);
+      vec3 colorMap = rgb(u_lowColor.r, u_lowColor.g, u_lowColor.b);
+      colorMap = mix(colorMap, highColor, vDistortion);
+      gl_FragColor = vec4(colorMap, 1.);
+      }
+    </script>
 </body>
 
 </html>
