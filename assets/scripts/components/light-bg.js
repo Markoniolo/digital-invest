@@ -20,6 +20,9 @@ function lightBgBoxArrayInit () {
     const light = box.querySelector('[data-role="light-bg"]')
     if (!light) return
 
+    let timer = 20
+    let reload = false
+
     box.addEventListener('mouseenter', activateMousemoveHandler)
     box.addEventListener('mouseleave', cancelMousemoveHandler)
 
@@ -34,11 +37,17 @@ function lightBgBoxArrayInit () {
     }
 
     function mousemoveHandler (e) {
-      const rect = box.getBoundingClientRect()
-      const x = e.clientX - rect.left
-      const y = e.clientY - rect.top
-      light.style.top = y + 'px'
-      light.style.left = x + 'px'
+      if (!reload || !timer) {
+        reload = true
+        const rect = box.getBoundingClientRect()
+        const x = e.clientX - rect.left
+        const y = e.clientY - rect.top
+        light.style.top = y + 'px'
+        light.style.left = x + 'px'
+        if (timer) {
+          setTimeout(() => reload = false, timer)
+        }
+      }
     }
   }
 }

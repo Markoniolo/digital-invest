@@ -1,28 +1,48 @@
-const stepsSection = document.querySelector('[data-element="steps"]')
+const stepsItems = document.querySelectorAll('[data-element="steps-item"]')
 
-if (stepsSection) stepsSectionInit()
+if (stepsItems.length) stepsItemsInit()
 
-function stepsSectionInit () {
-  const stepsItems = stepsSection.querySelectorAll('[data-element="steps-item"]')
-  if (stepsItems.length) stepsItemsInit()
+function stepsItemsInit () {
+  let transformDelta
+  let timer = 100
+  let reload = false
 
-  function stepsItemsInit () {
-    window.addEventListener('scroll', checkStepsItems)
+  if (window.innerWidth < 768) {
+    transformDelta = -50
+  } else if (window.innerWidth < 1440) {
+    transformDelta = -65
+  } else {
+    timer = 50
+    transformDelta = -70
+  }
 
-    function checkStepsItems () {
+  window.addEventListener('scroll', updateStepsItems)
+
+  function updateStepsItems() {
+    if (!reload || !timer) {
+      reload = true
       for (let i = 0; i < stepsItems.length; i++) {
-        if (elementIsVisible(stepsItems[i])) {
-          stepsItems[i].classList.add('steps__item_fade')
-        }
+        updateStepsItemTransform(stepsItems[i])
+      }
+      if (timer) {
+        setTimeout(() => reload = false, timer)
       }
     }
+  }
 
-    function elementIsVisible (el) {
-      const rect = el.getBoundingClientRect()
-      return (
-        rect.top >= 100 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) - 100
-      )
-    }
+  function updateStepsItemTransform (item) {
+    let topCoord = getTopCoord(item)
+    if (topCoord < 0) topCoord = 0
+    let k = topCoord / (window.innerHeight - item.clientHeight)
+    if (k > 1) k = 1
+    if (k < 0) k = 0
+    const transformX = k * transformDelta
+    item.style.transform = `translateX(${transformX}px) scale(${1 - k*0.25})`
+    item.style.opacity = `${1 - k*0.8}`
+  }
+
+  function getTopCoord (elem) {
+    let box = elem.getBoundingClientRect()
+    return box.top - 2*elem.clientHeight
   }
 }

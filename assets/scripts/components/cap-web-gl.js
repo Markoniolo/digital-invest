@@ -1,4 +1,4 @@
-import * as THREE from './three.js';
+import * as THREE from '../modules/three.js';
 
 // Helper functions
 const rgb = function(r, g, b) {
@@ -29,7 +29,6 @@ const config = {
     { low: rgb(181, 224, 238), high: rgb(166, 217, 234) },
     { low: rgb(47, 149, 181), high: rgb(33, 131, 166) },
     { low: rgb(15, 66, 81), high: rgb(11, 57, 72) },
-    { low: rgb(175, 49, 49), high: rgb(123, 16, 16) }
   ]
 }
 
@@ -58,15 +57,23 @@ const createWave = async function(selector, colors) {
 
 
       // Get el width and height
-      // const elWidth = parseFloat(window.getComputedStyle(item).width);
-      // const elHeight = parseFloat(window.getComputedStyle(item).height);
+      let elWidth
+      let elHeight
 
-      const elWidth = 855
-      const elHeight = 718
+      if (window.innerWidth < 768) {
+
+        elWidth = 343
+        elHeight = 336
+      } else {
+        elWidth = 686
+        elHeight = 672
+        // elWidth = parseFloat(window.getComputedStyle(item).width);
+        // elHeight = parseFloat(window.getComputedStyle(item).height);
+      }
 
       // Set sizes and set scene/camera
       renderer.setSize( elWidth, elHeight );
-      renderer.setPixelRatio( window.devicePixelRatio );
+      // renderer.setPixelRatio( window.devicePixelRatio );
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera( 75, elWidth / elHeight, 0.1, 1000 );

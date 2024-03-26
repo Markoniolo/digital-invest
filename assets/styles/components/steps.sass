@@ -32,11 +32,11 @@
   padding-left: 216px
   transform: translateX(-70px) scale(0.75)
   opacity: 0.2
-  transition-property: opacity, transform
-  transition-duration: 0.8s
+  transition-timing-function: linear
+  transition-duration: 0.1s
+  transition-property: transform, opacity
   @include media(lg)
     padding-left: 56px
-  //  padding-left: 6.59rem
   @include media(xs)
     padding-left: 84px
   &:not(:last-of-type)
@@ -87,10 +87,13 @@
   width: 35.932rem
   height: 35.932rem
   border-radius: 50%
-  background-color: $saturated
+  background: radial-gradient(#BEDFEA, #EAF1F4)
   @include media(lg)
     margin-left: 28px
     width: 35.64rem
     height: 35.64rem
   @include media(xs)
     display: none
+
+.steps__diagram-canvas
+

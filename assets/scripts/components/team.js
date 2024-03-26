@@ -3,21 +3,46 @@ const teamItems = document.querySelectorAll('[data-element="team-item"]')
 if (teamItems.length) teamItemsInit()
 
 function teamItemsInit () {
-  window.addEventListener('scroll', checkTeamItems)
+  let transformDelta
+  let timer = 100
+  let reload = false
 
-  function checkTeamItems () {
-    for (let i = 0; i < teamItems.length; i++) {
-      if (elementIsVisible(teamItems[i])) {
-        teamItems[i].classList.add('team__item_fade')
+  if (window.innerWidth < 768) {
+    transformDelta = 50
+  } else if (window.innerWidth < 1440) {
+    transformDelta = 65
+  } else {
+    timer = 50
+    transformDelta = 70
+  }
+
+  window.addEventListener('scroll', updateTeamItems)
+
+  function updateTeamItems() {
+    if (!reload || !timer) {
+      reload = true
+      for (let i = 0; i < teamItems.length; i++) {
+        updateTeamItemTransform(teamItems[i])
+      }
+      if (timer) {
+        setTimeout(() => reload = false, timer)
       }
     }
   }
 
-  function elementIsVisible (el) {
-    const rect = el.getBoundingClientRect()
-    return (
-      rect.top >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + 10
-    )
+  function updateTeamItemTransform (item) {
+    let topCoord = getTopCoord(item)
+    if (topCoord < 0) topCoord = 0
+    let k = topCoord / (window.innerHeight - item.clientHeight)
+    if (k > 1) k = 1
+    if (k < 0) k = 0
+    const transformX = k * transformDelta
+    item.style.transform = `translateX(${transformX}px) scale(${1 - k*0.25})`
+    item.style.opacity = `${1 - k*0.8}`
+  }
+
+  function getTopCoord (elem) {
+    let box = elem.getBoundingClientRect()
+    return box.top - 2*elem.clientHeight
   }
 }

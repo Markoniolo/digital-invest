@@ -1,4 +1,5 @@
 const modalOpeners = document.querySelectorAll('[data-role="modal-opener"]')
+const html = document.getElementsByTagName('html')[0]
 
 if (modalOpeners.length) modalsInit()
 
@@ -19,9 +20,11 @@ function modalOpenerInit (btnOpenModal) {
 
   function openModal() {
     modal.classList.add('modal_active')
+    html.classList.add('html_no-scroll')
   }
 
   function closeModal() {
     modal.classList.remove('modal_active')
+    html.classList.remove('html_no-scroll')
   }
 }

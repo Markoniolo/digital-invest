@@ -1,21 +1,22 @@
 -
   const casesArea = [
-    { name: 'ERP-система для производства', transformY: 10 },
-    { name: 'Fintech-проект', transformY: 10 },
-    { name: 'Маркетинговые сервисы', transformY: 10 },
-    { name: 'Система автоматизации для строительства дата-центров', transformY: 10 },
-    { name: 'Система хранения и обмена чувствительной информацией', transformY: 10 },
-    { name: 'Разработка инструментов для нагруженного сервиса', transformY: 10 },
-    { name: 'Разработка личного кабинета для СМИ-проекта', transformY: 10 },
+    { name: 'ERP-система для производства', transform: 50 },
+    { name: 'Fintech-проект', transform: 75 },
+    { name: 'Маркетинговые сервисы', transform: 50 },
+    { name: 'Система автоматизации для строительства дата-центров', transform: 25 },
+    { name: 'Система хранения и обмена чувствительной информацией', transform: 50 },
+    { name: 'Разработка инструментов для нагруженного сервиса', transform: 75 },
+    { name: 'Разработка личного кабинета для СМИ-проекта', transform: 50 },
   ]
 
 section.cases
   .cases__cont.cont
-    h2.cases__caption.h2 Наши кейсы
-    .cases__note.title Работаем по NDA
+    .cases__wrap(data-element="cases-wrap")
+      h2.cases__caption.h2 Наши кейсы
+      .cases__note.title Работаем по NDA
     .cases__area
       each item, index in casesArea
-        .cases__box(class=`cases__box_${index+1}`)
+        .cases__box(class=`cases__box_${index+1}` data-transform=item.transform)
           picture.cases__picture
             source(srcset=staticImg(`cases/case-${index+1}_336.jpg`) media="(max-width: 767px)")
             source(srcset=staticImg(`cases/case-${index+1}_351.jpg`) media="(max-width: 1439px)")

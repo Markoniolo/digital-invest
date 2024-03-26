@@ -52,8 +52,9 @@
   transform: translateX(70px) scale(0.75)
   opacity: 0.2
   transform-origin: bottom
-  transition-property: opacity, transform
-  transition-duration: 0.8s
+  transition-timing-function: linear
+  transition-duration: 0.1s
+  transition-property: transform, opacity
   @include media(lg)
     transform: translateX(65px) scale(0.75)
   @include media(xs)
@@ -63,15 +64,15 @@
     @include media(lg)
       margin-bottom: 32px
 
-.team__item_fade
-  transform: translateX(0) scale(1)
-  opacity: 1
-  @include media(lg)
-    transform: translateX(0) scale(1)
-  @include media(xs)
-    transform: translateX(0) scale(1)
-  .team__picture::before
-    opacity: 1
+//.team__item_fade
+//  transform: translateX(0) scale(1)
+//  opacity: 1
+//  @include media(lg)
+//    transform: translateX(0) scale(1)
+//  @include media(xs)
+//    transform: translateX(0) scale(1)
+//  .team__picture::before
+//    opacity: 1
 
 .team__picture
   position: relative

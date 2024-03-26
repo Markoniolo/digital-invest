@@ -1,5 +1,4 @@
 .cap
-  overflow: hidden
   margin-top: -4.641rem
   //margin-top: -74px
   margin-bottom: 120px
@@ -13,11 +12,12 @@
   position: relative
   z-index: 1
   padding-top: 194px
+  @include media(xl)
+    padding-top: 150px
   @include media(lg)
     padding-top: 117px
   @include media(xs)
-    //padding-top: 95px
-    padding-top: 23rem
+    padding-top: 95px
   &::before
     content: ''
     position: absolute
@@ -29,14 +29,20 @@
     +bgIcon('cap/cap-bg.svg')
     @include media(lg)
       height: 1290px
-      left: -36px
-      right: -36px
+      left: 0
+      right: 0
       +bgIcon('cap/cap-bg_840.svg')
     @include media(xs)
       height: 664px
-      left: -40px
-      right: -40px
       +bgIcon('cap/cap-bg_456.svg')
+
+.cap__cont-absolute
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  height: 700px
+  overflow: hidden
 
 .cap__figure
   position: absolute
@@ -107,7 +113,7 @@
     max-width: 478px
     width: 100%
   @include media(xs)
-    max-width: 69rem
+    max-width: 290px
 
 .cap__caption
   margin-top: 36px
@@ -117,7 +123,6 @@
     margin-bottom: 16px
   @include media(xs)
     margin-bottom: 12px
-    font-size: 9.15rem
 
 .cap__note
   text-align: right
@@ -219,7 +224,7 @@
     opacity: 0.8
 
 .cap__box_saturated
-  background-color: #2183A6
+  background-color: rgb(47, 149, 181)
   min-height: 22.513rem
   @include media(lg)
     min-height: 359px
@@ -230,7 +235,7 @@
     color: $white
 
 .cap__box_dark
-  background-color: $dark
+  background-color: rgb(15, 66, 81)
   min-height: 19.754rem
   @include media(lg)
     min-height: 315px
@@ -255,9 +260,13 @@
   width: calc(33.33% - 4px)
   border-radius: 16px
   overflow: hidden
+  transition-timing-function: linear
+  transition-duration: 0.1s
+  transition-property: transform
   @include media(lg)
     min-height: 246px
     width: 100%
+    transform: none !important
   @include media(xs)
     min-height: 236px
     border-radius: 8px

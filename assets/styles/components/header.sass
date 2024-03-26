@@ -95,6 +95,10 @@
 .header__link
   padding: 12px
   display: inline-block
+  @include media(lg)
+    font-size: 24px
+  @include media(xs)
+    font-size: 24px
 
 .header__button
   margin-top: 6px
@@ -103,7 +107,7 @@
   font-size: 1.51rem
   line-height: 110%
   @include media(lg)
-    font-size: 20px
+    font-size: 24px
 
 .header__logo
   pointer-events: all
