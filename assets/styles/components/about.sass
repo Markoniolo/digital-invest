@@ -75,13 +75,21 @@
 .about__area
   display: flex
   gap: 56px
+  transition-timing-function: linear
+  transition-duration: 0.1s
+  transition-property: transform
   //transform: translateX(100%)
   //transform: translateX(216px)
+  margin-left: 216px
   @include media(lg)
     gap: 46px
     //transform: translateX(120px)
+    transform: none
+    //margin-left: 120px
+    margin-left: 16.67%
   @include media(xs)
     gap: 13px
+    margin-left: 100px
     //transform: translateX(0)
 
 .about__area_scroll

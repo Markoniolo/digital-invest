@@ -205,46 +205,61 @@
     <div class="modal-order__wrap">
       <div class="modal-order__content">
         <button class="modal-order__close" type="button" data-role="modal-close"></button>
-        <div class="modal-order__title h4">Найдем подход к&nbsp;любому проекту</div>
-        <div class="modal-order__text text-large">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
-        <form class="modal-order__form" data-role="form-validate">
-          <label class="modal-order__label" data-role="form-validate-name">
-            <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
-            <div class="input-error-message">Не заполнено поле</div>
-          </label>
-          <div class="modal-order__label" data-role="form-validate-phone">
-            <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
-            <div class="input-error-message">Не заполнено поле</div>
-          </div>
-          <div class="modal-order__headline text-large">Удобный способ связи</div>
-          <div class="modal-order__list">
-            <label class="modal-order__radio-label">
-              <input class="modal-order__radio" type="radio" name="communication" checked value="По телефону">
-              <div class="modal-order__radio-view text-medium">По телефону</div>
+        <div class="modal-order__main">
+          <div class="modal-order__title">Найдем подход к&nbsp;любому проекту</div>
+          <div class="modal-order__text">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
+          <form class="modal-order__form" data-role="form-validate">
+            <label class="modal-order__label" data-role="form-validate-name">
+              <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
+              <div class="input-error-message">Не заполнено поле</div>
             </label>
-            <label class="modal-order__radio-label">
-              <input class="modal-order__radio" type="radio" name="communication" value="Telegram">
-              <div class="modal-order__radio-view text-medium">Telegram</div>
-            </label>
-            <label class="modal-order__radio-label">
-              <input class="modal-order__radio" type="radio" name="communication" value="WhatsApp">
-              <div class="modal-order__radio-view text-medium">WhatsApp</div>
-            </label>
-          </div>
-          <div class="modal-order__bottom">
-            <button class="modal-order__submit btn-small-arrow btn-small-arrow_black">
-              <span class="text-medium">Отправить заявку</span>
-            </button>
-            <div class="modal-order__policy text-small">
-              Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
-              <a href="policy.html">политикой конфиденциальности</a>
+            <div class="modal-order__label" data-role="form-validate-phone">
+              <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
+              <div class="input-error-message">Не заполнено поле</div>
             </div>
+            <div class="modal-order__headline text-large">Удобный способ связи</div>
+            <div class="modal-order__list">
+              <label class="modal-order__radio-label">
+                <input class="modal-order__radio" type="radio" name="communication" checked value="По телефону">
+                <div class="modal-order__radio-view text-medium">По телефону</div>
+              </label>
+              <label class="modal-order__radio-label">
+                <input class="modal-order__radio" type="radio" name="communication" value="Telegram">
+                <div class="modal-order__radio-view text-medium">Telegram</div>
+              </label>
+              <label class="modal-order__radio-label">
+                <input class="modal-order__radio" type="radio" name="communication" value="WhatsApp">
+                <div class="modal-order__radio-view text-medium">WhatsApp</div>
+              </label>
+            </div>
+            <div class="modal-order__bottom">
+              <button class="modal-order__submit btn-small-arrow btn-small-arrow_black">
+                <span>Отправить заявку</span>
+              </button>
+              <div class="modal-order__policy text-small">
+                Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
+                <a href="policy.html">политикой конфиденциальности</a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-order__thanks">
+          <div class="modal-order__thanks-icon">
+            <dotlottie-player src="statics/files/modal-order-lottie-icon.json" background="transparent" speed="1" style="width: 126px; height: 126px" direction="1" playmode="normal" loop="" autoplay=""></dotlottie-player>
           </div>
-        </form>
+          <div class="modal-order__thanks-title">Заявка успешно отправлена!</div>
+          <div class="modal-order__thanks-text">В течение дня с Вами свяжется наш менеджер для уточнения деталей</div>
+          <div class="modal-order__thanks-note text-small">
+            Окно закроется автоматически через
+            <span class="modal-order__counter">10</span>
+            сек...
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <script src="statics/js/libs.js"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module" async></script>
   <script src="statics/js/app.js" async></script>
 </body>
 

@@ -5,6 +5,7 @@ const gulp = require('gulp')
 
 const clean = require('./tasks/clean')
 const font = require('./tasks/font')
+const files = require('./tasks/files')
 const view = require('./tasks/view')
 const style = require('./tasks/style')
 const script = require('./tasks/script')
@@ -23,6 +24,7 @@ gulp.task('watch', () => {
 gulp.task('build', gulp.series(
   clean.all,
   font.build,
+  files.build,
   style.build,
   script.build,
   scriptLibs.build,

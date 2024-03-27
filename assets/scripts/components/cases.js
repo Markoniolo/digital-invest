@@ -42,7 +42,7 @@ function casesBoxesInit () {
     let box = casesWrap.getBoundingClientRect()
     let wrapTopCoord = box.top
     let wrapBottomCoord = box.bottom
-    console.log(wrapBottomCoord)
+
     if (wrapTopCoord < window.innerHeight/2 + casesWrap.clientHeight/2) {
       casesWrap.style.opacity = "0.2"
     } else {

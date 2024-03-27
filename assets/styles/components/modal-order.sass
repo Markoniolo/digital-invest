@@ -1,5 +1,11 @@
 .modal-order
 
+.modal-order_thanks
+  .modal-order__main
+    display: none
+  .modal-order__thanks
+    display: block
+
 .modal-order__layer
   position: fixed
   z-index: -1
@@ -11,7 +17,7 @@
 
 .modal-order__wrap
   margin: auto
-  width: 615px
+  width: 655px
   padding: 20px
 
 .modal-order__content
@@ -50,6 +56,8 @@
   margin-bottom: 24px
   max-width: 396px
   width: 100%
+  font-size: 36px
+  line-height: 105%
   @include media(xs)
     font-size: 24px
     padding-right: 60px
@@ -58,6 +66,8 @@
   margin-bottom: 36px
   max-width: 450px
   width: 100%
+  font-size: 16px
+  line-height: 140%
   @include media(lg)
     max-width: 380px
 
@@ -115,6 +125,9 @@
 .modal-order__submit
   @include media(xs)
     width: 100%
+  span
+    font-size: 14px
+    line-height: 105%
 
 .modal-order__policy
   margin-left: 20px
@@ -124,3 +137,29 @@
     max-width: 320px
     margin: 14px auto 0
     text-align: center
+
+.modal-order__thanks
+  display: none
+  text-align: center
+
+.modal-order__thanks-icon
+  margin-top: 100px
+  margin-bottom: 79px
+  display: flex
+  justify-content: center
+
+.modal-order__thanks-title
+  margin-bottom: 20px
+  font-size: 36px
+  line-height: 105%
+
+.modal-order__thanks-text
+  max-width: 410px
+  margin: 0 auto 63px
+  opacity: 0.7
+  font-size: 16px
+  line-height: 140%
+
+.modal-order__thanks-note
+  margin-bottom: 4px
+  opacity: 0.4

@@ -55,7 +55,6 @@ function formValidateInit (form) {
     success()
 
     function success () {
-      console.log('success')
       openThanks()
       inputPhone.value = ''
       inputName.value = ''
@@ -63,6 +62,22 @@ function formValidateInit (form) {
   }
 
   function openThanks () {
+    if (form.classList.contains('modal-order__form')) {
+      const modalOrder = form.closest('.modal-order')
+      modalOrder.classList.add('modal-order_thanks')
+      const timerId = setInterval(updateCounter, 1000)
+      const closeBtn = modalOrder.querySelector('[data-role="modal-close"]')
+      const counter = modalOrder.querySelector('.modal-order__counter')
 
+      function updateCounter () {
+        counter.innerHTML = +counter.innerHTML - 1
+        if (counter.innerHTML === "0") {
+          clearInterval(timerId)
+          closeBtn.click()
+          modalOrder.classList.remove('modal-order_thanks')
+          counter.innerHTML = '10'
+        }
+      }
+    }
   }
 }

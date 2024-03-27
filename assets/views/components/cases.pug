@@ -16,7 +16,7 @@ section.cases
       .cases__note.title Работаем по NDA
     .cases__area
       each item, index in casesArea
-        .cases__box(class=`cases__box_${index+1}` data-transform=item.transform)
+        .cases__box(class=`cases__box_${index+1}` data-transform=item.transform data-role="modal-cases-opener" data-index=index)
           picture.cases__picture
             source(srcset=staticImg(`cases/case-${index+1}_336.jpg`) media="(max-width: 767px)")
             source(srcset=staticImg(`cases/case-${index+1}_351.jpg`) media="(max-width: 1439px)")

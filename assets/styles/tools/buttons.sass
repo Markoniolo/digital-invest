@@ -37,14 +37,18 @@
     display: inline-block
   &:not(:hover)
     span
-      animation: 0.3s btnBlackArrowSpanReverse forwards linear
+      animation: 0.2s btnBlackArrowSpanReverse forwards linear
     &::before
-      animation: 0.3s btnBlackArrowReverse forwards linear
+      animation: 0.2s btnBlackArrowReverse forwards linear
+    &::after
+      animation: 0.2s btnBlackArrowLeftReverse forwards linear
   &:hover
     &::before
-      animation: 0.3s btnBlackArrow forwards linear
+      animation: 0.2s btnBlackArrow forwards linear
+    &::after
+      animation: 0.2s btnBlackArrowLeft forwards linear
     span
-      animation: 0.3s btnBlackArrowSpan forwards linear
+      animation: 0.2s btnBlackArrowSpan forwards linear
   &::before
     content: ''
     width: 26px
@@ -53,38 +57,42 @@
     top: 23px
     right: 24px
     +bgIcon('ic_arrow_btn_right_white.svg')
+  &::after
+    content: ''
+    width: 26px
+    height: 26px
+    position: absolute
+    top: 23px
+    left: -26px
+    +bgIcon('ic_arrow_btn_right_white.svg')
   @keyframes btnBlackArrow
     0%
       right: 24px
-    50%
+    100%
       right: -26px
-    51%
-      right: 0
+  @keyframes btnBlackArrowLeft
+    0%
       left: -26px
     100%
       left: 24px
   @keyframes btnBlackArrowReverse
     0%
-      left: 24px
-    50%
-      right: 0
-      left: -26px
-    51%
       right: -26px
     100%
       right: 24px
+  @keyframes btnBlackArrowLeftReverse
+    0%
+      left: 24px
+    100%
+      left: -26px
   @keyframes btnBlackArrowSpan
     0%
-      transform: translateX(0)
-    51%
       transform: translateX(0)
     100%
       transform: translateX(62px)
   @keyframes btnBlackArrowSpanReverse
     0%
       transform: translateX(62px)
-    51%
-      transform: translateX(0)
     100%
       transform: translateX(0)
 
@@ -102,14 +110,18 @@
     display: inline-block
   &:not(:hover)
     span
-      animation: 0.3s btnSmallArrowSpanReverse forwards linear
+      animation: 0.2s btnSmallArrowSpanReverse forwards linear
     &::before
-      animation: 0.3s btnSmallArrowReverse forwards linear
+      animation: 0.2s btnSmallArrowReverse forwards linear
+    &::after
+      animation: 0.2s btnSmallArrowLeftReverse forwards linear
   &:hover
     &::before
-      animation: 0.3s btnSmallArrow forwards linear
+      animation: 0.2s btnSmallArrow forwards linear
+    &::after
+      animation: 0.2s btnSmallArrowLeft forwards linear
     span
-      animation: 0.3s btnSmallArrowSpan forwards linear
+      animation: 0.2s btnSmallArrowSpan forwards linear
   &::before
     content: ''
     width: 18px
@@ -121,38 +133,45 @@
     @include media(lg)
       width: 16px
       height: 16px
+  &::after
+    content: ''
+    width: 18px
+    height: 18px
+    position: absolute
+    top: calc(50% - 9px)
+    left: -26px
+    +bgIcon('ic_arrow_btn_right_black.svg')
+    @include media(lg)
+      width: 16px
+      height: 16px
   @keyframes btnSmallArrow
     0%
       right: 24px
-    50%
+    100%
       right: -26px
-    51%
-      right: 0
+  @keyframes btnSmallArrowLeft
+    0%
       left: -26px
     100%
       left: 24px
   @keyframes btnSmallArrowReverse
     0%
-      left: 24px
-    50%
-      right: 0
-      left: -26px
-    51%
       right: -26px
     100%
       right: 24px
+  @keyframes btnSmallArrowLeftReverse
+    0%
+      left: 24px
+    100%
+      left: -26px
   @keyframes btnSmallArrowSpan
     0%
-      transform: translateX(0)
-    51%
       transform: translateX(0)
     100%
       transform: translateX(32px)
   @keyframes btnSmallArrowSpanReverse
     0%
       transform: translateX(32px)
-    51%
-      transform: translateX(0)
     100%
       transform: translateX(0)
 
@@ -164,4 +183,6 @@
   background-color: $text
   color: $white
   &::before
+    +bgIcon('ic_arrow_btn_right_white.svg')
+  &::after
     +bgIcon('ic_arrow_btn_right_white.svg')

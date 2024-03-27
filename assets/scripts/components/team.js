@@ -10,7 +10,7 @@ function teamItemsInit () {
   if (window.innerWidth < 768) {
     transformDelta = 50
   } else if (window.innerWidth < 1440) {
-    transformDelta = 65
+    transformDelta = 60
   } else {
     timer = 50
     transformDelta = 70

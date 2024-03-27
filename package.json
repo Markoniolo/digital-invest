@@ -12,6 +12,7 @@
   ],
   "dependencies": {
     "cross-env": "^7.0.3",
+    "gsap": "^3.12.5",
     "inputmask": "^5.0.7",
     "update-browserslist-db": "^1.0.13"
   },
