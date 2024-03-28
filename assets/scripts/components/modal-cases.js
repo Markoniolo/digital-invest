@@ -1,6 +1,4 @@
 import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
-gsap.registerPlugin(ScrollTrigger)
 
 const modalCasesSlider = document.querySelector('[data-element="modal-cases-slider"]')
 
@@ -35,6 +33,32 @@ function modalCasesSliderInit () {
   const html = document.getElementsByTagName('html')[0]
   const pictures = document.querySelectorAll('.modal-cases__picture')
 
+  const canvas = document.querySelector('.modal-cases-canvas')
+  const ctx = canvas.getContext("2d")
+
+  let x
+  let transparent = false
+  let delta
+  let start, previousTimeStamp
+  let done = false
+  let stop = false
+
+  updateCanvasSize()
+
+  window.addEventListener('resize', updateCanvasSize)
+
+  function updateCanvasSize () {
+    ctx.canvas.width  = window.innerWidth
+    ctx.canvas.height = window.innerHeight
+    if (window.innerWidth >= 1440) {
+      delta = 144
+    } else if (window.innerWidth >= 768) {
+      delta = 72
+    } else {
+      delta = 36
+    }
+  }
+
   function updatePicture () {
     for (let i = 0; i < pictures.length; i++) {
       if (isVisible(pictures[i])) {
@@ -61,7 +85,62 @@ function modalCasesSliderInit () {
 
   btnCloseCases.addEventListener('click', closeModalCases)
 
+  function canvasCasesAnimation () {
+    done = false
+    stop = false
+    transparent = false
+    x = 0
+    delta = Math.abs(delta)
+    window.requestAnimationFrame(step)
+  }
+
+  function canvasCasesAnimationReverse () {
+    done = false
+    stop = false
+    transparent = true
+    x = window.innerWidth
+    delta = -Math.abs(delta)
+    window.requestAnimationFrame(step)
+  }
+
+  function step(timeStamp) {
+    if (start === undefined) {
+      start = timeStamp;
+    }
+    if (previousTimeStamp !== timeStamp) {
+      drawRect(x)
+      x += delta
+      if (x >= window.innerWidth || x <= 0) done = true
+    }
+    previousTimeStamp = timeStamp
+    if (!done) {
+      setTimeout(() => window.requestAnimationFrame(step), 40)
+    } else if (!stop) {
+      if (delta > 0) {
+        x = delta/2
+      } else {
+        x = window.innerWidth - delta/2
+      }
+      done = false
+      stop = true
+      setTimeout(() => window.requestAnimationFrame(step), 40)
+    }
+  }
+
+  function drawRect (x) {
+    const windowHeight = window.innerHeight
+    ctx.beginPath()
+    ctx.fillStyle = "#EAF1F4"
+    if (transparent) {
+      ctx.clearRect(x, 0, delta/2, windowHeight)
+    } else {
+      ctx.rect(x, 0, delta/2, windowHeight)
+      ctx.fill()
+    }
+  }
+
   function openModalCases () {
+    canvasCasesAnimation()
     const index = +this.getAttribute('data-index')
     modalCases.classList.add('modal-cases_active')
     header.classList.add('header_cases-modal')
@@ -70,6 +149,7 @@ function modalCasesSliderInit () {
   }
 
   function closeModalCases() {
+    canvasCasesAnimationReverse()
     html.classList.remove('html_no-scroll')
     modalCases.classList.remove('modal-cases_active')
     header.classList.remove('header_cases-modal')

@@ -1,0 +1,15 @@
+.modal-thanks.modal(data-role="modal")
+  .modal-thanks__layer.modal-layer(data-role="modal-layer")
+  .modal-thanks__wrap.modal-wrap
+    .modal-thanks__content.modal-content
+      button.modal-thanks__close.modal-close(type='button' data-role="modal-close")
+      .modal-thanks__icon
+        dotlottie-player(src=`${pathStatics}/files/modal-order-lottie-icon.json` background='transparent' speed='1' style='width: 126px; height: 126px' direction='1' playmode='normal' loop='' autoplay='')
+      .modal-thanks__title Заявка успешно отправлена!
+      .modal-thanks__text В течение дня с Вами свяжется наш менеджер для уточнения деталей
+      .modal-thanks__note.text-small
+        | Окно закроется автоматически через
+        |
+        span.modal-thanks__counter 10
+        |
+        | сек...

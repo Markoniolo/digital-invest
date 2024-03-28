@@ -7,10 +7,11 @@ html(lang='ru')
   head
     include _head
     block head
-  body#body(class = `body_${VIEW}`)
+  body#body
     include header
     main.wrapper
       block body
     include footer
     include ../modals/modal-order
+    include ../modals/modal-thanks
     include scripts

@@ -4,6 +4,7 @@
     margin-bottom: 90px
   @include media(xs)
     margin-bottom: 60px
+    overflow: hidden
 
 .steps__cont
 
@@ -32,13 +33,16 @@
   padding-left: 216px
   transform: translateX(-70px) scale(0.75)
   opacity: 0.2
+  transform-origin: bottom left
   transition-timing-function: linear
   transition-duration: 0.1s
   transition-property: transform, opacity
   @include media(lg)
     padding-left: 56px
+    transform: translateX(-10px) scale(0.80)
   @include media(xs)
     padding-left: 84px
+    transform: translateX(-5px) scale(0.85)
   &:not(:last-of-type)
     margin-bottom: 62px
     @include media(xs)
@@ -58,7 +62,6 @@
   line-height: 110%
   @include media(lg)
     font-size: 18px
-  //  font-size: 2.823rem
   @include media(xs)
     font-size: 18px
 
@@ -68,15 +71,11 @@
 
 .steps__headline
   margin-bottom: 12px
-  //@include media(lg)
-  //  font-size: 2.117rem
   @include media(xs)
     margin-bottom: 7px
 
 .steps__text
   opacity: 0.8
-  //@include media(lg)
-  //  font-size: 1.411rem
   @include media(lg)
     font-size: 12px
 
@@ -96,4 +95,11 @@
     display: none
 
 .steps__diagram-canvas
-
+  width: 100%
+  height: 100%
+  background-color: transparent
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0

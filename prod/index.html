@@ -33,7 +33,7 @@
   <meta property="og:title" content="Цифровые инвестиции" />
 </head>
 
-<body class="body_index" id="body">
+<body id="body">
   <header class="header" data-element="header">
     <div class="header__cont cont">
       <div class="header__area">
@@ -174,7 +174,7 @@
           <div class="cases__note title">Работаем по NDA</div>
         </div>
         <div class="cases__area">
-          <div class="cases__box cases__box_1" data-transform="50" data-role="modal-cases-opener" data-index="0">
+          <div class="cases__box cases__box_1" data-transform="100" data-role="modal-cases-opener" data-index="0">
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-1_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-1_351.jpg" media="(max-width: 1439px)">
@@ -191,7 +191,7 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_2" data-transform="75" data-role="modal-cases-opener" data-index="1">
+          <div class="cases__box cases__box_2" data-transform="150" data-role="modal-cases-opener" data-index="1">
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-2_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-2_351.jpg" media="(max-width: 1439px)">
@@ -208,7 +208,7 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_3" data-transform="50" data-role="modal-cases-opener" data-index="2">
+          <div class="cases__box cases__box_3" data-transform="100" data-role="modal-cases-opener" data-index="2">
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-3_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-3_351.jpg" media="(max-width: 1439px)">
@@ -225,7 +225,7 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_4" data-transform="25" data-role="modal-cases-opener" data-index="3">
+          <div class="cases__box cases__box_4" data-transform="50" data-role="modal-cases-opener" data-index="3">
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-4_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-4_351.jpg" media="(max-width: 1439px)">
@@ -242,7 +242,7 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_5" data-transform="50" data-role="modal-cases-opener" data-index="4">
+          <div class="cases__box cases__box_5" data-transform="100" data-role="modal-cases-opener" data-index="4">
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-5_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-5_351.jpg" media="(max-width: 1439px)">
@@ -259,7 +259,7 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_6" data-transform="75" data-role="modal-cases-opener" data-index="5">
+          <div class="cases__box cases__box_6" data-transform="150" data-role="modal-cases-opener" data-index="5">
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-6_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-6_351.jpg" media="(max-width: 1439px)">
@@ -276,7 +276,7 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_7" data-transform="50" data-role="modal-cases-opener" data-index="6">
+          <div class="cases__box cases__box_7" data-transform="100" data-role="modal-cases-opener" data-index="6">
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-7_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-7_351.jpg" media="(max-width: 1439px)">
@@ -296,10 +296,10 @@
         </div>
       </div>
     </section>
-    <section class="order">
-      <div class="order__cont cont" data-role="light-bg-box">
+    <section class="order" data-role="light-bg-box" data-target=".order__light">
+      <div class="order__cont cont">
         <div class="order__area">
-          <div class="order__light" data-role="light-bg"></div>
+          <div class="order__light"></div>
           <div class="order__box">
             <h2 class="order__caption h2">Найдем подход к&nbsp;любому проекту</h2>
             <div class="order__text text-large">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
@@ -609,7 +609,9 @@
             </ul>
           </div>
           <div class="steps__diagram">
-            <canvas class="steps__diagram-canvas" id="steps__diagram-canvas"></canvas>
+            <canvas class="steps__diagram-canvas"></canvas>
+            <!--canvas.steps__diagram-canvas-->
+            <!--canvas.steps__diagram-canvas-->
           </div>
         </div>
       </div>
@@ -657,6 +659,7 @@
       </div>
     </section>
     <div class="modal-cases" data-element="modal-cases">
+      <canvas class="modal-cases-canvas"></canvas>
       <div class="modal-cases__slider" data-element="modal-cases-slider">
         <div class="modal-cases__wrapper swiper-wrapper">
           <div class="modal-cases__slide swiper-slide">
@@ -937,8 +940,8 @@
     </div>
   </main>
   <footer class="footer">
-    <div class="footer__cont" data-role="light-bg-box">
-      <div class="footer__light" data-role="light-bg"></div>
+    <div class="footer__cont" data-role="light-bg-box" data-target=".footer__light">
+      <div class="footer__light"></div>
       <div class="footer__area">
         <div class="footer__note title">Обсудим проект?</div>
         <a class="footer__email h1" href="mailto:info@cifrinvest.ru">info@cifrinvest.ru</a>
@@ -953,66 +956,67 @@
     </div>
   </footer>
   <div class="modal-order modal" data-role="modal">
-    <div class="modal-order__layer" data-role="modal-layer"></div>
-    <div class="modal-order__wrap">
-      <div class="modal-order__content">
-        <button class="modal-order__close" type="button" data-role="modal-close"></button>
-        <div class="modal-order__main">
-          <div class="modal-order__title">Найдем подход к&nbsp;любому проекту</div>
-          <div class="modal-order__text">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
-          <form class="modal-order__form" data-role="form-validate">
-            <label class="modal-order__label" data-role="form-validate-name">
-              <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
-              <div class="input-error-message">Не заполнено поле</div>
+    <div class="modal-order__layer modal-layer" data-role="modal-layer"></div>
+    <div class="modal-order__wrap modal-wrap">
+      <div class="modal-order__content modal-content">
+        <button class="modal-order__close modal-close" type="button" data-role="modal-close"></button>
+        <div class="modal-order__title">Найдем подход к&nbsp;любому проекту</div>
+        <div class="modal-order__text">Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение</div>
+        <form class="modal-order__form" data-role="form-validate">
+          <label class="modal-order__label" data-role="form-validate-name">
+            <input class="modal-order__input text-large input" placeholder="Ваше имя" type="text" name="name">
+            <div class="input-error-message">Не заполнено поле</div>
+          </label>
+          <div class="modal-order__label" data-role="form-validate-phone">
+            <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
+            <div class="input-error-message">Не заполнено поле</div>
+          </div>
+          <div class="modal-order__headline text-large">Удобный способ связи</div>
+          <div class="modal-order__list">
+            <label class="modal-order__radio-label">
+              <input class="modal-order__radio" type="radio" name="communication" checked value="По телефону">
+              <div class="modal-order__radio-view text-medium">По телефону</div>
             </label>
-            <div class="modal-order__label" data-role="form-validate-phone">
-              <input class="modal-order__input text-large input" placeholder="Номер телефона" type="tel" name="phone">
-              <div class="input-error-message">Не заполнено поле</div>
+            <label class="modal-order__radio-label">
+              <input class="modal-order__radio" type="radio" name="communication" value="Telegram">
+              <div class="modal-order__radio-view text-medium">Telegram</div>
+            </label>
+            <label class="modal-order__radio-label">
+              <input class="modal-order__radio" type="radio" name="communication" value="WhatsApp">
+              <div class="modal-order__radio-view text-medium">WhatsApp</div>
+            </label>
+          </div>
+          <div class="modal-order__bottom">
+            <button class="modal-order__submit btn-small-arrow btn-small-arrow_black">
+              <span>Отправить заявку</span>
+            </button>
+            <div class="modal-order__policy text-small">
+              Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
+              <a href="policy.html">политикой конфиденциальности</a>
             </div>
-            <div class="modal-order__headline text-large">Удобный способ связи</div>
-            <div class="modal-order__list">
-              <label class="modal-order__radio-label">
-                <input class="modal-order__radio" type="radio" name="communication" checked value="По телефону">
-                <div class="modal-order__radio-view text-medium">По телефону</div>
-              </label>
-              <label class="modal-order__radio-label">
-                <input class="modal-order__radio" type="radio" name="communication" value="Telegram">
-                <div class="modal-order__radio-view text-medium">Telegram</div>
-              </label>
-              <label class="modal-order__radio-label">
-                <input class="modal-order__radio" type="radio" name="communication" value="WhatsApp">
-                <div class="modal-order__radio-view text-medium">WhatsApp</div>
-              </label>
-            </div>
-            <div class="modal-order__bottom">
-              <button class="modal-order__submit btn-small-arrow btn-small-arrow_black">
-                <span>Отправить заявку</span>
-              </button>
-              <div class="modal-order__policy text-small">
-                Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
-                <a href="policy.html">политикой конфиденциальности</a>
-              </div>
-            </div>
-          </form>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal-thanks modal" data-role="modal">
+    <div class="modal-thanks__layer modal-layer" data-role="modal-layer"></div>
+    <div class="modal-thanks__wrap modal-wrap">
+      <div class="modal-thanks__content modal-content">
+        <button class="modal-thanks__close modal-close" type="button" data-role="modal-close"></button>
+        <div class="modal-thanks__icon">
+          <dotlottie-player src="statics/files/modal-order-lottie-icon.json" background="transparent" speed="1" style="width: 126px; height: 126px" direction="1" playmode="normal" loop="" autoplay=""></dotlottie-player>
         </div>
-        <div class="modal-order__thanks">
-          <div class="modal-order__thanks-icon">
-            <dotlottie-player src="statics/files/modal-order-lottie-icon.json" background="transparent" speed="1" style="width: 126px; height: 126px" direction="1" playmode="normal" loop="" autoplay=""></dotlottie-player>
-          </div>
-          <div class="modal-order__thanks-title">Заявка успешно отправлена!</div>
-          <div class="modal-order__thanks-text">В течение дня с Вами свяжется наш менеджер для уточнения деталей</div>
-          <div class="modal-order__thanks-note text-small">
-            Окно закроется автоматически через
-            <span class="modal-order__counter">10</span>
-            сек...
-          </div>
+        <div class="modal-thanks__title">Заявка успешно отправлена!</div>
+        <div class="modal-thanks__text">В течение дня с Вами свяжется наш менеджер для уточнения деталей</div>
+        <div class="modal-thanks__note text-small">
+          Окно закроется автоматически через
+          <span class="modal-thanks__counter">10</span>
+          сек...
         </div>
       </div>
     </div>
   </div>
-  <script src="statics/js/libs.js"></script>
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module" async></script>
-  <script src="statics/js/app.js" async></script>
   <script id="noise" type="x-shader/x-fragment">
       #define NUM_OCTAVES 5
       vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -1114,6 +1118,9 @@
       gl_FragColor = vec4(colorMap, 1.);
       }
     </script>
+  <script src="statics/js/libs.js"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module" async></script>
+  <script src="statics/js/app.js" async></script>
 </body>
 
 </html>

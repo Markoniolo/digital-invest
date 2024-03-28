@@ -1,14 +1,11 @@
+import gsap from "gsap"
+
 const lightBgBoxArray = document.querySelectorAll('[data-role="light-bg-box"]')
 
 if (lightBgBoxArray.length) lightBgBoxArrayInit()
 
 function lightBgBoxArrayInit () {
-  window.addEventListener('resize', checkWindowSize)
-  checkWindowSize()
-
-  function checkWindowSize () {
-    if (window.innerWidth >= 1440) lightBgBoxArrayActivate()
-  }
+  lightBgBoxArrayActivate()
 
   function lightBgBoxArrayActivate () {
     for (let i = 0; i < lightBgBoxArray.length; i++) {
@@ -17,12 +14,9 @@ function lightBgBoxArrayInit () {
   }
 
   function lightBgBoxInit (box) {
-    const light = box.querySelector('[data-role="light-bg"]')
-    if (!light) return
-
-    let timer = 20
-    let reload = false
-
+    const targetClassName = box.getAttribute('data-target')
+    const light = box.querySelector(targetClassName
+    )
     box.addEventListener('mouseenter', activateMousemoveHandler)
     box.addEventListener('mouseleave', cancelMousemoveHandler)
 
@@ -37,17 +31,12 @@ function lightBgBoxArrayInit () {
     }
 
     function mousemoveHandler (e) {
-      if (!reload || !timer) {
-        reload = true
-        const rect = box.getBoundingClientRect()
-        const x = e.clientX - rect.left
-        const y = e.clientY - rect.top
-        light.style.top = y + 'px'
-        light.style.left = x + 'px'
-        if (timer) {
-          setTimeout(() => reload = false, timer)
-        }
-      }
+      const rect = box.getBoundingClientRect()
+      gsap.to(targetClassName, {
+        left: e.clientX - rect.left,
+        top: e.clientY - rect.top,
+        duration: 0.1
+      });
     }
   }
 }

@@ -9,6 +9,10 @@ function formValidateArrayInit () {
 }
 
 function formValidateInit (form) {
+  const html = document.getElementsByTagName('html')[0]
+  const modalThanks = document.querySelector('.modal-thanks')
+  const counter = document.querySelector('.modal-thanks__counter')
+
   const labelPhone = form.querySelector('[data-role="form-validate-phone"]')
   const labelName = form.querySelector('[data-role="form-validate-name"]')
 
@@ -63,21 +67,30 @@ function formValidateInit (form) {
 
   function openThanks () {
     if (form.classList.contains('modal-order__form')) {
-      const modalOrder = form.closest('.modal-order')
-      modalOrder.classList.add('modal-order_thanks')
-      const timerId = setInterval(updateCounter, 1000)
-      const closeBtn = modalOrder.querySelector('[data-role="modal-close"]')
-      const counter = modalOrder.querySelector('.modal-order__counter')
+      const btnClose = form.closest('.modal-order').querySelector('.modal-order__close')
+      btnClose.click()
+    }
+    openModalThanks()
+  }
 
-      function updateCounter () {
-        counter.innerHTML = +counter.innerHTML - 1
-        if (counter.innerHTML === "0") {
-          clearInterval(timerId)
-          closeBtn.click()
-          modalOrder.classList.remove('modal-order_thanks')
-          counter.innerHTML = '10'
-        }
+  function openModalThanks () {
+    const timerId = setInterval(updateCounter, 1000)
+
+    function updateCounter () {
+      counter.innerHTML = +counter.innerHTML - 1
+      if (counter.innerHTML === "0") {
+        clearInterval(timerId)
+        closeModalThanks()
+        counter.innerHTML = '10'
       }
     }
+
+    modalThanks.classList.add('modal_active')
+    html.classList.add('html_no-scroll')
+  }
+
+  function closeModalThanks () {
+    modalThanks.classList.remove('modal_active')
+    html.classList.remove('html_no-scroll')
   }
 }

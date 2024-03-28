@@ -1,56 +1,12 @@
 .modal-order
 
-.modal-order_thanks
-  .modal-order__main
-    display: none
-  .modal-order__thanks
-    display: block
-
 .modal-order__layer
-  position: fixed
-  z-index: -1
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  background: rgba(0, 34, 46, 0.5)
 
 .modal-order__wrap
-  margin: auto
-  width: 655px
-  padding: 20px
 
 .modal-order__content
-  position: relative
-  z-index: 1
-  background: $gray
-  border-radius: 32px
-  padding: 36px
-  @include media(xs)
-    padding: 18px
-    border-radius: 16px
 
 .modal-order__close
-  position: absolute
-  z-index: 1
-  top: 0
-  right: 0
-  width: 90px
-  height: 90px
-  opacity: 0.4
-  transition-duration: $transition-duration
-  transition-property: opacity
-  &:hover
-    opacity: 1
-  &::before
-    content: ''
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%,-50%)
-    width: 26px
-    height: 26px
-    +bgIcon('ic_close_modal.svg')
 
 .modal-order__title
   margin-bottom: 24px
@@ -137,29 +93,3 @@
     max-width: 320px
     margin: 14px auto 0
     text-align: center
-
-.modal-order__thanks
-  display: none
-  text-align: center
-
-.modal-order__thanks-icon
-  margin-top: 100px
-  margin-bottom: 79px
-  display: flex
-  justify-content: center
-
-.modal-order__thanks-title
-  margin-bottom: 20px
-  font-size: 36px
-  line-height: 105%
-
-.modal-order__thanks-text
-  max-width: 410px
-  margin: 0 auto 63px
-  opacity: 0.7
-  font-size: 16px
-  line-height: 140%
-
-.modal-order__thanks-note
-  margin-bottom: 4px
-  opacity: 0.4

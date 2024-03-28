@@ -78,26 +78,13 @@
   transition-timing-function: linear
   transition-duration: 0.1s
   transition-property: transform
-  //transform: translateX(100%)
-  //transform: translateX(216px)
-  margin-left: 216px
+  transform: translateX(216px)
   @include media(lg)
     gap: 46px
-    //transform: translateX(120px)
-    transform: none
-    //margin-left: 120px
-    margin-left: 16.67%
+    transform: translateX(120px)
   @include media(xs)
     gap: 13px
-    margin-left: 100px
-    //transform: translateX(0)
-
-.about__area_scroll
-  transform: translateX(0)
-  @include media(lg)
-    transform: translateX(-334px)
-  @include media(xs)
-    transform: translateX(-234px)
+    transform: translateX(0)
 
 .about__icon
   flex-shrink: 0

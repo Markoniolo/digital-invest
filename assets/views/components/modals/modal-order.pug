@@ -1,44 +1,32 @@
 .modal-order.modal(data-role="modal")
-  .modal-order__layer(data-role="modal-layer")
-  .modal-order__wrap
-    .modal-order__content
-      button.modal-order__close(type='button' data-role="modal-close")
-      .modal-order__main
-        .modal-order__title Найдем подход к&nbsp;любому проекту
-        .modal-order__text Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение
-        form.modal-order__form(data-role="form-validate")
-          label.modal-order__label(data-role="form-validate-name")
-            input.modal-order__input.text-large.input(placeholder='Ваше имя' type='text' name='name')
-            .input-error-message Не заполнено поле
-          .modal-order__label(data-role="form-validate-phone")
-            input.modal-order__input.text-large.input(placeholder='Номер телефона' type='tel' name='phone')
-            .input-error-message Не заполнено поле
-          .modal-order__headline.text-large Удобный способ связи
-          .modal-order__list
-            label.modal-order__radio-label
-              input.modal-order__radio(type='radio' name='communication' checked value='По телефону')
-              .modal-order__radio-view.text-medium По телефону
-            label.modal-order__radio-label
-              input.modal-order__radio(type='radio' name='communication' value='Telegram')
-              .modal-order__radio-view.text-medium Telegram
-            label.modal-order__radio-label
-              input.modal-order__radio(type='radio' name='communication' value='WhatsApp')
-              .modal-order__radio-view.text-medium WhatsApp
-          .modal-order__bottom
-            button.modal-order__submit.btn-small-arrow.btn-small-arrow_black
-              span Отправить заявку
-            .modal-order__policy.text-small
-              | Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
-              |
-              a(href='policy.html') политикой конфиденциальности
-      .modal-order__thanks
-        .modal-order__thanks-icon
-          dotlottie-player(src=`${pathStatics}/files/modal-order-lottie-icon.json` background='transparent' speed='1' style='width: 126px; height: 126px' direction='1' playmode='normal' loop='' autoplay='')
-        .modal-order__thanks-title Заявка успешно отправлена!
-        .modal-order__thanks-text В течение дня с Вами свяжется наш менеджер для уточнения деталей
-        .modal-order__thanks-note.text-small
-          | Окно закроется автоматически через
-          |
-          span.modal-order__counter 10
-          |
-          | сек...
+  .modal-order__layer.modal-layer(data-role="modal-layer")
+  .modal-order__wrap.modal-wrap
+    .modal-order__content.modal-content
+      button.modal-order__close.modal-close(type='button' data-role="modal-close")
+      .modal-order__title Найдем подход к&nbsp;любому проекту
+      .modal-order__text Оставьте заявку, простым языком ответим на все интересующие вопросы и предложим решение
+      form.modal-order__form(data-role="form-validate")
+        label.modal-order__label(data-role="form-validate-name")
+          input.modal-order__input.text-large.input(placeholder='Ваше имя' type='text' name='name')
+          .input-error-message Не заполнено поле
+        .modal-order__label(data-role="form-validate-phone")
+          input.modal-order__input.text-large.input(placeholder='Номер телефона' type='tel' name='phone')
+          .input-error-message Не заполнено поле
+        .modal-order__headline.text-large Удобный способ связи
+        .modal-order__list
+          label.modal-order__radio-label
+            input.modal-order__radio(type='radio' name='communication' checked value='По телефону')
+            .modal-order__radio-view.text-medium По телефону
+          label.modal-order__radio-label
+            input.modal-order__radio(type='radio' name='communication' value='Telegram')
+            .modal-order__radio-view.text-medium Telegram
+          label.modal-order__radio-label
+            input.modal-order__radio(type='radio' name='communication' value='WhatsApp')
+            .modal-order__radio-view.text-medium WhatsApp
+        .modal-order__bottom
+          button.modal-order__submit.btn-small-arrow.btn-small-arrow_black
+            span Отправить заявку
+          .modal-order__policy.text-small
+            | Нажимая на кнопку “Отправить заявку”, вы соглашаетесь с
+            |
+            a(href='policy.html') политикой конфиденциальности

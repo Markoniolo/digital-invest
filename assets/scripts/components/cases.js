@@ -1,67 +1,42 @@
-const casesBoxes = document.querySelectorAll('.cases__box')
-const casesArea = document.querySelector('.cases__area')
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
+const casesBoxes = document.querySelectorAll('.cases__box')
 if (casesBoxes.length) casesBoxesInit()
 
 function casesBoxesInit () {
-  const casesWrap = document.querySelector('[data-element="cases-wrap"]')
+  animateCasesBox()
+  animateCasesWrap()
 
-  let timer = 50
-  let reload = false
-
-  if (window.innerWidth >= 1440) {
-    window.addEventListener('scroll', checkCasesBoxes)
-  }
-
-  function elementIsVisible (el) {
-    const rect = el.getBoundingClientRect()
-    return (
-      rect.top >= -el.clientHeight &&
-      rect.bottom <= (window.innerHeight + el.clientHeight)
-    )
-  }
-
-  function checkCasesBoxes () {
-    if (elementIsVisible(casesArea)) updateBoxes()
-  }
-
-  function updateBoxes() {
-    if (!reload || !timer) {
-      reload = true
-      for (let i = 0; i < casesBoxes.length; i++) {
-        updateBoxTransform(casesBoxes[i])
+  function animateCasesWrap () {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.cases__wrap',
+        scrub: true,
+        start: "top 50%",
       }
-      updateCasesWrapTransform()
-      if (timer) {
-        setTimeout(() => reload = false, timer)
-      }
-    }
+    })
+    tl.to('.cases__wrap', {
+      opacity: 0.2,
+      duration: 1,
+    })
   }
 
-  function updateCasesWrapTransform () {
-    let box = casesWrap.getBoundingClientRect()
-    let wrapTopCoord = box.top
-    let wrapBottomCoord = box.bottom
-
-    if (wrapTopCoord < window.innerHeight/2 + casesWrap.clientHeight/2) {
-      casesWrap.style.opacity = "0.2"
-    } else {
-      casesWrap.style.opacity = "1"
-    }
-    if (wrapBottomCoord < window.innerHeight/2 + casesWrap.clientHeight/2) {
-      casesWrap.style.opacity = "0"
-    }
-  }
-
-  function updateBoxTransform (box) {
-    let topCoord = getTopCoord(box)
-    let k = 1 - topCoord / (window.innerHeight - box.clientHeight)
-    const transformY = k * box.getAttribute('data-transform')
-    box.style.transform = `translateY(-${transformY}px)`
-  }
-
-  function getTopCoord (elem) {
-    let box = elem.getBoundingClientRect()
-    return box.top
+  function animateCasesBox () {
+    let fadein = gsap.utils.toArray('.cases__box')
+    fadein.forEach((item, index) => {
+      const offset = -item.getAttribute('data-transform')
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          scrub: true,
+          start: "top 50%"
+        }
+      })
+      tl.to(item, {
+        y: offset,
+      })
+    })
   }
 }

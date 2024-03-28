@@ -1,48 +1,26 @@
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
+
 const teamItems = document.querySelectorAll('[data-element="team-item"]')
 
 if (teamItems.length) teamItemsInit()
 
 function teamItemsInit () {
-  let transformDelta
-  let timer = 100
-  let reload = false
+  animateTeamItems()
 
-  if (window.innerWidth < 768) {
-    transformDelta = 50
-  } else if (window.innerWidth < 1440) {
-    transformDelta = 60
-  } else {
-    timer = 50
-    transformDelta = 70
-  }
-
-  window.addEventListener('scroll', updateTeamItems)
-
-  function updateTeamItems() {
-    if (!reload || !timer) {
-      reload = true
-      for (let i = 0; i < teamItems.length; i++) {
-        updateTeamItemTransform(teamItems[i])
-      }
-      if (timer) {
-        setTimeout(() => reload = false, timer)
-      }
-    }
-  }
-
-  function updateTeamItemTransform (item) {
-    let topCoord = getTopCoord(item)
-    if (topCoord < 0) topCoord = 0
-    let k = topCoord / (window.innerHeight - item.clientHeight)
-    if (k > 1) k = 1
-    if (k < 0) k = 0
-    const transformX = k * transformDelta
-    item.style.transform = `translateX(${transformX}px) scale(${1 - k*0.25})`
-    item.style.opacity = `${1 - k*0.8}`
-  }
-
-  function getTopCoord (elem) {
-    let box = elem.getBoundingClientRect()
-    return box.top - 2*elem.clientHeight
+  function animateTeamItems () {
+    let fadein = gsap.utils.toArray('.team__item')
+    fadein.forEach((item, index) => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          scrub: true,
+          start: "top 90%",
+          end: "top 10%"
+        }
+      })
+      tl.to(item, {x: 0, scale: 1, opacity: 1,})
+    })
   }
 }
