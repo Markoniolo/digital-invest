@@ -1,11 +1,11 @@
 import gsap from "gsap";
 
 const capBoxes = document.querySelectorAll('[data-element="cap-box"]')
-const capArea = document.querySelector('.cap__area')
 
 if (capBoxes.length) capBoxesInit()
 
 function capBoxesInit () {
+  const mm = gsap.matchMedia()
 
   animateCapBoxes()
 
@@ -20,8 +20,11 @@ function capBoxesInit () {
           start: "top 50%"
         }
       })
-      tl.to(item, {
-        y: offset,
+
+      mm.add("(min-width: 1440px)", () => {
+        tl.to(item, {
+          y: offset,
+        })
       })
     })
   }

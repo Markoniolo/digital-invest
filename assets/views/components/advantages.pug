@@ -11,18 +11,20 @@
   ]
 
 section.advantages
-  .advantages__cont.cont
-    h2.advantages__caption.h2 Наши преимущества
-    ul.advantages__list
-      each item in advantagesList
-        li.advantages__item
-          .advantages__title.title!= item.title
-          .advantages__text.text-medium= item.text
-    .advantages__headline.title Нам доверяют
-    .advantages__partners-box
-      each item in [1,2]
-        .advantages__partners
-          each box in [1,2]
-            each picture, index in ['png','svg','svg','svg','svg','svg','svg']
-              picture.advantages__partner
-                img.advantages__partner-image(src=staticImg(`advantages/advantages-partner-${index+1}.${picture}`) alt='')
+  .advantages__wrap
+    .advantages__cont.cont
+      h2.advantages__caption.h2 Наши преимущества
+      ul.advantages__list
+        each item, index in advantagesList
+          li.advantages__item
+            .advantages__number!= `0${index+1}`
+            .advantages__title.title!= item.title
+            .advantages__text.text-medium= item.text
+      .advantages__headline.title Нам доверяют
+      .advantages__partners-box
+        each item in [1,2]
+          .advantages__partners
+            each box in [1,2]
+              each picture, index in ['png','svg','svg','svg','svg','svg','svg']
+                picture.advantages__partner
+                  img.advantages__partner-image(src=staticImg(`advantages/advantages-partner-${index+1}.${picture}`) alt='')

@@ -6,20 +6,34 @@ const casesBoxes = document.querySelectorAll('.cases__box')
 if (casesBoxes.length) casesBoxesInit()
 
 function casesBoxesInit () {
+  const mm = gsap.matchMedia()
+
   animateCasesBox()
   animateCasesWrap()
 
   function animateCasesWrap () {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.cases__wrap',
-        scrub: true,
-        start: "top 50%",
-      }
-    })
-    tl.to('.cases__wrap', {
-      opacity: 0.2,
-      duration: 1,
+    mm.add("(min-width: 1440px)", () => {
+      gsap.to('.cases__wrap', {
+        scrollTrigger: {
+          trigger: '.cases__wrap',
+          start: "top 50%",
+          scrub: true
+        },
+        opacity: 0.2,
+        duration: 1,
+      })
+
+      gsap.to('.cases__wrap', {
+        scrollTrigger: {
+          trigger: '.order',
+          start: "top 100%",
+          end: "top 90%",
+          scrub: true
+        },
+        opacity: 0,
+        duration: 0.5,
+        immediateRender: false,
+      })
     })
   }
 
@@ -34,9 +48,13 @@ function casesBoxesInit () {
           start: "top 50%"
         }
       })
-      tl.to(item, {
-        y: offset,
+
+      mm.add("(min-width: 1440px)", () => {
+        tl.to(item, {
+          y: offset,
+        })
       })
+
     })
   }
 }

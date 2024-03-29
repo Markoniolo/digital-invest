@@ -1,10 +1,31 @@
 .advantages
-  overflow: hidden
+  position: relative
+  z-index: 1
   margin-bottom: 120px
   @include media(lg)
     margin-bottom: 90px
   @include media(xs)
     margin-bottom: 60px
+  &::before
+    content: ''
+    height: 1028px
+    position: absolute
+    z-index: -1
+    top: -120px
+    right: 0
+    left: 0
+    +bgIcon('advantages/advantages-bg.svg')
+    @include media(lg)
+      top: -144px
+      +bgIcon('advantages/advantages-bg_768.svg')
+      height: 716px
+    @include media(xs)
+      top: -118px
+      +bgIcon('advantages/advantages-bg_375.svg')
+      height: 676px
+
+.advantages__wrap
+  overflow: hidden
 
 .advantages__cont
 
@@ -17,29 +38,60 @@
 
 .advantages__list
   margin-bottom: 84px
-  margin-left: 216px
+  transform: translateX(216px)
   display: flex
-  gap: 36px
+  //gap: 36px
+  gap: 2rem
   @include media(lg)
+    transform: none !important
     margin-bottom: 90px
     margin-left: 0
     gap: 40px
     column-gap: 60px
     flex-wrap: wrap
   @include media(xs)
-    margin-bottom: 33px
+    margin-bottom: 50px
     gap: 39px
 
 .advantages__item
-  width: 20.32rem
+  //width: 20.32rem
+  position: relative
+  width: 18.8rem
   flex-shrink: 0
   @include media(lg)
     width: 42%
   @include media(xs)
-    width: 100%
+    width: 93%
+    padding-right: 30px
+
+.advantages__number
+  width: 120px
+  overflow: hidden
+  display: flex
+  justify-content: flex-end
+  transform: translateX(-216px)
+  font-size: 140px
+  line-height: 105%
+  opacity: 0.1
+  color: $saturated
+  position: absolute
+  z-index: -2
+  bottom: -50px
+  right: 0
+  @include media(lg)
+    transform: none
+    width: 60px
+    font-size: 72px
+    bottom: -30px
+    right: 3px
+  @include media(xs)
+    font-size: 64px
+    width: 55px
+    right: -22px
 
 .advantages__title
   margin-bottom: 12px
+  font-size: 1.3rem
 
 .advantages__text
   opacity: 0.8

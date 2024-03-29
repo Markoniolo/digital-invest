@@ -13,6 +13,8 @@
   align-items: flex-start
 
 .steps__wrap
+  position: relative
+  z-index: 1
   width: 37.375rem
   @include media(lg)
     width: 55%
@@ -79,20 +81,37 @@
   @include media(lg)
     font-size: 12px
 
-.steps__diagram
+.steps__diagram-box
+  margin-left: 55px
+  background-color: $gray
+  border-radius: 50%
   position: sticky
   top: 80px
-  margin-left: 55px
+  z-index: 1
+  @include media(lg)
+    margin-left: 28px
+  @include media(xs)
+    display: none
+
+.steps__diagram
   width: 35.932rem
   height: 35.932rem
   border-radius: 50%
   background: radial-gradient(#BEDFEA, #EAF1F4)
   @include media(lg)
-    margin-left: 28px
     width: 35.64rem
     height: 35.64rem
-  @include media(xs)
-    display: none
+
+.steps__diagram-percent
+  font-size: 24px
+  line-height: 110%
+  color: $white
+  position: absolute
+  z-index: 5
+  bottom: 42px
+  right: 0
+  left: 0
+  text-align: center
 
 .steps__diagram-canvas
   width: 100%

@@ -5,7 +5,7 @@ const aboutArea = document.querySelector('[data-element="about-area"]')
 if (aboutArea) aboutAreaInit()
 
 function aboutAreaInit () {
-  let mm = gsap.matchMedia()
+  const mm = gsap.matchMedia()
 
   animateAboutArea()
 

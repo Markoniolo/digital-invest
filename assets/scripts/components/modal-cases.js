@@ -18,12 +18,16 @@ function modalCasesSliderInit () {
       1439: {
         spaceBetween: 50,
         direction: "horizontal",
+        speed: 1000,
+        freeMode: {
+          enabled: false,
+        },
       },
     },
   })
 
   swiper.on('slideNextTransitionStart', function (e) {
-    updatePicture()
+    // updatePicture()
   });
 
   const modalCasesOpeners = document.querySelectorAll('[data-role="modal-cases-opener"]')
@@ -45,8 +49,6 @@ function modalCasesSliderInit () {
 
   updateCanvasSize()
 
-  window.addEventListener('resize', updateCanvasSize)
-
   function updateCanvasSize () {
     ctx.canvas.width  = window.innerWidth
     ctx.canvas.height = window.innerHeight
@@ -63,7 +65,7 @@ function modalCasesSliderInit () {
     for (let i = 0; i < pictures.length; i++) {
       if (isVisible(pictures[i])) {
         const agree = gsap.timeline()
-        agree.to(pictures[i], 1, {scale: 1.2})
+        agree.to(pictures[i], 0.3, {scale: 1.2})
       }
     }
   }

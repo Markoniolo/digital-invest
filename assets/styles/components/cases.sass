@@ -21,13 +21,24 @@
     content: ''
     position: absolute
     z-index: -2
+    background: linear-gradient(0deg, rgb(33, 131, 166) 0%, rgb(33, 131, 166) 10%, rgb(197, 233, 247) 100%)
+    bottom: -345px
+    left: 0
+    right: 0
+    height: 650px
+
+
+.cases__cont
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    z-index: -2
     background: $pastel
     top: 497px
     left: 0
     right: 0
     bottom: 0
-
-.cases__cont
 
 .cases__wrap
   position: sticky

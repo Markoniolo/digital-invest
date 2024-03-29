@@ -2,9 +2,12 @@ import gsap from "gsap";
 
 const stepsDiagramCanvasArray = document.querySelectorAll(".steps__diagram-canvas")
 
-if (stepsDiagramCanvasArray.length) stepsDiagramCanvasArrayInit()
+if (stepsDiagramCanvasArray.length && window.innerWidth >= 768) stepsDiagramCanvasArrayInit()
 
 function stepsDiagramCanvasArrayInit () {
+  const mm = gsap.matchMedia()
+  const percent = document.querySelector(".steps__diagram-percent")
+
   const obj = {num: 0}
   let stop = false
   let ctxArray = []
@@ -58,6 +61,8 @@ function stepsDiagramCanvasArrayInit () {
 
     drawPieSlice(ctx, Math.round(canvas.width/2), Math.round(canvas.height/2),
       Math.round(canvas.width/2)-1, startAngle, endAngle + angleDelta, color, "rgba(136, 189, 209, 0)")
+
+    percent.innerHTML = Math.round(100 * obj.num) + '%'
   }
 
   let tl = gsap.timeline({
@@ -68,12 +73,15 @@ function stepsDiagramCanvasArrayInit () {
       end: "+=800"
     }
   })
-  tl.to(obj, {
-    num: 1,
-    duration: 1,
-    onUpdate: async function () {
-      updateDiagram(ctxArray[0], stepsDiagramCanvasArray[0], colors[0], angleDeltaArray[0])
-    }
+
+  mm.add("(min-width: 768px)", () => {
+    tl.to(obj, {
+      num: 1,
+      duration: 1,
+      onUpdate: async function () {
+        window.requestAnimationFrame(() => updateDiagram(ctxArray[0], stepsDiagramCanvasArray[0], colors[0], angleDeltaArray[0]))
+      }
+    })
   })
 }
 

@@ -5,6 +5,8 @@ const lightBgBoxArray = document.querySelectorAll('[data-role="light-bg-box"]')
 if (lightBgBoxArray.length) lightBgBoxArrayInit()
 
 function lightBgBoxArrayInit () {
+  const mm = gsap.matchMedia()
+
   lightBgBoxArrayActivate()
 
   function lightBgBoxArrayActivate () {
@@ -32,11 +34,13 @@ function lightBgBoxArrayInit () {
 
     function mousemoveHandler (e) {
       const rect = box.getBoundingClientRect()
-      gsap.to(targetClassName, {
-        left: e.clientX - rect.left,
-        top: e.clientY - rect.top,
-        duration: 0.1
-      });
+      mm.add("(min-width: 1440px)", () => {
+        gsap.to(targetClassName, {
+          left: e.clientX - rect.left,
+          top: e.clientY - rect.top,
+          duration: 0.1
+        });
+      })
     }
   }
 }
