@@ -22,6 +22,7 @@ section.team
             picture.team__picture
               source(srcset=staticImg(`team/team-1_68.jpg`) media="(max-width: 1439px)")
               img.team__image(src=staticImg('team/team-1.jpg') alt='')
+              .team__status
             .team__inner
               .team__name.title= item.name
               .team__text.text-medium= item.text

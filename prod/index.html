@@ -34,10 +34,15 @@
 </head>
 
 <body id="body">
+  <a class="logo magnetic" href="/">
+    <img class="logo-image magnetic-inner" src="statics/img/logo.svg" alt="">
+  </a>
   <header class="header" data-element="header">
     <div class="header__cont cont">
       <div class="header__area">
-        <button class="header__burger magnetic" type="button" data-element="header-burger"></button>
+        <div class="magnetic">
+          <button class="header__burger magnetic-inner" type="button" data-element="header-burger"></button>
+        </div>
         <button class="header__back-cases magnetic" type="button" data-element="header__back-cases">
           <span>Назад</span>
         </button>
@@ -69,10 +74,9 @@
             <span>Оставить заявку</span>
           </button>
         </div>
-        <a class="header__logo magnetic" href="/">
-          <img class="header__logo-image" src="statics/img/logo.svg" alt="">
-        </a>
-        <a class="header__tg magnetic" href="#" target="_blank"></a>
+        <div class="header__tg-box magnetic">
+          <a class="header__tg magnetic-inner" href="#" target="_blank"></a>
+        </div>
       </div>
     </div>
   </header>
@@ -174,7 +178,8 @@
           <div class="cases__note title">Работаем по NDA</div>
         </div>
         <div class="cases__area">
-          <div class="cases__box cases__box_1" data-transform="100" data-role="modal-cases-opener" data-index="0">
+          <div class="cases__box cases__box_1" data-transform="100" data-role="modal-cases-opener" data-index="0" data-src="/statics/img/cases/case-1.jpg">
+            <canvas class="cases__canvas"></canvas>
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-1_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-1_351.jpg" media="(max-width: 1439px)">
@@ -191,7 +196,8 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_2" data-transform="150" data-role="modal-cases-opener" data-index="1">
+          <div class="cases__box cases__box_2" data-transform="150" data-role="modal-cases-opener" data-index="1" data-src="/statics/img/cases/case-2.jpg">
+            <canvas class="cases__canvas"></canvas>
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-2_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-2_351.jpg" media="(max-width: 1439px)">
@@ -208,7 +214,8 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_3" data-transform="100" data-role="modal-cases-opener" data-index="2">
+          <div class="cases__box cases__box_3" data-transform="100" data-role="modal-cases-opener" data-index="2" data-src="/statics/img/cases/case-3.jpg">
+            <canvas class="cases__canvas"></canvas>
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-3_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-3_351.jpg" media="(max-width: 1439px)">
@@ -225,7 +232,8 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_4" data-transform="50" data-role="modal-cases-opener" data-index="3">
+          <div class="cases__box cases__box_4" data-transform="50" data-role="modal-cases-opener" data-index="3" data-src="/statics/img/cases/case-4.jpg">
+            <canvas class="cases__canvas"></canvas>
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-4_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-4_351.jpg" media="(max-width: 1439px)">
@@ -242,7 +250,8 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_5" data-transform="100" data-role="modal-cases-opener" data-index="4">
+          <div class="cases__box cases__box_5" data-transform="100" data-role="modal-cases-opener" data-index="4" data-src="/statics/img/cases/case-5.jpg">
+            <canvas class="cases__canvas"></canvas>
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-5_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-5_351.jpg" media="(max-width: 1439px)">
@@ -259,7 +268,8 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_6" data-transform="150" data-role="modal-cases-opener" data-index="5">
+          <div class="cases__box cases__box_6" data-transform="150" data-role="modal-cases-opener" data-index="5" data-src="/statics/img/cases/case-6.jpg">
+            <canvas class="cases__canvas"></canvas>
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-6_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-6_351.jpg" media="(max-width: 1439px)">
@@ -276,7 +286,8 @@
               <img class="cases__tech-icon" src="statics/img/cases/ic_cases_tech_4.svg" alt="">
             </div>
           </div>
-          <div class="cases__box cases__box_7" data-transform="100" data-role="modal-cases-opener" data-index="6">
+          <div class="cases__box cases__box_7" data-transform="100" data-role="modal-cases-opener" data-index="6" data-src="/statics/img/cases/case-7.jpg">
+            <canvas class="cases__canvas"></canvas>
             <picture class="cases__picture">
               <source srcset="statics/img/cases/case-7_336.jpg" media="(max-width: 767px)">
               <source srcset="statics/img/cases/case-7_351.jpg" media="(max-width: 1439px)">
@@ -352,6 +363,7 @@
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
+                <div class="team__status"></div>
               </picture>
               <div class="team__inner">
                 <div class="team__name title">Аналитик</div>
@@ -362,6 +374,7 @@
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
+                <div class="team__status"></div>
               </picture>
               <div class="team__inner">
                 <div class="team__name title">Project-менеджер</div>
@@ -372,6 +385,7 @@
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
+                <div class="team__status"></div>
               </picture>
               <div class="team__inner">
                 <div class="team__name title">Дизайнер</div>
@@ -382,6 +396,7 @@
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
+                <div class="team__status"></div>
               </picture>
               <div class="team__inner">
                 <div class="team__name title">Team Lead</div>
@@ -392,6 +407,7 @@
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
+                <div class="team__status"></div>
               </picture>
               <div class="team__inner">
                 <div class="team__name title">Верстальщик</div>
@@ -402,6 +418,7 @@
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
+                <div class="team__status"></div>
               </picture>
               <div class="team__inner">
                 <div class="team__name title">Backend-разработчик</div>
@@ -412,6 +429,7 @@
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
+                <div class="team__status"></div>
               </picture>
               <div class="team__inner">
                 <div class="team__name title">Frontend-разработчик</div>
@@ -422,6 +440,7 @@
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
+                <div class="team__status"></div>
               </picture>
               <div class="team__inner">
                 <div class="team__name title">Тестировщик</div>
@@ -432,6 +451,7 @@
               <picture class="team__picture">
                 <source srcset="statics/img/team/team-1_68.jpg" media="(max-width: 1439px)">
                 <img class="team__image" src="statics/img/team/team-1.jpg" alt="">
+                <div class="team__status"></div>
               </picture>
               <div class="team__inner">
                 <div class="team__name title">Администратор серверов</div>

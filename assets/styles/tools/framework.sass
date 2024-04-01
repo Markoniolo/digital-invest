@@ -72,8 +72,7 @@
   line-height: 140%
 
 .magnetic
-  transition-duration: $transition-duration
-  transition-property: transform
+  padding: 10px
 
 .html_no-scroll
   //overflow: hidden
@@ -85,3 +84,24 @@
     overflow: hidden
     touch-action: none
     -ms-touch-action: none
+
+.logo
+  box-sizing: content-box
+  pointer-events: all
+  position: absolute
+  z-index: 5
+  top: 10px
+  left: 50%
+  transform: translateX(-50%)
+  width: 9.093rem
+  @include media(lg)
+    width: 145px
+  @include media(xs)
+    width: 126px
+
+.logo-image
+  height: 2.01rem
+  @include media(lg)
+    height: 32px
+  @include media(xs)
+    height: 27px

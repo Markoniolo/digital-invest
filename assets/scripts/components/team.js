@@ -22,5 +22,18 @@ function teamItemsInit () {
       })
       tl.to(item, {x: 0, scale: 1, opacity: 1,})
     })
+
+    let fadeinStatus = gsap.utils.toArray('.team__status')
+    fadeinStatus.forEach((item, index) => {
+      let t2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          scrub: true,
+          start: "top 40%",
+          end: "top 30%"
+        }
+      })
+      t2.to(item, {opacity: 1})
+    })
   }
 }

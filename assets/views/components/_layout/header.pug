@@ -8,10 +8,13 @@
     'Ответы на вопросы',
   ]
 
+a.logo.magnetic(href='/')
+  img.logo-image.magnetic-inner(src=staticImg('logo.svg') alt='')
 header.header(data-element="header")
   .header__cont.cont
     .header__area
-      button.header__burger.magnetic(type='button' data-element="header-burger")
+      .magnetic
+        button.header__burger.magnetic-inner(type='button' data-element="header-burger")
       if VIEW === 'policy'
         button.header__back.text-medium.magnetic(type='button') Назад
       if VIEW === 'index'
@@ -26,6 +29,5 @@ header.header(data-element="header")
         a.header__button.btn.btn-saturated(href='mailto:info@cifrinvest.ru') info@cifrinvest.ru
         button.header__button.btn.btn-black-arrow(data-role="modal-opener" data-modal-class="modal-order")
           span Оставить заявку
-      a.header__logo.magnetic(href='/')
-        img.header__logo-image(src=staticImg('logo.svg') alt='')
-      a.header__tg.magnetic(href='#' target='_blank')
+      .header__tg-box.magnetic
+        a.header__tg.magnetic-inner(href='#' target='_blank')

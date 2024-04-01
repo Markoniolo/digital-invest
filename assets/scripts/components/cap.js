@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import gsap from "gsap"
 
 const capBoxes = document.querySelectorAll('[data-element="cap-box"]')
 

@@ -14,8 +14,8 @@ function advantagesListInit () {
       scrollTrigger: {
         trigger: '.advantages__list',
         scrub: true,
-        start: "top 70%",
-        end: "top 20%",
+        start: "top 60%",
+        end: "top 10%",
       }
     })
 
@@ -23,8 +23,8 @@ function advantagesListInit () {
       scrollTrigger: {
         trigger: '.advantages__list',
         scrub: true,
-        start: "top 70%",
-        end: "top 20%",
+        start: "top 60%",
+        end: "top 10%",
       }
     })
 

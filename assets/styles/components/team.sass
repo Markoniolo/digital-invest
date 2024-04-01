@@ -80,29 +80,26 @@
   @include media(xs)
     width: 68px
     height: 68px
-  &::before
-    content: ''
-    position: absolute
-    bottom: 3px
-    right: 10px
-    width: 1.38rem
-    height: 1.38rem
-    border-radius: 50%
-    background-color: #3BD867
-    border: 3px solid $dark
-    opacity: 0
-    transition-property: opacity
-    transition-duration: $transition-duration
-    transition-delay: 0.8s
-    @include media(lg)
-      width: 1.529rem
-      height: 1.529rem
-      right: 6px
-      bottom: 2px
-      border: 2px solid $dark
-    @include media(xs)
-      width: 13px
-      height: 13px
+
+.team__status
+  position: absolute
+  bottom: 3px
+  right: 10px
+  width: 1.38rem
+  height: 1.38rem
+  border-radius: 50%
+  background-color: #3BD867
+  border: 3px solid $dark
+  opacity: 0
+  @include media(lg)
+    width: 1.529rem
+    height: 1.529rem
+    right: 6px
+    bottom: 2px
+    border: 2px solid $dark
+  @include media(xs)
+    width: 13px
+    height: 13px
 
 .team__image
   height: 100%

@@ -47,6 +47,8 @@ function modalCasesSliderInit () {
   let done = false
   let stop = false
 
+  window.addEventListener('resize', updateCanvasSize)
+
   updateCanvasSize()
 
   function updateCanvasSize () {

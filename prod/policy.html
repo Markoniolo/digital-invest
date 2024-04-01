@@ -34,10 +34,15 @@
 </head>
 
 <body id="body">
+  <a class="logo magnetic" href="/">
+    <img class="logo-image magnetic-inner" src="statics/img/logo.svg" alt="">
+  </a>
   <header class="header" data-element="header">
     <div class="header__cont cont">
       <div class="header__area">
-        <button class="header__burger magnetic" type="button" data-element="header-burger"></button>
+        <div class="magnetic">
+          <button class="header__burger magnetic-inner" type="button" data-element="header-burger"></button>
+        </div>
         <button class="header__back text-medium magnetic" type="button">Назад</button>
         <div class="header__menu">
           <nav class="header__nav">
@@ -67,10 +72,9 @@
             <span>Оставить заявку</span>
           </button>
         </div>
-        <a class="header__logo magnetic" href="/">
-          <img class="header__logo-image" src="statics/img/logo.svg" alt="">
-        </a>
-        <a class="header__tg magnetic" href="#" target="_blank"></a>
+        <div class="header__tg-box magnetic">
+          <a class="header__tg magnetic-inner" href="#" target="_blank"></a>
+        </div>
       </div>
     </div>
   </header>

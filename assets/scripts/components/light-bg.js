@@ -17,8 +17,7 @@ function lightBgBoxArrayInit () {
 
   function lightBgBoxInit (box) {
     const targetClassName = box.getAttribute('data-target')
-    const light = box.querySelector(targetClassName
-    )
+    const light = box.querySelector(targetClassName)
     box.addEventListener('mouseenter', activateMousemoveHandler)
     box.addEventListener('mouseleave', cancelMousemoveHandler)
 

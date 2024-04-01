@@ -20,7 +20,7 @@ const randomInteger = function(min, max) {
 
 const config = {
   individualItem: '.cap__box', // class of individual item
-  carouselWidth: document.querySelector('.cap__box').clientWidth, // in px
+  carouselWidth: document.querySelector('.cap__box') ? document.querySelector('.cap__box').clientWidth : 0, // in px
   carouselId: '#cap__carousel', // carousel selector
   carouselHolderId: '#cap__area', // carousel should be <div id="carouselId"><div id="carouselHolderId">{items}</div></div>
   colors: [
@@ -155,4 +155,5 @@ const createWave = async function(selector, colors) {
   }
 }
 
-createWave(config.individualItem, config.colors);
+const capBox = document.querySelector('.cap__box')
+if (capBox) createWave(config.individualItem, config.colors);

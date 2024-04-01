@@ -30,7 +30,7 @@
 
 .header__area
   position: relative
-  padding: 12px 0
+  padding: 2px 0
   display: flex
   align-items: center
 
@@ -44,6 +44,7 @@
   @include media(lg)
     width: 50px
     height: 50px
+    margin-left: -10px
   @include media(xs)
     width: 42px
     height: 42px
@@ -148,24 +149,10 @@
   @include media(lg)
     font-size: 24px
 
-.header__logo
-  pointer-events: all
-  position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%,-50%)
-  width: 9.093rem
+.header__tg-box
+  margin-left: auto
   @include media(lg)
-    width: 145px
-  @include media(xs)
-    width: 126px
-
-.header__logo-image
-  height: 2.01rem
-  @include media(lg)
-    height: 32px
-  @include media(xs)
-    height: 27px
+    margin-right: -10px
 
 .header__tg
   display: flex
@@ -173,7 +160,6 @@
   justify-content: center
   pointer-events: all
   overflow: hidden
-  margin-left: auto
   position: relative
   width: 3.14rem
   height: 3.14rem

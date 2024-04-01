@@ -143,6 +143,18 @@
   @include media(lg)
     width: 100%
 
+.cases__canvas
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100% !important
+  height: 100% !important
+  z-index: 1
+  @include media(lg)
+    display: none
+
 .cases__picture
   position: absolute
   z-index: -1
@@ -150,12 +162,17 @@
   right: 0
   bottom: 0
   left: 0
+  display: none
+  @include media(lg)
+    display: block
 
 .cases__image
   height: 100%
   object-fit: cover
 
 .cases__top
+  position: relative
+  z-index: 5
   display: flex
   align-items: flex-start
   justify-content: space-between
@@ -198,6 +215,8 @@
       top: 3px
 
 .cases__tech-icons
+  position: relative
+  z-index: 5
   margin-top: auto
   display: flex
   gap: 16px
