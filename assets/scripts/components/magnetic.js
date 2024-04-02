@@ -2,7 +2,7 @@ import gsap from "gsap"
 
 const magneticItems = document.querySelectorAll('.magnetic')
 
-if (magneticItems.length) magneticItemsInit()
+if (magneticItems.length) setTimeout(magneticItemsInit,0)
 
 function magneticItemsInit () {
   for (let i = 0; i < magneticItems.length; i++) {

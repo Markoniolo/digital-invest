@@ -2,7 +2,7 @@ import gsap from "gsap";
 
 const stepsDiagramCanvasArray = document.querySelectorAll(".steps__diagram-canvas")
 
-if (stepsDiagramCanvasArray.length && window.innerWidth >= 768) stepsDiagramCanvasArrayInit()
+if (stepsDiagramCanvasArray.length && window.innerWidth >= 768) setTimeout(stepsDiagramCanvasArrayInit,0)
 
 function stepsDiagramCanvasArrayInit () {
   const mm = gsap.matchMedia()

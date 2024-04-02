@@ -37,7 +37,7 @@
   filter: blur(60px)
   transform: translate(-50%, -50%)
   transition-timing-function: linear
-  transition-duration: 0.2s
+  transition-duration: 0.05s
   transition-property: top, left
   @include media(lg)
     display: none !important
@@ -101,6 +101,8 @@
   opacity: 0.4
   @include media(lg)
     font-size: 12px
+  @include media(xs)
+    font-size: 12px
 
 .footer__policy
   opacity: 0.4
@@ -112,6 +114,6 @@
   @include media(lg)
     font-size: 12px
   @include media(xs)
-    font-size: 10px
+    font-size: 12px
     order: -1
     margin-bottom: 12px

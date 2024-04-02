@@ -2,7 +2,7 @@ import gsap from "gsap";
 
 const advantagesList = document.querySelector('.advantages__list')
 
-if (advantagesList) advantagesListInit()
+if (advantagesList) setTimeout(advantagesListInit, 0)
 
 function advantagesListInit () {
   let mm = gsap.matchMedia()
@@ -14,8 +14,8 @@ function advantagesListInit () {
       scrollTrigger: {
         trigger: '.advantages__list',
         scrub: true,
-        start: "top 60%",
-        end: "top 10%",
+        start: "top 80%",
+        end: "top 20%",
       }
     })
 
@@ -23,14 +23,14 @@ function advantagesListInit () {
       scrollTrigger: {
         trigger: '.advantages__list',
         scrub: true,
-        start: "top 60%",
-        end: "top 10%",
+        start: "top 80%",
+        end: "top 20%",
       }
     })
 
     mm.add("(min-width: 1440px)", () => {
-      tl.to('.advantages__list', {x: '0', duration: '0.5'})
-      t2.to('.advantages__number', { x: '0', width: '155', duration: '0.5' })
+      tl.to('.advantages__list', {x: '-100', duration: '0.5'})
+      t2.to('.advantages__number', { x: '-100', width: '155', duration: '0.5' })
     })
   }
 }

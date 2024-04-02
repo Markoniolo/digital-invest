@@ -2,7 +2,7 @@ import gsap from "gsap";
 
 const aboutArea = document.querySelector('[data-element="about-area"]')
 
-if (aboutArea) aboutAreaInit()
+if (aboutArea) setTimeout(aboutAreaInit, 0)
 
 function aboutAreaInit () {
   const mm = gsap.matchMedia()

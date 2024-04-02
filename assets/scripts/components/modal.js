@@ -2,8 +2,8 @@ const modalOpeners = document.querySelectorAll('[data-role="modal-opener"]')
 const modals = document.querySelectorAll('[data-role="modal"]')
 const html = document.getElementsByTagName('html')[0]
 
-if (modalOpeners.length) modalOpenersInit()
-if (modals.length) modalsInit()
+if (modalOpeners.length) setTimeout(modalOpenersInit,0)
+if (modals.length) setTimeout(modalsInit,0)
 
 function modalOpenersInit () {
   for (let i = 0; i < modalOpeners.length; i++) {

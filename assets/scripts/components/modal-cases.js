@@ -2,7 +2,7 @@ import gsap from "gsap"
 
 const modalCasesSlider = document.querySelector('[data-element="modal-cases-slider"]')
 
-if (modalCasesSlider) modalCasesSliderInit()
+if (modalCasesSlider) setTimeout(modalCasesSliderInit, 0)
 
 function modalCasesSliderInit () {
   const swiper = new Swiper(modalCasesSlider, {
@@ -52,7 +52,7 @@ function modalCasesSliderInit () {
   updateCanvasSize()
 
   function updateCanvasSize () {
-    ctx.canvas.width  = window.innerWidth
+    ctx.canvas.width = window.innerWidth
     ctx.canvas.height = window.innerHeight
     if (window.innerWidth >= 1440) {
       delta = 144
@@ -61,26 +61,30 @@ function modalCasesSliderInit () {
     } else {
       delta = 36
     }
+    ctx.beginPath()
+    ctx.fillStyle = "#EAF1F4"
+    ctx.rect(0, 0, window.innerWidth, window.innerHeight)
+    ctx.fill()
   }
 
-  function updatePicture () {
-    for (let i = 0; i < pictures.length; i++) {
-      if (isVisible(pictures[i])) {
-        const agree = gsap.timeline()
-        agree.to(pictures[i], 0.3, {scale: 1.2})
-      }
-    }
-  }
+  // function updatePicture () {
+  //   for (let i = 0; i < pictures.length; i++) {
+  //     if (isVisible(pictures[i])) {
+  //       const agree = gsap.timeline()
+  //       agree.to(pictures[i], 0.3, {scale: 1.2})
+  //     }
+  //   }
+  // }
 
-  function isVisible (el) {
-    const rect = el.getBoundingClientRect()
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight) &&
-      rect.right <= (window.innerWidth + 200)
-    );
-  }
+  // function isVisible (el) {
+  //   const rect = el.getBoundingClientRect()
+  //   return (
+  //     rect.top >= 0 &&
+  //     rect.left >= 0 &&
+  //     rect.bottom <= (window.innerHeight) &&
+  //     rect.right <= (window.innerWidth + 200)
+  //   );
+  // }
 
 
   for (let i = 0; i < modalCasesOpeners.length; i++) {
@@ -95,6 +99,7 @@ function modalCasesSliderInit () {
     transparent = false
     x = 0
     delta = Math.abs(delta)
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
     window.requestAnimationFrame(step)
   }
 
@@ -112,7 +117,7 @@ function modalCasesSliderInit () {
       start = timeStamp;
     }
     if (previousTimeStamp !== timeStamp) {
-      drawRect(x)
+      drawRect(x, delta)
       x += delta
       if (x >= window.innerWidth || x <= 0) done = true
     }
@@ -131,7 +136,7 @@ function modalCasesSliderInit () {
     }
   }
 
-  function drawRect (x) {
+  function drawRect (x, delta) {
     const windowHeight = window.innerHeight
     ctx.beginPath()
     ctx.fillStyle = "#EAF1F4"

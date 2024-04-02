@@ -1,6 +1,6 @@
 const faqTopArray = document.querySelectorAll('[data-element="faq__top"]')
 
-if (faqTopArray.length) faqTopArrayInit()
+if (faqTopArray.length) setTimeout(faqTopArrayInit, 0)
 
 function faqTopArrayInit () {
   for (let i = 0; i < faqTopArray.length; i++) {
@@ -21,13 +21,13 @@ function faqTopArrayInit () {
 
   function faqTopClose (faqTop, item, content) {
     item.classList.remove('faq__box_active')
-    content.style.maxHeight = 0
+    content.style.height = 0
     faqTop.classList.remove('faq__top_active')
   }
 
   function faqTopOpen (faqTop, item, content) {
     item.classList.add('faq__box_active')
-    content.style.maxHeight = content.scrollHeight + "px"
+    content.style.height = content.scrollHeight + "px"
     faqTop.classList.add('faq__top_active')
   }
 }

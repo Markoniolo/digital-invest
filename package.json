@@ -11,6 +11,7 @@
     "defaults"
   ],
   "dependencies": {
+    "@lottiefiles/lottie-player": "^2.0.4",
     "cross-env": "^7.0.3",
     "gsap": "^3.12.5",
     "inputmask": "^5.0.7",

@@ -2,7 +2,7 @@ import gsap from "gsap"
 
 const lightBgBoxArray = document.querySelectorAll('[data-role="light-bg-box"]')
 
-if (lightBgBoxArray.length) lightBgBoxArrayInit()
+if (lightBgBoxArray.length) setTimeout(lightBgBoxArrayInit,0)
 
 function lightBgBoxArrayInit () {
   const mm = gsap.matchMedia()

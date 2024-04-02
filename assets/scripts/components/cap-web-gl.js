@@ -156,4 +156,4 @@ const createWave = async function(selector, colors) {
 }
 
 const capBox = document.querySelector('.cap__box')
-if (capBox) createWave(config.individualItem, config.colors);
+if (capBox) setTimeout(createWave(config.individualItem, config.colors), 0);

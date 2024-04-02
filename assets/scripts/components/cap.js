@@ -2,7 +2,7 @@ import gsap from "gsap"
 
 const capBoxes = document.querySelectorAll('[data-element="cap-box"]')
 
-if (capBoxes.length) capBoxesInit()
+if (capBoxes.length) setTimeout(capBoxesInit, 0)
 
 function capBoxesInit () {
   const mm = gsap.matchMedia()

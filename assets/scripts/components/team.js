@@ -4,9 +4,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 const teamItems = document.querySelectorAll('[data-element="team-item"]')
 
-if (teamItems.length) teamItemsInit()
+if (teamItems.length) setTimeout(teamItemsInit, 0)
 
 function teamItemsInit () {
+  const mm = gsap.matchMedia()
+
   animateTeamItems()
 
   function animateTeamItems () {
@@ -17,10 +19,12 @@ function teamItemsInit () {
           trigger: item,
           scrub: true,
           start: "top 90%",
-          end: "top 10%"
+          end: "top 30%"
         }
       })
-      tl.to(item, {x: 0, scale: 1, opacity: 1,})
+      mm.add("(min-width: 1440px)", () => {
+        tl.to(item, {x: 0, scale: 1, opacity: 1,})
+      })
     })
 
     let fadeinStatus = gsap.utils.toArray('.team__status')
@@ -29,11 +33,13 @@ function teamItemsInit () {
         scrollTrigger: {
           trigger: item,
           scrub: true,
-          start: "top 40%",
-          end: "top 30%"
+          start: "top 60%",
+          end: "top 50%"
         }
       })
-      t2.to(item, {opacity: 1})
+      mm.add("(min-width: 1440px)", () => {
+        t2.to(item, {opacity: 1})
+      })
     })
   }
 }

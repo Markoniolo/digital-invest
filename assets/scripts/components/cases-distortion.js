@@ -86,7 +86,7 @@ import * as THREE from '../modules/three.js'
 const textureDisplacement = new THREE.TextureLoader().load('/statics/img/cases/distortion.jpg')
 
 const casesDistortionArray = document.querySelectorAll('.cases__box')
-if (casesDistortionArray.length) casesDistortionInit()
+if (casesDistortionArray.length) setTimeout(casesDistortionInit,0)
 
 function casesDistortionInit () {
   for (let i = 0; i < casesDistortionArray.length; i++) {

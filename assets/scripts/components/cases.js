@@ -3,7 +3,7 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 const casesBoxes = document.querySelectorAll('.cases__box')
-if (casesBoxes.length) casesBoxesInit()
+if (casesBoxes.length) setTimeout(casesBoxesInit, 0)
 
 function casesBoxesInit () {
   const mm = gsap.matchMedia()

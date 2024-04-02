@@ -1,6 +1,6 @@
 const formValidateArray = document.querySelectorAll('[data-role="form-validate"]')
 
-if (formValidateArray.length) formValidateArrayInit()
+if (formValidateArray.length) setTimeout(formValidateArrayInit,0)
 
 function formValidateArrayInit () {
   for (let i = 0; i < formValidateArray.length; i++) {
@@ -10,7 +10,6 @@ function formValidateArrayInit () {
 
 function formValidateInit (form) {
   const html = document.getElementsByTagName('html')[0]
-  const modalThanks = document.querySelector('.modal-thanks')
   const counter = document.querySelector('.modal-thanks__counter')
 
   const labelPhone = form.querySelector('[data-role="form-validate-phone"]')
@@ -23,8 +22,16 @@ function formValidateInit (form) {
   inputName.addEventListener('input', removeError)
   form.addEventListener('submit', validate)
 
-  const maskPhone = new IMask(inputPhone, { mask: '+{7} (000) 000-00-00' });
-  const maskName = new IMask(inputName, { mask: /^[А-ЯЁa-zA-Z\s]+$/i });
+  const maskPhone = new IMask(inputPhone, { mask: '+{7} (000) 000-00-00' })
+  const maskName = new IMask(inputName, { mask: /^[А-ЯЁa-zA-Z\s]+$/i })
+
+  let timerId
+
+  const modalThanks = document.querySelector('.modal-thanks')
+  const layer = modalThanks.querySelector('.modal-layer')
+  const close = modalThanks.querySelector('.modal-close')
+  layer.addEventListener('click', closeModalThanks)
+  close.addEventListener('click', closeModalThanks)
 
   function removeError () {
     this.classList.remove('input-error')
@@ -74,7 +81,7 @@ function formValidateInit (form) {
   }
 
   function openModalThanks () {
-    const timerId = setInterval(updateCounter, 1000)
+    timerId = setInterval(updateCounter, 1000)
 
     function updateCounter () {
       counter.innerHTML = +counter.innerHTML - 1
@@ -92,5 +99,7 @@ function formValidateInit (form) {
   function closeModalThanks () {
     modalThanks.classList.remove('modal_active')
     html.classList.remove('html_no-scroll')
+    clearInterval(timerId)
+    counter.innerHTML = '10'
   }
 }

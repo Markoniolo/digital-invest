@@ -16,10 +16,12 @@ header.header(data-element="header")
       .magnetic
         button.header__burger.magnetic-inner(type='button' data-element="header-burger")
       if VIEW === 'policy'
-        button.header__back.text-medium.magnetic(type='button') Назад
+        .magnetic
+          a.header__back.text-medium.magnetic-inner(href='/') Назад
       if VIEW === 'index'
-        button.header__back-cases.magnetic(type='button' data-element="header__back-cases")
-          span Назад
+        .magnetic
+          button.header__back-cases.magnetic-inner(type='button' data-element="header__back-cases")
+            span Назад
       .header__menu
         nav.header__nav
           ul.header__list

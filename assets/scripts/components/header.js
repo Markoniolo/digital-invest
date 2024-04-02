@@ -1,6 +1,6 @@
 const header = document.querySelector('[data-element="header"]')
 
-if (header) headerInit()
+if (header) setTimeout(headerInit, 0)
 
 function headerInit () {
   const headerBurger = document.querySelector('[data-element="header-burger"]')

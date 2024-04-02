@@ -43,9 +43,11 @@
         <div class="magnetic">
           <button class="header__burger magnetic-inner" type="button" data-element="header-burger"></button>
         </div>
-        <button class="header__back-cases magnetic" type="button" data-element="header__back-cases">
-          <span>Назад</span>
-        </button>
+        <div class="magnetic">
+          <button class="header__back-cases magnetic-inner" type="button" data-element="header__back-cases">
+            <span>Назад</span>
+          </button>
+        </div>
         <div class="header__menu">
           <nav class="header__nav">
             <ul class="header__list">
@@ -1028,13 +1030,13 @@
       </div>
     </div>
   </div>
-  <div class="modal-thanks modal" data-role="modal">
-    <div class="modal-thanks__layer modal-layer" data-role="modal-layer"></div>
+  <div class="modal-thanks modal">
+    <div class="modal-thanks__layer modal-layer"></div>
     <div class="modal-thanks__wrap modal-wrap">
       <div class="modal-thanks__content modal-content">
-        <button class="modal-thanks__close modal-close" type="button" data-role="modal-close"></button>
+        <button class="modal-thanks__close modal-close" type="button"></button>
         <div class="modal-thanks__icon">
-          <dotlottie-player src="statics/files/modal-order-lottie-icon.json" background="transparent" speed="1" style="width: 126px; height: 126px" direction="1" playmode="normal" loop="" autoplay=""></dotlottie-player>
+          <lottie-player src="statics/files/modal-order-lottie-icon.json" background="transparent" speed="1" style="width: 126px; height: 126px" direction="1" playmode="normal" loop="" autoplay=""></lottie-player>
         </div>
         <div class="modal-thanks__title">Заявка успешно отправлена!</div>
         <div class="modal-thanks__text">В течение дня с Вами свяжется наш менеджер для уточнения деталей</div>
@@ -1147,9 +1149,8 @@
       gl_FragColor = vec4(colorMap, 1.);
       }
     </script>
-  <script src="statics/js/libs.js"></script>
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module" async></script>
-  <script src="statics/js/app.js" async></script>
+  <script src="statics/js/libs.js" defer></script>
+  <script src="statics/js/app.js" defer></script>
 </body>
 
 </html>

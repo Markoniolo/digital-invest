@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const stepsItems = document.querySelectorAll('[data-element="steps-item"]')
 
-if (stepsItems.length) stepsItemsInit()
+if (stepsItems.length) setTimeout(stepsItemsInit, 0)
 
 function stepsItemsInit () {
   animateStepsItems()
@@ -17,7 +17,7 @@ function stepsItemsInit () {
           trigger: item,
           scrub: true,
           start: "top 90%",
-          end: "top 10%"
+          end: "top 30%"
         }
       })
       tl.to(item, {

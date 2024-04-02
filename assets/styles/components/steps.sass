@@ -33,18 +33,20 @@
 .steps__item
   position: relative
   padding-left: 216px
-  transform: translateX(-70px) scale(0.75)
-  opacity: 0.2
+  transform: translateX(-70px) scale(0.618)
+  opacity: 0.3
   transform-origin: bottom left
-  transition-timing-function: linear
-  transition-duration: 0.1s
-  transition-property: transform, opacity
+  transition-timing-function: ease-out
+  transition-duration: 0.5s
+  transition-property: transform, opacity, scale
   @include media(lg)
     padding-left: 56px
-    transform: translateX(-10px) scale(0.80)
+    transform: none
+    opacity: 1
+    //transform: translateX(-10px) scale(0.80)
   @include media(xs)
     padding-left: 84px
-    transform: translateX(-5px) scale(0.85)
+    //transform: translateX(-5px) scale(0.85)
   &:not(:last-of-type)
     margin-bottom: 62px
     @include media(xs)
@@ -63,7 +65,7 @@
   font-size: 1.51rem
   line-height: 110%
   @include media(lg)
-    font-size: 18px
+    font-size: 24px
   @include media(xs)
     font-size: 18px
 
@@ -112,6 +114,8 @@
   right: 0
   left: 0
   text-align: center
+  @include media(lg)
+    font-size: 18px
 
 .steps__diagram-canvas
   width: 100%

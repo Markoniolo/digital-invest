@@ -1,5 +1,4 @@
 if VIEW === 'index'
   include ./cap-web-gl-script
-script(src=`${pathStatics}/js/libs.js`)
-script(src='https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs' type='module' async=true)
-script(src=`${pathStatics}/js/app.js`, async=true)
+script(src=`${pathStatics}/js/libs.js` defer)
+script(src=`${pathStatics}/js/app.js` defer)
