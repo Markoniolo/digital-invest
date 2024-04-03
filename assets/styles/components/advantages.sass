@@ -1,21 +1,25 @@
 .advantages
+  overflow: hidden
   position: relative
   z-index: 1
-  margin-bottom: 120px
+  margin-bottom: -80px
+  padding-top: 120px
+  padding-bottom: 200px
   @include media(lg)
+    overflow: visible
+    padding-top: 0
     margin-bottom: 90px
+    padding-bottom: 0
+    background: none
   @include media(xs)
     margin-bottom: 60px
   &::before
-    content: ''
-    height: 1028px
-    position: absolute
-    z-index: -1
-    top: -120px
-    right: 0
-    left: 0
-    +bgIcon('advantages/advantages-bg.svg')
     @include media(lg)
+      content: ''
+      position: absolute
+      z-index: -1
+      right: 0
+      left: 0
       top: -144px
       +bgIcon('advantages/advantages-bg_768.svg')
       height: 716px
@@ -23,6 +27,24 @@
       top: -118px
       +bgIcon('advantages/advantages-bg_375.svg')
       height: 676px
+
+.advantages__bg-anim
+  position: absolute
+  z-index: -1
+  width: calc(100vw + 300px)
+  left: 0
+  top: 0
+  bottom: 0
+  background-image: url($imgPath + 'advantages/advantages-bg.svg')
+  background-size: calc(100% - 300px) 100%
+  //background-repeat: repeat
+  background-position: center left 20px
+  transition-timing-function: ease-out
+  transition-duration: 0.5s
+  transition-property: transform
+  will-change: transform
+  @include media(lg)
+    display: none
 
 .advantages__wrap
   overflow: hidden
@@ -38,12 +60,10 @@
 
 .advantages__list
   margin-bottom: 84px
-  transform: translateX(216px)
   display: flex
-  gap: 2rem
-  transition-timing-function: ease-out
-  transition-duration: 0.5s
-  transition-property: transform
+  gap: 2.5rem
+  @include media(xl)
+    gap: 2.2rem
   @include media(lg)
     transform: none !important
     margin-bottom: 90px
@@ -78,11 +98,13 @@
   color: $saturated
   position: absolute
   z-index: -2
-  bottom: -50px
-  right: -90px
+  bottom: -76px
+  right: -6rem
   transition-timing-function: ease-out
   transition-duration: 0.5s
   transition-property: transform, width
+  @include media(xl)
+    right: -7.9rem
   @include media(lg)
     transform: none
     width: 60px
@@ -93,6 +115,14 @@
     font-size: 64px
     width: 55px
     right: -22px
+
+.advantages__inner
+  transform: translateX(216px)
+  transition-timing-function: ease-out
+  transition-duration: 0.5s
+  transition-property: transform
+  @include media(lg)
+    transform: none
 
 .advantages__title
   margin-bottom: 12px

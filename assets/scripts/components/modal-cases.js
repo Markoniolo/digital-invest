@@ -54,38 +54,12 @@ function modalCasesSliderInit () {
   function updateCanvasSize () {
     ctx.canvas.width = window.innerWidth
     ctx.canvas.height = window.innerHeight
-    if (window.innerWidth >= 1440) {
-      delta = 144
-    } else if (window.innerWidth >= 768) {
-      delta = 72
-    } else {
-      delta = 36
-    }
+    delta = 144
     ctx.beginPath()
     ctx.fillStyle = "#EAF1F4"
     ctx.rect(0, 0, window.innerWidth, window.innerHeight)
     ctx.fill()
   }
-
-  // function updatePicture () {
-  //   for (let i = 0; i < pictures.length; i++) {
-  //     if (isVisible(pictures[i])) {
-  //       const agree = gsap.timeline()
-  //       agree.to(pictures[i], 0.3, {scale: 1.2})
-  //     }
-  //   }
-  // }
-
-  // function isVisible (el) {
-  //   const rect = el.getBoundingClientRect()
-  //   return (
-  //     rect.top >= 0 &&
-  //     rect.left >= 0 &&
-  //     rect.bottom <= (window.innerHeight) &&
-  //     rect.right <= (window.innerWidth + 200)
-  //   );
-  // }
-
 
   for (let i = 0; i < modalCasesOpeners.length; i++) {
     modalCasesOpeners[i].addEventListener('click', openModalCases)
@@ -107,44 +81,46 @@ function modalCasesSliderInit () {
     done = false
     stop = false
     transparent = true
-    x = window.innerWidth
+    x = 0
     delta = -Math.abs(delta)
     window.requestAnimationFrame(step)
   }
 
   function step(timeStamp) {
     if (start === undefined) {
-      start = timeStamp;
+      start = timeStamp
     }
     if (previousTimeStamp !== timeStamp) {
       drawRect(x, delta)
-      x += delta
-      if (x >= window.innerWidth || x <= 0) done = true
+      x += delta/36
+      if (x >= delta/2 && delta > 0) done = true
+      if (x <= delta/2 && delta < 0) done = true
     }
     previousTimeStamp = timeStamp
     if (!done) {
-      setTimeout(() => window.requestAnimationFrame(step), 40)
+      setTimeout(() => window.requestAnimationFrame(step), 20)
     } else if (!stop) {
-      if (delta > 0) {
-        x = delta/2
-      } else {
-        x = window.innerWidth - delta/2
-      }
+      x = 0
       done = false
       stop = true
-      setTimeout(() => window.requestAnimationFrame(step), 40)
+      setTimeout(() => window.requestAnimationFrame(step), 20)
     }
   }
 
   function drawRect (x, delta) {
     const windowHeight = window.innerHeight
+    const windowWidth = window.innerWidth
     ctx.beginPath()
     ctx.fillStyle = "#EAF1F4"
     if (transparent) {
-      ctx.clearRect(x, 0, delta/2, windowHeight)
+      for (let step = window.innerWidth; step > 0; step+=delta/2) {
+        ctx.clearRect(step + x, 0, delta/36, windowHeight)
+      }
     } else {
-      ctx.rect(x, 0, delta/2, windowHeight)
-      ctx.fill()
+      for (let step = 0; step < windowWidth; step+=delta/2) {
+        ctx.rect(step + x, 0, delta/36, windowHeight)
+        ctx.fill()
+      }
     }
   }
 

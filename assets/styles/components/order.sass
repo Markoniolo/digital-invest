@@ -1,6 +1,13 @@
 .order
+  padding-top: 100px
+  margin-top: -100px
   position: relative
+  overflow: hidden
   color: $white
+  @include media(lg)
+    padding-top: 0
+    margin-top: 0
+    padding-bottom: 0
   &::after
     content: ''
     position: absolute
@@ -15,7 +22,6 @@
       top: 203px
 
 .order__cont
-  overflow: hidden
   position: relative
   z-index: 1
   padding-top: 274px

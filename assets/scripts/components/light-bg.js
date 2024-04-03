@@ -34,9 +34,11 @@ function lightBgBoxArrayInit () {
     function mousemoveHandler (e) {
       const rect = box.getBoundingClientRect()
       mm.add("(min-width: 1440px)", () => {
+        let top = e.clientY - rect.top
+        if (top < 73) top = 73
         gsap.to(targetClassName, {
           left: e.clientX - rect.left,
-          top: e.clientY - rect.top,
+          top: top,
           duration: 0.1
         });
       })

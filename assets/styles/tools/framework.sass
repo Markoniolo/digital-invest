@@ -6,19 +6,15 @@
 .cont
   margin: 0 auto
   width: 100%
-  //max-width: calc(1296px + 72px + 72px)
   max-width: calc(1776px + 72px + 72px)
   padding: 0 72px
   @include media(lg)
     padding: 0 24px
-    //max-width: calc(720px + 24px + 24px)
   @include media(xs)
     padding: 0 16px
-    //max-width: calc(392px + 16px + 16px)
 
 .h1
   font-size: 5rem
-  //font-size: 80px
   line-height: 105%
   @include media(lg)
     font-size: 64px
@@ -74,8 +70,11 @@
 .magnetic
   padding: 10px
 
+.magnetic-inner
+  @include media(lg)
+    transform: none !important
+
 .html_no-scroll
-  //overflow: hidden
   position: relative
   height: 100%
   body
