@@ -7,13 +7,11 @@ if (stepsDiagramCanvasArray.length && window.innerWidth >= 768) setTimeout(steps
 function stepsDiagramCanvasArrayInit () {
   const mm = gsap.matchMedia()
   const percent = document.querySelector(".steps__diagram-percent")
-
+  
   const obj = {num: 0}
   let stop = false
   let ctxArray = []
   const colors = ['#3A90B0','#67ABC4','#88BDD1']
-  const angleDeltaArray = [0,0.3,0]
-
   for (let i = 0; i < stepsDiagramCanvasArray.length; i++) {
     ctxArray[i] = stepsDiagramCanvasArray[i].getContext("2d")
   }
@@ -31,10 +29,14 @@ function stepsDiagramCanvasArrayInit () {
     }
   }
 
-  function drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, fillColor, strokeColor) {
+  function drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, fillColor) {
     ctx.save()
-    ctx.fillStyle = fillColor
-    ctx.strokeStyle = strokeColor
+    const gradient = ctx.createRadialGradient(radius, radius, radius/2, radius, radius, radius);
+    gradient.addColorStop(0, "#2282A6")
+    gradient.addColorStop(1, fillColor)
+
+    ctx.fillStyle = gradient
+    ctx.strokeStyle = gradient
     ctx.beginPath()
     ctx.moveTo(centerX, centerY)
     ctx.arc(centerX, centerY, radius, startAngle, endAngle)
@@ -51,37 +53,58 @@ function stepsDiagramCanvasArrayInit () {
     ctx.restore()
   }
 
-  function updateDiagram (ctx, canvas, color, angleDelta) {
+  function updateDiagram (ctx, canvas, color, startAngle, endAngle) {
     stop = true
+    let done = false
 
-    clearCanvas(ctx)
+    let speed = 0.01
+    let step = Math.abs((endAngle - startAngle) / 60)
 
-    let startAngle = 3*Math.PI/2
-    let endAngle = 3*Math.PI/2 + 2 * Math.PI * obj.num
+    window.requestAnimationFrame(animate)
 
-    drawPieSlice(ctx, Math.round(canvas.width/2), Math.round(canvas.height/2),
-      Math.round(canvas.width/2)-1, startAngle, endAngle + angleDelta, color, "rgba(136, 189, 209, 0)")
+    const percentNewValue = Math.round(100 * obj.num)
+    if (percentNewValue > percent.innerHTML.slice(0, -1)) {
+      percent.innerHTML = Math.round(100 * obj.num) + '%'
+    }
 
-    percent.innerHTML = Math.round(100 * obj.num) + '%'
+    function animate () {
+      drawPieSlice(ctx, Math.round(canvas.width/2), Math.round(canvas.height/2),
+        Math.round(canvas.width/2)-1, startAngle, startAngle + step * speed, color)
+
+      startAngle += step * speed
+      if (startAngle > endAngle) {
+        done = true
+        startAngle -= step
+      }
+
+      if (!done) {
+        speed += 0.1
+        setTimeout(() => window.requestAnimationFrame(animate), 0)
+      } else {
+        stop = false
+      }
+    }
   }
 
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.steps__area',
-      scrub: true,
-      start: "top 20%",
-      end: "+=800"
-    }
+  let t1 = gsap.timeline({
+    scrollTrigger: {trigger: '.steps__area', scrub: true, start: "top 70%", end: "+=1200",
+      onUpdate: ({direction}) => startAnimation(direction)}
   })
 
   mm.add("(min-width: 768px)", () => {
-    tl.to(obj, {
+    t1.to(obj, {
       num: 1,
-      duration: 1,
-      onUpdate: async function () {
-        window.requestAnimationFrame(() => updateDiagram(ctxArray[0], stepsDiagramCanvasArray[0], colors[0], angleDeltaArray[0]))
-      }
     })
   })
+
+  async function startAnimation (direction) {
+    let startAngle
+    let endAngle
+    startAngle = 3*Math.PI/2
+    endAngle = 3*Math.PI/2 + 2 * Math.PI * obj.num
+    updateDiagram(ctxArray[0], stepsDiagramCanvasArray[0], colors[0], startAngle, endAngle)
+    setTimeout( () => updateDiagram(ctxArray[1], stepsDiagramCanvasArray[1], colors[1], startAngle, endAngle), 100)
+    setTimeout( () => updateDiagram(ctxArray[2], stepsDiagramCanvasArray[2], colors[2], startAngle, endAngle), 200)
+  }
 }
 

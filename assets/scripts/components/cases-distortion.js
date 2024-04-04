@@ -1,4 +1,5 @@
 import gsap from "gsap"
+import * as THREE from 'three'
 
 const VERTEX_SHADER = `
 varying vec2 vUv;
@@ -81,12 +82,10 @@ const getDistortionShaderMaterialParameters = ({ intensity, fromTexture, toTextu
   opacity: 1,
 })
 
-import * as THREE from '../modules/three.js'
-
 const textureDisplacement = new THREE.TextureLoader().load('/statics/img/cases/distortion.jpg')
 
 const casesDistortionArray = document.querySelectorAll('.cases__box')
-if (casesDistortionArray.length) setTimeout(casesDistortionInit,0)
+if (casesDistortionArray.length) casesDistortionInit()
 
 function casesDistortionInit () {
   for (let i = 0; i < casesDistortionArray.length; i++) {
@@ -94,7 +93,7 @@ function casesDistortionInit () {
   }
 }
 
-async function caseDistortionInit (node) {
+function caseDistortionInit (node) {
   const containerEl = node
   const dataSrc = node.getAttribute('data-src')
   const containerElem = node
@@ -109,7 +108,7 @@ async function caseDistortionInit (node) {
     0
   )
 
-  const renderer = new THREE.WebGL1Renderer({
+  const renderer = new THREE.WebGLRenderer({
     antialias: true,
     alpha: true,
     canvas: canvasEl,
@@ -137,16 +136,15 @@ async function caseDistortionInit (node) {
     displacement:textureDisplacement
   }
 
-  async function update () {
+  function update () {
     updateSize()
-    updateTexturesSize();
-    renderer.render(scene, camera);
+    updateTexturesSize()
+    renderer.render(scene, camera)
   }
 
   function updateSize () {
-    const { width, height } = containerElem.getBoundingClientRect();
-
-    renderer.setSize(width, height);
+    const { width, height } = containerElem.getBoundingClientRect()
+    renderer.setSize(width, height)
   }
 
   textures.displacement.wrapS = textures.displacement.wrapT =
