@@ -1,11 +1,11 @@
 -
   const headerMenu = [
-    'О нас',
-    'Кейсы',
-    'Команда',
-    'Преимущества',
-    'Этапы работы',
-    'Ответы на вопросы',
+    { text: 'О нас', link: '#about' },
+    { text: 'Кейсы', link: '#cases'},
+    { text: 'Команда', link: '#team'},
+    { text: 'Преимущества', link: '#advantages'},
+    { text: 'Этапы работы', link: '#steps'},
+    { text: 'Ответы на вопросы', link: '#faq'},
   ]
 
 a.logo.magnetic(href='/')
@@ -27,7 +27,7 @@ header.header(data-element="header")
           ul.header__list
             each item in headerMenu
               li.header__item
-                a.header__link.title.link-black(href="#")= item
+                a.header__link.title.link-black(href=item.link data-role="scroll-to-anchor")= item.text
         a.header__button.btn.btn-saturated(href='mailto:info@cifrinvest.ru') info@cifrinvest.ru
         button.header__button.btn.btn-black-arrow(data-role="modal-opener" data-modal-class="modal-order")
           span Оставить заявку

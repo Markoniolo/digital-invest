@@ -6,6 +6,27 @@
   margin-bottom: 79px
   display: flex
   justify-content: center
+  path
+    stroke-dasharray: 150
+    stroke-dashoffset: 150
+    animation: modalThanksIconCheck 1s linear infinite
+    @keyframes modalThanksIconCheck
+      0%
+        stroke-dashoffset: 150
+      50%
+        stroke-dashoffset: 150
+      100%
+        stroke-dashoffset: 0
+  svg
+    transform-origin: center
+    animation: modalThanksIconCircle 1s linear infinite
+    @keyframes modalThanksIconCircle
+      0%
+        transform: scale(0)
+      50%
+        transform: scale(1)
+      100%
+        transform: scale(1)
 
 .modal-thanks__title
   margin-bottom: 20px

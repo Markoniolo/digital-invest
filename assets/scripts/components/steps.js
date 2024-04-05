@@ -19,7 +19,7 @@ function stepsItemsInit () {
           trigger: item,
           scrub: true,
           start: "top 90%",
-          end: "top 30%"
+          end: "top 80%"
         }
       })
       mm.add("(min-width: 1440px)", () => {

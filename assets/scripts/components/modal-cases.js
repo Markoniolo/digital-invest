@@ -26,8 +26,9 @@ function modalCasesSliderInit () {
     },
   })
 
-  swiper.on('slideNextTransitionStart', function (e) {
+  swiper.on('sliderMove', function (e) {
     // updatePicture()
+    // console.log('update')
   });
 
   const modalCasesOpeners = document.querySelectorAll('[data-role="modal-cases-opener"]')

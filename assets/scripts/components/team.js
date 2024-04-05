@@ -19,7 +19,7 @@ function teamItemsInit () {
           trigger: item,
           scrub: true,
           start: "top 90%",
-          end: "top 30%"
+          end: "top 80%"
         }
       })
       mm.add("(min-width: 1440px)", () => {
@@ -33,8 +33,8 @@ function teamItemsInit () {
         scrollTrigger: {
           trigger: item,
           scrub: true,
-          start: "top 60%",
-          end: "top 50%"
+          start: "top 90%",
+          end: "top 80%"
         }
       })
       mm.add("(min-width: 1440px)", () => {

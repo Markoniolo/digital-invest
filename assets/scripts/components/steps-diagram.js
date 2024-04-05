@@ -7,7 +7,7 @@ if (stepsDiagramCanvasArray.length && window.innerWidth >= 768) setTimeout(steps
 function stepsDiagramCanvasArrayInit () {
   const mm = gsap.matchMedia()
   const percent = document.querySelector(".steps__diagram-percent")
-  
+
   const obj = {num: 0}
   let stop = false
   let ctxArray = []
@@ -102,9 +102,9 @@ function stepsDiagramCanvasArrayInit () {
     let endAngle
     startAngle = 3*Math.PI/2
     endAngle = 3*Math.PI/2 + 2 * Math.PI * obj.num
-    updateDiagram(ctxArray[0], stepsDiagramCanvasArray[0], colors[0], startAngle, endAngle)
-    setTimeout( () => updateDiagram(ctxArray[1], stepsDiagramCanvasArray[1], colors[1], startAngle, endAngle), 100)
-    setTimeout( () => updateDiagram(ctxArray[2], stepsDiagramCanvasArray[2], colors[2], startAngle, endAngle), 200)
+    updateDiagram(ctxArray[0], stepsDiagramCanvasArray[0], colors[1], startAngle, endAngle)
+    // setTimeout( () => updateDiagram(ctxArray[1], stepsDiagramCanvasArray[1], colors[1], startAngle, endAngle), 100)
+    // setTimeout( () => updateDiagram(ctxArray[2], stepsDiagramCanvasArray[2], colors[2], startAngle, endAngle), 200)
   }
 }
 

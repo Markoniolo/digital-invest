@@ -50,22 +50,22 @@
           <nav class="header__nav">
             <ul class="header__list">
               <li class="header__item">
-                <a class="header__link title link-black" href="#">О нас</a>
+                <a class="header__link title link-black" href="#about" data-role="scroll-to-anchor">О нас</a>
               </li>
               <li class="header__item">
-                <a class="header__link title link-black" href="#">Кейсы</a>
+                <a class="header__link title link-black" href="#cases" data-role="scroll-to-anchor">Кейсы</a>
               </li>
               <li class="header__item">
-                <a class="header__link title link-black" href="#">Команда</a>
+                <a class="header__link title link-black" href="#team" data-role="scroll-to-anchor">Команда</a>
               </li>
               <li class="header__item">
-                <a class="header__link title link-black" href="#">Преимущества</a>
+                <a class="header__link title link-black" href="#advantages" data-role="scroll-to-anchor">Преимущества</a>
               </li>
               <li class="header__item">
-                <a class="header__link title link-black" href="#">Этапы работы</a>
+                <a class="header__link title link-black" href="#steps" data-role="scroll-to-anchor">Этапы работы</a>
               </li>
               <li class="header__item">
-                <a class="header__link title link-black" href="#">Ответы на вопросы</a>
+                <a class="header__link title link-black" href="#faq" data-role="scroll-to-anchor">Ответы на вопросы</a>
               </li>
             </ul>
           </nav>
@@ -256,8 +256,13 @@
       <div class="modal-thanks__content modal-content">
         <button class="modal-thanks__close modal-close" type="button"></button>
         <div class="modal-thanks__icon">
-          <lottie-player src="statics/files/modal-order-lottie-icon.json" background="transparent" speed="1" style="width: 126px; height: 126px" direction="1" playmode="normal" loop="" autoplay=""></lottie-player>
+          <svg width="126" height="126" viewbox="0 0 126 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="round" d="M63 0C97.7697 0 126 28.2303 126 63C126 97.7697 97.7697 126 63 126C28.2303 126 0 97.7697 0 63C0 28.2303 28.2303 0 63 0Z" fill="#2382A6"></path>
+            <path d="M37.5488 65.5033L55.072 82.1921L90.9528 45.894" stroke="white" stroke-width="10.0132" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
         </div>
+        <!--.modal-thanks__icon-->
+        <!--  lottie-player(src=`${pathStatics}/files/modal-order-lottie-icon.json` background='transparent' speed='1' style='width: 126px; height: 126px' direction='1' playmode='normal' loop='' autoplay='')-->
         <div class="modal-thanks__title">Заявка успешно отправлена!</div>
         <div class="modal-thanks__text">В течение дня с Вами свяжется наш менеджер для уточнения деталей</div>
         <div class="modal-thanks__note text-small">
