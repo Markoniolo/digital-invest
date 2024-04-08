@@ -1,6 +1,13 @@
 .modal-thanks
   text-align: center
 
+.modal-thanks.modal_active
+  .modal-thanks__icon
+    path
+      animation: modalThanksIconCheck 1s linear forwards
+    svg
+      animation: modalThanksIconCircle 1s linear forwards
+
 .modal-thanks__icon
   margin-top: 100px
   margin-bottom: 79px
@@ -9,7 +16,6 @@
   path
     stroke-dasharray: 150
     stroke-dashoffset: 150
-    animation: modalThanksIconCheck 1s linear infinite
     @keyframes modalThanksIconCheck
       0%
         stroke-dashoffset: 150
@@ -19,7 +25,6 @@
         stroke-dashoffset: 0
   svg
     transform-origin: center
-    animation: modalThanksIconCircle 1s linear infinite
     @keyframes modalThanksIconCircle
       0%
         transform: scale(0)

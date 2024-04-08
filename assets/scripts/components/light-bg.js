@@ -22,12 +22,12 @@ function lightBgBoxArrayInit () {
     box.addEventListener('mouseleave', cancelMousemoveHandler)
 
     function activateMousemoveHandler () {
-      light.style.display = 'block'
+      light.style.opacity = '1'
       window.addEventListener('mousemove', mousemoveHandler)
     }
 
     function cancelMousemoveHandler () {
-      light.style.display = 'none'
+      light.style.opacity = '0'
       window.removeEventListener('mousemove', mousemoveHandler)
     }
 

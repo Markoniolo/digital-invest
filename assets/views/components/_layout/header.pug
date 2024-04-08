@@ -8,13 +8,20 @@
     { text: 'Ответы на вопросы', link: '#faq'},
   ]
 
-a.logo.magnetic(href='/')
-  img.logo-image.magnetic-inner(src=staticImg('logo.svg') alt='')
+if VIEW === 'index'
+  .logo
+    img.logo-image(src=staticImg('logo.svg') alt='')
+else
+  a.logo.magnetic(href='/')
+    img.logo-image.magnetic-inner(src=staticImg('logo.svg') alt='')
 header.header(data-element="header")
   .header__cont.cont
     .header__area
       .magnetic
         button.header__burger.magnetic-inner(type='button' data-element="header-burger")
+          svg(viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
+            rect.header__burger-line-1(x='14' y='20' width='22' height='2' rx='1' fill='#00222E')
+            rect.header__burger-line-2(x='14' y='28' width='16' height='2' rx='1' fill='#00222E')
       if VIEW === 'policy'
         .magnetic
           a.header__back.text-medium.magnetic-inner(href='/') Назад
@@ -28,8 +35,8 @@ header.header(data-element="header")
             each item in headerMenu
               li.header__item
                 a.header__link.title.link-black(href=item.link data-role="scroll-to-anchor")= item.text
-        a.header__button.btn.btn-saturated(href='mailto:info@cifrinvest.ru') info@cifrinvest.ru
-        button.header__button.btn.btn-black-arrow(data-role="modal-opener" data-modal-class="modal-order")
+        a.header__button.header__button_1.btn.btn-saturated(href='mailto:info@cifrinvest.ru') info@cifrinvest.ru
+        button.header__button.header__button_2.btn.btn-black-arrow(data-role="modal-opener" data-modal-class="modal-order")
           span Оставить заявку
       .header__tg-box.magnetic
         a.header__tg.magnetic-inner(href='#' target='_blank')

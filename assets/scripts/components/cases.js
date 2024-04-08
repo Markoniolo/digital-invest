@@ -17,23 +17,23 @@ function casesBoxesInit () {
         scrollTrigger: {
           trigger: '.cases__wrap',
           start: "top 50%",
-          scrub: true
-        },
-        opacity: 0.2,
-        duration: 1,
-      })
-
-      gsap.to('.cases__wrap', {
-        scrollTrigger: {
-          trigger: '.order',
-          start: "top 100%",
-          end: "top 90%",
+          end: "+=1500",
           scrub: true
         },
         opacity: 0,
-        duration: 0.5,
-        immediateRender: false,
       })
+
+      // gsap.to('.cases__wrap', {
+      //   scrollTrigger: {
+      //     trigger: '.order',
+      //     start: "top 100%",
+      //     end: "top 90%",
+      //     scrub: true
+      //   },
+      //   opacity: 0,
+      //   duration: 0.5,
+      //   immediateRender: false,
+      // })
     })
   }
 
@@ -45,7 +45,7 @@ function casesBoxesInit () {
         scrollTrigger: {
           trigger: item,
           scrub: true,
-          start: "top 50%"
+          start: "top 100%"
         }
       })
 

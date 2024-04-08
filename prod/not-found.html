@@ -41,7 +41,12 @@
     <div class="header__cont cont">
       <div class="header__area">
         <div class="magnetic">
-          <button class="header__burger magnetic-inner" type="button" data-element="header-burger"></button>
+          <button class="header__burger magnetic-inner" type="button" data-element="header-burger">
+            <svg viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect class="header__burger-line-1" x="14" y="20" width="22" height="2" rx="1" fill="#00222E"></rect>
+              <rect class="header__burger-line-2" x="14" y="28" width="16" height="2" rx="1" fill="#00222E"></rect>
+            </svg>
+          </button>
         </div>
         <div class="header__menu">
           <nav class="header__nav">
@@ -66,8 +71,8 @@
               </li>
             </ul>
           </nav>
-          <a class="header__button btn btn-saturated" href="mailto:info@cifrinvest.ru">info@cifrinvest.ru</a>
-          <button class="header__button btn btn-black-arrow" data-role="modal-opener" data-modal-class="modal-order">
+          <a class="header__button header__button_1 btn btn-saturated" href="mailto:info@cifrinvest.ru">info@cifrinvest.ru</a>
+          <button class="header__button header__button_2 btn btn-black-arrow" data-role="modal-opener" data-modal-class="modal-order">
             <span>Оставить заявку</span>
           </button>
         </div>
@@ -166,8 +171,6 @@
             <path d="M37.5488 65.5033L55.072 82.1921L90.9528 45.894" stroke="white" stroke-width="10.0132" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
         </div>
-        <!--.modal-thanks__icon-->
-        <!--  lottie-player(src=`${pathStatics}/files/modal-order-lottie-icon.json` background='transparent' speed='1' style='width: 126px; height: 126px' direction='1' playmode='normal' loop='' autoplay='')-->
         <div class="modal-thanks__title">Заявка успешно отправлена!</div>
         <div class="modal-thanks__text">В течение дня с Вами свяжется наш менеджер для уточнения деталей</div>
         <div class="modal-thanks__note text-small">

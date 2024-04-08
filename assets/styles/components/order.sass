@@ -180,9 +180,15 @@
 
 .order__policy
   margin-left: 20px
-  opacity: 0.4
+  color: rgba(white, .4)
   max-width: 340px
   @include media(xs)
     max-width: 320px
     margin: 14px auto 0
     text-align: center
+  a
+    color: rgba(white, .4)
+    transition-duration: $transition-duration
+    transition-property: color
+    &:hover
+      color: rgba(white, 1)

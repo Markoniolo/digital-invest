@@ -18,7 +18,7 @@ function teamItemsInit () {
         scrollTrigger: {
           trigger: item,
           scrub: true,
-          start: "top 90%",
+          start: "top 100%",
           end: "top 80%"
         }
       })

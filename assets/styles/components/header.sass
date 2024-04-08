@@ -8,9 +8,48 @@
   .header__menu
     opacity: 1
     pointer-events: all
+    transition-duration: $transition-duration
+  .header__nav
+    transition-duration: 0.1s
   .header__burger
-    &::before
-      +bgIcon('ic_burger_close_black.svg')
+    .header__burger-line-1
+      transform: translate(23px,-7px) rotate(45deg)
+    .header__burger-line-2
+      transform: translate(-13px, 23px) rotate(-45deg)
+      width: 22px
+  .header__button_1
+    opacity: 1
+    pointer-events: all
+    transform: translateY(0)
+    transition-duration: 0.2s
+    transition-delay: 0.7s
+  .header__button_2
+    animation: 0.2s headerButton forwards
+    animation-delay: 0.8s
+    @keyframes headerButton
+      0%
+        opacity: 0
+        transform: translateY(10px)
+      100%
+        opacity: 1
+        transform: translateY(0)
+  .header__item
+    transform: translateX(0)
+    opacity: 1
+    pointer-events: all
+    transition-duration: 0.1s
+    &:nth-child(1)
+      transition-delay: 0.1s
+    &:nth-child(2)
+      transition-delay: 0.2s
+    &:nth-child(3)
+      transition-delay: 0.3s
+    &:nth-child(4)
+      transition-delay: 0.4s
+    &:nth-child(5)
+      transition-delay: 0.5s
+    &:nth-child(6)
+      transition-delay: 0.6s
 
 .header_cases-modal
   position: fixed
@@ -48,16 +87,16 @@
   @include media(xs)
     width: 42px
     height: 42px
-  &::before
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    +bgIcon('ic_burger_open_black.svg')
-    transition-duration: $transition-duration
-    transition-property: background
+  svg
+    pointer-events: none
+    width: 100%
+    height: 100%
+    .header__burger-line-1
+      transition-duration: 0.3s
+      transition-property: transform
+    .header__burger-line-2
+      transition-duration: 0.3s
+      transition-property: transform, width
 
 .header__back
   pointer-events: all
@@ -120,7 +159,7 @@
   opacity: 0
   pointer-events: none
   transition-property: opacity
-  transition-duration: $transition-duration
+  transition-duration: 0s
   @include media(lg)
     max-width: 363px
 
@@ -129,10 +168,17 @@
   box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5)
   background: $white
   border-radius: 16px
+  height: 0
+  overflow: hidden
+  transition-property: height
 
 .header__list
 
 .header__item
+  opacity: 0
+  pointer-events: none
+  transform: translateX(-12px)
+  transition-property: opacity, transform
 
 .header__link
   padding: 12px
@@ -143,13 +189,21 @@
     font-size: 24px
 
 .header__button
+  opacity: 0
   margin-top: 6px
   display: block
   width: 100%
   font-size: 1.51rem
   line-height: 110%
+  pointer-events: none
+  transform: translateY(10px)
   @include media(lg)
     font-size: 24px
+
+.header__button_1
+  transition-property: opacity, transform
+
+.header__button_2
 
 .header__tg-box
   margin-left: auto
@@ -186,7 +240,7 @@
       height: 24px
   &:hover
     &::before
-      animation: $transition-duration headerTgAnim forwards linear
+      animation: 0.2s headerTgAnim forwards linear
   @keyframes headerTgAnim
     0%
       transform: translate(0,0)

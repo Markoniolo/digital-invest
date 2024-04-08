@@ -93,7 +93,7 @@ function casesDistortionInit () {
   }
 }
 
-function caseDistortionInit (node) {
+async function caseDistortionInit (node) {
   const containerEl = node
   const dataSrc = node.getAttribute('data-src')
   const containerElem = node
@@ -128,92 +128,97 @@ function caseDistortionInit (node) {
   const texture = textureFirst
   texture.minFilter = texture.magFilter = THREE.LinearFilter
   texture.anisotropy = rendererCapabilities
-  const textureSecond = new THREE.TextureLoader().load(dataSrc)
 
-  const textures = {
-    first: textureFirst,
-    second: textureSecond,
-    displacement:textureDisplacement
-  }
+  const textureSecond = new THREE.TextureLoader().load(dataSrc, function ( texture ) {
+    loadComplete(texture)
+  })
 
-  function update () {
-    updateSize()
-    updateTexturesSize()
-    renderer.render(scene, camera)
-  }
+  function loadComplete (textureSecond) {
+    const textures = {
+      first: textureFirst,
+      second: textureSecond,
+      displacement:textureDisplacement
+    }
 
-  function updateSize () {
-    const { width, height } = containerElem.getBoundingClientRect()
-    renderer.setSize(width, height)
-  }
+    function update () {
+      updateSize()
+      updateTexturesSize()
+      renderer.render(scene, camera)
+    }
 
-  textures.displacement.wrapS = textures.displacement.wrapT =
+    function updateSize () {
+      const { width, height } = containerElem.getBoundingClientRect()
+      renderer.setSize(width, height)
+    }
+
+    textures.displacement.wrapS = textures.displacement.wrapT =
       THREE.RepeatWrapping;
 
-  const material = new THREE.ShaderMaterial(
-    getDistortionShaderMaterialParameters({
-      intensity: 0.5,
-      fromTexture: textures.first,
-      toTexture: textures.second,
-      displacementTexture: textures.displacement,
-      imageSize: new THREE.Vector2(
-        containerEl.getBoundingClientRect().width,
-        containerEl.getBoundingClientRect().height
-      ),
-      containerSize: new THREE.Vector2(
-        containerEl.getBoundingClientRect().width,
-        containerEl.getBoundingClientRect().height
-      )
-    })
-  )
+    const material = new THREE.ShaderMaterial(
+      getDistortionShaderMaterialParameters({
+        intensity: 0.5,
+        fromTexture: textures.first,
+        toTexture: textures.second,
+        displacementTexture: textures.displacement,
+        imageSize: new THREE.Vector2(
+          containerEl.getBoundingClientRect().width,
+          containerEl.getBoundingClientRect().height
+        ),
+        containerSize: new THREE.Vector2(
+          containerEl.getBoundingClientRect().width,
+          containerEl.getBoundingClientRect().height
+        )
+      })
+    )
 
-  function updateTexturesSize() {
-    if (textures === null) {
-      return
+    function updateTexturesSize() {
+      if (textures === null) {
+        return
+      }
+      material.uniforms.imageSize.value = new THREE.Vector2(
+        containerEl.getBoundingClientRect().width,
+        containerEl.getBoundingClientRect().height
+      );
+
+      material.uniforms.containerSize.value = new THREE.Vector2(
+        containerEl.getBoundingClientRect().width,
+        containerEl.getBoundingClientRect().height
+      );
     }
-    material.uniforms.imageSize.value = new THREE.Vector2(
-      containerEl.getBoundingClientRect().width,
-      containerEl.getBoundingClientRect().height
-    );
 
-    material.uniforms.containerSize.value = new THREE.Vector2(
-      containerEl.getBoundingClientRect().width,
-      containerEl.getBoundingClientRect().height
-    );
-  }
+    const geometry = new THREE.PlaneGeometry(
+      containerEl.offsetWidth,
+      containerEl.offsetHeight,
+      1
+    )
 
-  const geometry = new THREE.PlaneGeometry(
-    containerEl.offsetWidth,
-    containerEl.offsetHeight,
-    1
-  )
+    const object = new THREE.Mesh(geometry, material)
 
-  const object = new THREE.Mesh(geometry, material)
+    sceneController.scene.add(object)
 
-  sceneController.scene.add(object)
+    containerEl.addEventListener('mouseenter', animate)
+    containerEl.addEventListener('mouseleave', animateLeave)
 
-  containerEl.addEventListener('mouseenter', animate)
-  containerEl.addEventListener('mouseleave', animateLeave)
+    animateLeave()
 
-  animateLeave()
+    function animate() {
+      gsap.to(material.uniforms.dispositionFactor, {
+        value: 1,
+        duration: 0.6,
+        onUpdate() {
+          update();
+        },
+      })
+    }
 
-  function animate() {
-    gsap.to(material.uniforms.dispositionFactor, {
-      value: 1,
-      duration: 0.6,
-      onUpdate() {
-        update();
-      },
-    })
-  }
-
-  function animateLeave () {
-    gsap.to(material.uniforms.dispositionFactor, {
-      value: 0,
-      duration: 0.6,
-      onUpdate() {
-        update();
-      },
-    })
+    function animateLeave () {
+      gsap.to(material.uniforms.dispositionFactor, {
+        value: 0,
+        duration: 0.6,
+        onUpdate() {
+          update();
+        },
+      })
+    }
   }
 }

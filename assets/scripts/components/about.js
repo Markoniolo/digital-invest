@@ -14,7 +14,7 @@ function aboutAreaInit () {
       scrollTrigger: {
         trigger: '.about__area',
         scrub: true,
-        start: "top 80%",
+        start: "top 100%",
       }
     })
 

@@ -44,6 +44,7 @@
 .faq__list
 
 .faq__item
+  cursor: pointer
   border-radius: 16px
   backdrop-filter: blur(30px)
   box-shadow: 0 4px 20px 0 rgba(191, 218, 228, 0.5)
@@ -56,17 +57,19 @@
       margin-bottom: 16px
     @include media(xs)
       margin-bottom: 12px
+  &:hover
+    .faq__button::before
+      +bgIcon('ic_dropdown_arrow_saturated.svg')
+
+.faq__item_active
+  .faq__button::before
+    transform: rotate(180deg)
 
 .faq__top
-  cursor: pointer
   display: flex
   padding: 12px 12px 12px 24px
   @include media(xs)
     padding: 12px 12px 12px 12px
-
-.faq__top_active
-  .faq__button::before
-    transform: rotate(180deg)
 
 .faq__headline
   margin-right: 28px
@@ -99,7 +102,7 @@
     width: 1.13rem
     height: 1.13rem
     +bgIcon('ic_dropdown_arrow_black.svg')
-    transition-property: transform
+    transition-property: transform, background
     transition-duration: $transition-duration
     @include media(lg)
       width: 18px
@@ -107,11 +110,18 @@
     @include media(xs)
       width: 15px
       height: 15px
+  &::after
+    content: ''
+    +bgIcon('ic_dropdown_arrow_saturated.svg')
+    opacity: 0
+    width: 0
+    height: 0
+    pointer-events: none
 
 .faq__content
-  transition-duration: 0.5s
+  transition-duration: $transition-duration
   transition-property: height
-  transition-timing-function: cubic-bezier(0, 1, 0, 1)
+  //transition-timing-function: cubic-bezier(0, 1, 0, 1)
   height: 0
   overflow: hidden
 

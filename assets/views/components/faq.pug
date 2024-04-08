@@ -11,8 +11,8 @@ section.faq#faq
       h2.faq__caption.h2 Ответы на&nbsp;вопросы
       ul.faq__list
         each item in faqList
-          li.faq__item
-            .faq__top(data-element="faq__top")
+          li.faq__item(data-element="faq__item")
+            .faq__top
               .faq__headline.subtitle!= item.headline
               .faq__button
             .faq__content

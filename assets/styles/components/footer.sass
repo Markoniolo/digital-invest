@@ -25,7 +25,6 @@
       content: none
 
 .footer__light
-  display: none
   position: absolute
   z-index: -2
   bottom: 100px
@@ -36,11 +35,12 @@
   height: 183px
   filter: blur(60px)
   transform: translate(-50%, -50%)
-  transition-timing-function: linear
-  transition-duration: 0.05s
-  transition-property: top, left
+  opacity: 0
+  pointer-events: none
+  transition-property: opacity
+  transition-duration: $transition-duration
   @include media(lg)
-    display: none !important
+    opacity: 0 !important
 
 .footer__area
   display: flex
@@ -66,21 +66,32 @@
   text-decoration: none
   position: relative
   transition-duration: $transition-duration
-  transition-property: opacity
+  transition-property: transform
   @include media(lg)
     margin-bottom: 42px
   @include media(xs)
     margin-bottom: 32px
   &:hover
-    opacity: 0.8
-  &::before
+    transform: translateY(-3px)
+    &::before
+      left: 100%
+    //&::after
+    //  right: 0
+  &::before, &::after
     content: ''
     height: 2px
     position: absolute
     bottom: 0
+    background-color: $white
+    transition-property: left
+    transition-duration: $transition-duration
+  &::before
     left: 0
     right: 0
-    background-color: $white
+  //&::after
+  //  left: 0
+  //  right: 0
+  //  transition-delay: 0.15s
 
 .footer__order
   display: block
