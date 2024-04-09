@@ -19,6 +19,7 @@ function modalCasesSliderInit () {
         spaceBetween: 50,
         direction: "horizontal",
         speed: 1000,
+        allowTouchMove: false,
         freeMode: {
           enabled: false,
         },
@@ -26,17 +27,29 @@ function modalCasesSliderInit () {
     },
   })
 
-  swiper.on('sliderMove', function (e) {
-    // updatePicture()
-    // console.log('update')
-  });
+  if (window.innerWidth >= 1440) {
+    activateResizeAnimation()
+  }
+
+  function activateResizeAnimation () {
+    swiper.on('slideNextTransitionStart', function (e) {
+      let index = swiper.activeIndex - 1
+      const currentSlide = swiper.slides[index]
+      const picture = currentSlide.querySelector('.modal-cases__picture')
+      picture.style.transform = `translateY(-50%) scale(${window.innerHeight / picture.clientHeight})`
+      picture.style.borderRadius = "0"
+      setTimeout(() => {
+        picture.style.transform = `translateY(-50%)`
+        picture.style.borderRadius = "16px"
+      },1000)
+    })
+  }
 
   const modalCasesOpeners = document.querySelectorAll('[data-role="modal-cases-opener"]')
   const modalCases = document.querySelector('[data-element="modal-cases"]')
   const btnCloseCases = document.querySelector('[data-element="header__back-cases"]')
   const header = document.querySelector('[data-element="header"]')
   const html = document.getElementsByTagName('html')[0]
-  const pictures = document.querySelectorAll('.modal-cases__picture')
 
   const canvas = document.querySelector('.modal-cases-canvas')
   const ctx = canvas.getContext("2d")

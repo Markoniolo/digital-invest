@@ -21,6 +21,8 @@
   transition-delay: 0s
   .modal-cases__slider
     opacity: 1
+  .modal-cases__picture
+    will-change: transform
 
 .modal-cases-canvas
   position: absolute
@@ -41,15 +43,16 @@
   transition-property: opacity
 
 .modal-cases__wrapper
+  transition-timing-function: ease-in-out
 
 .modal-cases__slide
   display: flex
   max-width: 1920px
   width: 100%
-  padding-left: 72px
-  padding-right: 72px
-  padding-top: 13vh
-  padding-bottom: 10vh
+  padding: 13vh 72px 10vh
+  transition-duration: 0.6s
+  //transition-property: padding
+  transition-timing-function: linear
   @include media(lg)
     padding: 70px 24px 0
     flex-direction: column
@@ -176,25 +179,30 @@
   height: 32px
 
 .modal-cases__picture
-  position: relative
-  margin-left: auto
+  position: absolute
+  top: 50%
+  right: -44px
+  transform: translateY(-50%)
   width: 38.8799rem
+  height: 38.8799rem
   flex-shrink: 0
   border-radius: 16px
   overflow: hidden
-  align-self: center
+  transform-origin: right
+  transition-timing-function: ease-in-out
+  transition-duration: 0.5s
+  transition-property: transform, border-radius
   @include media(lg)
     position: static
+    transform: none
     width: 620px
+    height: 620px
     margin: 90px auto 0
   @include media(xs)
     margin: 60px auto 0
+    height: 69.795rem
     width: 69.795rem
 
 .modal-cases__image
-  height: 38.8799rem
+  height: 100%
   object-fit: cover
-  @include media(lg)
-    height: 620px
-  @include media(xs)
-    height: 69.795rem

@@ -122,7 +122,7 @@ const config = {
 }
 
 // Async function for generating webGL waves
-const createWave = async function(selector, colors) {
+async function createWave (selector, colors) {
   if(document.querySelectorAll(selector) !== null && document.querySelectorAll(selector).length > 0) {
     let i = 0
 
@@ -136,7 +136,7 @@ const createWave = async function(selector, colors) {
       const renderer = new THREE.WebGLRenderer({
         powerPreference: "high-performance",
         antialias: true,
-        alpha: true,
+        alpha: false,
         canvas: document.getElementById(`canvas-${i}`)
       })
 
@@ -145,7 +145,6 @@ const createWave = async function(selector, colors) {
       let elHeight
 
       if (window.innerWidth < 768) {
-
         elWidth = 343
         elHeight = 336
       } else {
@@ -166,11 +165,6 @@ const createWave = async function(selector, colors) {
         high = colors[i].high
         low = colors[i].low
         ++i
-      }
-
-      // And use the high color for the subtext.
-      if(item.querySelector('.subtext') !== null) {
-        item.querySelector('.subtext').style.background = `rgba(${high.x},${high.y},${high.z},0.75)`
       }
 
       // Create a plane, and pass that through to our shaders
@@ -194,31 +188,33 @@ const createWave = async function(selector, colors) {
       scene.add(mesh)
 
       // On hover effects for each item
-      let enterTimer, exitTimer
-      item.addEventListener('mouseenter', function(e) {
-        if(typeof exitTimer !== "undefined") {
-          clearTimeout(exitTimer)
-        }
-        enterTimer = setInterval(function() {
-          if(mesh.material.uniforms.u_height.value >= 0.5) {
-            mesh.material.uniforms.u_height.value -= 0.05
-          } else {
-            clearTimeout(enterTimer)
-          }
-        }, 10)
-      })
-      item.addEventListener('mouseleave', function(e) {
-        if(typeof enterTimer !== "undefined") {
-          clearTimeout(enterTimer)
-        }
-        exitTimer = setInterval(function() {
-          if(mesh.material.uniforms.u_height.value < 1) {
-            mesh.material.uniforms.u_height.value += 0.05
-          } else {
+      if (window.innerWidth >= 1440) {
+        let enterTimer, exitTimer
+        item.addEventListener('mouseenter', function (e) {
+          if (typeof exitTimer !== "undefined") {
             clearTimeout(exitTimer)
           }
-        }, 10)
-      })
+          enterTimer = setInterval(function () {
+            if (mesh.material.uniforms.u_height.value >= 0.5) {
+              mesh.material.uniforms.u_height.value -= 0.05
+            } else {
+              clearTimeout(enterTimer)
+            }
+          }, 10)
+        })
+        item.addEventListener('mouseleave', function (e) {
+          if (typeof enterTimer !== "undefined") {
+            clearTimeout(enterTimer)
+          }
+          exitTimer = setInterval(function () {
+            if (mesh.material.uniforms.u_height.value < 1) {
+              mesh.material.uniforms.u_height.value += 0.05
+            } else {
+              clearTimeout(exitTimer)
+            }
+          }, 10)
+        })
+      }
 
       renderer.render( scene, camera )
       let t = 0
@@ -235,4 +231,4 @@ const createWave = async function(selector, colors) {
 }
 
 const capBox = document.querySelector('.cap__box')
-if (capBox) createWave(config.individualItem, config.colors)
+if (capBox) setTimeout(() => createWave(config.individualItem, config.colors), 1000)

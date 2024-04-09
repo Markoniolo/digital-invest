@@ -14,7 +14,7 @@ function stepsDiagramInit () {
 
   let t1 = gsap.timeline({
     scrollTrigger: {
-      trigger: '.steps__area', scrub: true, start: "top 70%", end: "+=1300",
+      trigger: '.steps__area', scrub: true, start: "top 70%", end: "+=1500",
       onUpdate: () => percent.innerHTML = Math.round(100 * obj.num) + '%'
     }
   })
@@ -28,7 +28,7 @@ function stepsDiagramInit () {
         trigger: '.steps__area',
         scrub: true,
         start: "top 90%",
-        end: "+=1300"
+        end: "+=1500"
       }
     })
     mm.add("(min-width: 768px)", () => {
