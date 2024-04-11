@@ -1,5 +1,3 @@
-import gsap from "gsap"
-
 const modalCasesSlider = document.querySelector('[data-element="modal-cases-slider"]')
 
 if (modalCasesSlider) setTimeout(modalCasesSliderInit, 0)
@@ -50,6 +48,7 @@ function modalCasesSliderInit () {
   const btnCloseCases = document.querySelector('[data-element="header__back-cases"]')
   const header = document.querySelector('[data-element="header"]')
   const html = document.getElementsByTagName('html')[0]
+  const headerLinkArray = document.querySelectorAll('.header__link')
 
   const canvas = document.querySelector('.modal-cases-canvas')
   const ctx = canvas.getContext("2d")
@@ -80,6 +79,10 @@ function modalCasesSliderInit () {
   }
 
   btnCloseCases.addEventListener('click', closeModalCases)
+
+  for (let i = 0; i < headerLinkArray.length; i++) {
+    headerLinkArray[i].addEventListener('click', closeModalCases)
+  }
 
   function canvasCasesAnimation () {
     done = false

@@ -22,7 +22,7 @@ function lightBgBoxArrayInit () {
     box.addEventListener('mouseleave', cancelMousemoveHandler)
 
     function activateMousemoveHandler () {
-      light.style.opacity = '1'
+      light.style.opacity = '0.5'
       window.addEventListener('mousemove', mousemoveHandler)
     }
 

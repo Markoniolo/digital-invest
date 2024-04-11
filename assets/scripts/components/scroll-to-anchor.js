@@ -21,7 +21,16 @@ function clickOnTheScrollElement(event) {
       elementId = this.hash.substr(1)
     }
     const element = document.getElementById(elementId)
-    if (element) animateScrollToAnchor(element)
+
+    const openModal = document.querySelector('.modal-cases_active')
+
+    if (!element) return
+
+    if (openModal) {
+      setTimeout(() => animateScrollToAnchor(element), 600)
+    } else {
+      animateScrollToAnchor(element)
+    }
 }
 
 function animateScrollToAnchor(theElement) {

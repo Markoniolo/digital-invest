@@ -22,18 +22,6 @@ function casesBoxesInit () {
         },
         opacity: 0,
       })
-
-      // gsap.to('.cases__wrap', {
-      //   scrollTrigger: {
-      //     trigger: '.order',
-      //     start: "top 100%",
-      //     end: "top 90%",
-      //     scrub: true
-      //   },
-      //   opacity: 0,
-      //   duration: 0.5,
-      //   immediateRender: false,
-      // })
     })
   }
 
