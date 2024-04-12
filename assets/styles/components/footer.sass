@@ -61,11 +61,12 @@
     margin-bottom: 12px
 
 .footer__email
+  overflow: hidden
   margin-bottom: 52px
   padding-bottom: 7px
   text-decoration: none
   position: relative
-  transition-duration: $transition-duration
+  transition-duration: 0.5s
   transition-property: transform
   @include media(lg)
     margin-bottom: 42px
@@ -75,23 +76,26 @@
     transform: translateY(-3px)
     &::before
       left: 100%
-    //&::after
-    //  right: 0
+      transition-delay: 0s
+    &::after
+      right: 0
+      transform: translateX(0)
   &::before, &::after
     content: ''
     height: 2px
     position: absolute
-    bottom: 0
-    background-color: $white
-    transition-property: left
-    transition-duration: $transition-duration
-  &::before
     left: 0
     right: 0
-  //&::after
-  //  left: 0
-  //  right: 0
-  //  transition-delay: 0.15s
+    bottom: 0
+    background-color: $white
+    transition-duration: 0.5s
+  &::before
+    transition-property: left
+    transition-delay: 0.5s
+  &::after
+    transition-property: transform
+    transition-delay: 0.25s
+    transform: translateX(-100%)
 
 .footer__order
   display: block

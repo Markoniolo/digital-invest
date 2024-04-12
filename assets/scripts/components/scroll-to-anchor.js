@@ -10,6 +10,11 @@ function initScrollToAnchor() {
     function _loopAddEventScrollToAnchor(node) {
         node.addEventListener('click', clickOnTheScrollElement)
     }
+
+    if (window.location.hash && window.innerWidth < 1240) {
+      const element = document.getElementById(window.location.hash.substr(1))
+      animateScrollToAnchor(element)
+    }
 }
 
 function clickOnTheScrollElement(event) {

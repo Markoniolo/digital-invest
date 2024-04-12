@@ -27,12 +27,12 @@ section.cap
     .cap__top
       .cap__top-inner
         h1.cap__caption.h1 Интегратор digital-решений
-        .cap__note.text-medium Отдел разработки на аутсорсе <br> для вашего бизнеса
+        .cap__note.text-medium.text-normal-weight Отдел разработки на аутсорсе <br> для вашего бизнеса
       .cap__top-cards
         each item in capTopCards
           .cap__top-card
             .cap__top-card-value= item.value
-            .cap__top-card-note.text-medium= item.note
+            .cap__top-card-note.text-medium.text-normal-weight= item.note
     .cap__carousel#cap__carousel
       .cap__area#cap__area
         each item in capAreaCards
@@ -41,5 +41,5 @@ section.cap
             .cap__button
             .cap__title!= item.title
             .cap__price.text-medium= item.price
-            .cap__descr.text-medium= item.descr
+            .cap__descr.text-medium.text-normal-weight= item.descr
 

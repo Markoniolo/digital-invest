@@ -12,8 +12,8 @@ if VIEW === 'index'
   .logo
     img.logo-image(src=staticImg('logo.svg') alt='')
 else
-  a.logo.magnetic(href='/')
-    img.logo-image.magnetic-inner(src=staticImg('logo.svg') alt='')
+  a.logo(href='/')
+    img.logo-image(src=staticImg('logo.svg') alt='')
 header.header(data-element="header")
   .header__cont.cont
     .header__area
@@ -24,10 +24,11 @@ header.header(data-element="header")
             rect.header__burger-line-2(x='14' y='28' width='16' height='2' rx='1' fill='#00222E')
       if VIEW === 'policy'
         .magnetic
-          a.header__back.text-medium.magnetic-inner(href='/') Назад
+          a.header__back.text-medium.magnetic-inner(href='/')
+            span Назад
       if VIEW === 'index'
         .magnetic
-          button.header__back-cases.magnetic-inner(type='button' data-element="header__back-cases")
+          button.header__back.header__back_cases.magnetic-inner(type='button' data-element="header__back-cases")
             span Назад
       .header__menu
         nav.header__nav
@@ -37,7 +38,7 @@ header.header(data-element="header")
               if VIEW === 'index'
                 a.header__link.title.link-black(href=item.link data-role="scroll-to-anchor")= item.text
               else
-                a.header__link.title.link-black(href=`/${item.link}`)= item.text
+                a.header__link.title.link-black(href=`/index.html${item.link}`)= item.text
         a.header__button.header__button_1.btn.btn-saturated(href='mailto:info@cifrinvest.ru') info@cifrinvest.ru
         button.header__button.header__button_2.btn.btn-black-arrow(data-role="modal-opener" data-modal-class="modal-order")
           span Оставить заявку

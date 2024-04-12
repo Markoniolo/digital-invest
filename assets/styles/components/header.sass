@@ -57,7 +57,7 @@
   top: 0
   right: 0
   left: 0
-  .header__back-cases
+  .header__back_cases
     display: flex
 
 .header__cont
@@ -100,8 +100,9 @@
       transition-property: transform, width
 
 .header__back
+  overflow: hidden
+  margin-left: -8px
   pointer-events: all
-  margin-left: 12px
   background-color: $white
   border-radius: 1000px
   padding: 16px 24px 16px 52px
@@ -110,45 +111,66 @@
   position: relative
   @include media(xs)
     display: none
-  &::before
+  &::before, &::after
     content: ''
     width: 18px
     height: 18px
     position: absolute
     top: 16px
-    left: 16px
     +bgIcon('ic_arrow_btn_left_black.svg')
-
-.header__back-cases
-  display: none
-  align-items: center
-  pointer-events: all
-  margin-left: 12px
-  background-color: $white
-  border-radius: 1000px
-  padding: 16px 24px 16px 52px
-  position: relative
-  font-size: 14px
-  line-height: 105%
-  height: 50px
-  @include media(xs)
-    margin-left: 0
-    height: 42px
-    width: 42px
-    padding: 0
-    justify-content: center
+  &::before
+    left: 16px
+  &::after
+    right: -26px
+  span
+    display: inline-block
+  &:not(:hover)
     span
-      display: none
-  &::before
-    content: ''
-    width: 18px
-    height: 18px
-    position: absolute
-    top: 16px
-    left: 16px
-    +bgIcon('ic_arrow_btn_left_black.svg')
-    @include media(xs)
-      position: static
+      animation: 0.2s headerBackSpanReverse forwards linear
+    &::before
+      animation: 0.2s headerBackArrowReverse forwards linear
+    &::after
+      animation: 0.2s headerBackArrowLeftReverse forwards linear
+  &:hover
+    &::before
+      animation: 0.2s headerBackArrow forwards linear
+    &::after
+      animation: 0.2s headerBackArrowLeft forwards linear
+    span
+      animation: 0.2s headerBackSpan forwards linear
+  @keyframes headerBackArrow
+    0%
+      left: 24px
+    100%
+      left: -26px
+  @keyframes headerBackArrowLeft
+    0%
+      right: -26px
+    100%
+      right: 24px
+  @keyframes headerBackArrowReverse
+    0%
+      left: -26px
+    100%
+      left: 24px
+  @keyframes headerBackArrowLeftReverse
+    0%
+      right: 24px
+    100%
+      right: -26px
+  @keyframes headerBackSpan
+    0%
+      transform: translateX(0)
+    100%
+      transform: translateX(-32px)
+  @keyframes headerBackSpanReverse
+    0%
+      transform: translateX(-32px)
+    100%
+      transform: translateX(0)
+
+.header__back_cases
+  display: none
 
 .header__menu
   position: absolute
