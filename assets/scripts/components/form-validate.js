@@ -67,7 +67,7 @@ function formValidateInit (form) {
 
     function success () {
       openThanks()
-      inputPhone.value = ''
+      maskPhone.value = ''
       inputName.value = ''
     }
   }

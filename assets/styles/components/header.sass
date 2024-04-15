@@ -101,13 +101,15 @@
 
 .header__back
   overflow: hidden
+  display: flex
+  align-items: center
   margin-left: -8px
   pointer-events: all
   background-color: $white
   border-radius: 1000px
-  padding: 16px 24px 16px 52px
+  padding: 15px 24px 15px 52px
+  height: 50px
   text-decoration: none
-  display: inline-block
   position: relative
   @include media(xs)
     display: none
@@ -116,7 +118,7 @@
     width: 18px
     height: 18px
     position: absolute
-    top: 16px
+    top: 15px
     +bgIcon('ic_arrow_btn_left_black.svg')
   &::before
     left: 16px
@@ -124,6 +126,7 @@
     right: -26px
   span
     display: inline-block
+    font-size: 14px
   &:not(:hover)
     span
       animation: 0.2s headerBackSpanReverse forwards linear
