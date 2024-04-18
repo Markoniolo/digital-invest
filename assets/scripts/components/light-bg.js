@@ -20,15 +20,14 @@ function lightBgBoxArrayInit () {
     const light = box.querySelector(targetClassName)
     box.addEventListener('mouseenter', activateMousemoveHandler)
     box.addEventListener('mouseleave', cancelMousemoveHandler)
+    box.addEventListener('mousemove', mousemoveHandler)
 
     function activateMousemoveHandler () {
       light.classList.add('footer__light_active')
-      window.addEventListener('mousemove', mousemoveHandler)
     }
 
     function cancelMousemoveHandler () {
       light.classList.remove('footer__light_active')
-      window.removeEventListener('mousemove', mousemoveHandler)
     }
 
     function mousemoveHandler (e) {

@@ -1,3 +1,7 @@
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
+
 import * as THREE from 'three'
 
 const rgb = function(r, g, b) {
@@ -129,6 +133,8 @@ async function createWave (selector, colors) {
     document.querySelectorAll(selector).forEach(function(item) {
       // Create a renderer
 
+      let animationPause = false
+
       const newCanvas = document.createElement('canvas')
       newCanvas.id = `canvas-${i}`
       item.appendChild(newCanvas)
@@ -221,11 +227,25 @@ async function createWave (selector, colors) {
 
       const animate = function () {
         requestAnimationFrame( animate )
-        renderer.render( scene, camera )
-        mesh.material.uniforms.u_time.value = t
-        t = t + 0.02
+        if (!animationPause) renderAnim()
+        function renderAnim () {
+          renderer.render( scene, camera )
+          mesh.material.uniforms.u_time.value = t
+          t = t + 0.02
+        }
       }
+
       animate()
+
+      ScrollTrigger.create({
+        start: 0,
+        end: "max",
+        onUpdate: controlAnimation
+      });
+
+      function controlAnimation() {
+        animationPause = !ScrollTrigger.isInViewport(item)
+      }
     })
   }
 }
