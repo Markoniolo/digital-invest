@@ -1,4 +1,5 @@
 import './components/header'
+import './components/light-bg'
 import './components/faq'
 import './components/magnetic'
 import './components/team'
