@@ -34,7 +34,6 @@ function lightBgBoxArrayInit () {
       const rect = box.getBoundingClientRect()
       mm.add("(min-width: 1440px)", () => {
         let top = e.clientY - rect.top
-        if (top < 73) top = 73
         light.style.transform = `translate(${e.clientX - rect.left}px, ${top}px)`
       })
     }
